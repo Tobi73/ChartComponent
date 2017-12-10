@@ -69,7 +69,7 @@
             // 
             // btnConvert
             // 
-            this.btnConvert.Location = new System.Drawing.Point(314, 220);
+            this.btnConvert.Location = new System.Drawing.Point(319, 218);
             this.btnConvert.Name = "btnConvert";
             this.btnConvert.Size = new System.Drawing.Size(75, 23);
             this.btnConvert.TabIndex = 1;
@@ -84,14 +84,15 @@
             this.btnTable.TabIndex = 0;
             this.btnTable.Text = "table";
             this.btnTable.UseVisualStyleBackColor = true;
+            this.btnTable.Click += new System.EventHandler(this.btnTable_Click);
             // 
-            // Form1
+            // FormCreateGroupBox
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(505, 271);
             this.Controls.Add(this.groupBox1);
-            this.Name = "Form1";
+            this.Name = "FormCreateGroupBox";
             this.Text = "Form1";
             this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);

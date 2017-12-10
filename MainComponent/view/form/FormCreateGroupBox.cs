@@ -17,5 +17,10 @@ namespace MainComponent
         {
             InitializeComponent();
         }
+
+        private void btnTable_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
