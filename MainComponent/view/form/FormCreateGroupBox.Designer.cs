@@ -33,6 +33,8 @@
             this.btnLoad = new System.Windows.Forms.Button();
             this.btnConvert = new System.Windows.Forms.Button();
             this.btnTable = new System.Windows.Forms.Button();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -86,6 +88,10 @@
             this.btnTable.UseVisualStyleBackColor = true;
             this.btnTable.Click += new System.EventHandler(this.btnTable_Click);
             // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            // 
             // FormCreateGroupBox
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -106,5 +112,7 @@
         private System.Windows.Forms.Button btnLoad;
         private System.Windows.Forms.Button btnConvert;
         private System.Windows.Forms.Button btnTable;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
     }
 }

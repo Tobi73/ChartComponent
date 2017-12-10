@@ -33,6 +33,7 @@
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.govnoblyapotom1 = new ChartComponent.Govnoblyapotom(this.components);
+            this.customGroupBox1 = new MainComponent.CustomGroupBox(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.govnoblyapotom1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -49,15 +50,27 @@
             series1.Legend = "Legend1";
             series1.Name = "Series1";
             this.govnoblyapotom1.Series.Add(series1);
-            this.govnoblyapotom1.Size = new System.Drawing.Size(533, 298);
+            this.govnoblyapotom1.Size = new System.Drawing.Size(120, 40);
             this.govnoblyapotom1.TabIndex = 0;
             this.govnoblyapotom1.Text = "govnoblyapotom1";
+            // 
+            // customGroupBox1
+            // 
+            this.customGroupBox1.Location = new System.Drawing.Point(167, 34);
+            this.customGroupBox1.MinimumSize = new System.Drawing.Size(480, 250);
+            this.customGroupBox1.Name = "customGroupBox1";
+            this.customGroupBox1.Size = new System.Drawing.Size(480, 250);
+            this.customGroupBox1.TabIndex = 1;
+            this.customGroupBox1.TabStop = false;
+            this.customGroupBox1.Text = "customGroupBox1";
+            this.customGroupBox1.UseTable = true;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(625, 392);
+            this.ClientSize = new System.Drawing.Size(719, 392);
+            this.Controls.Add(this.customGroupBox1);
             this.Controls.Add(this.govnoblyapotom1);
             this.Name = "Form1";
             this.Text = "Form1";
@@ -70,6 +83,7 @@
         #endregion
 
         private ChartComponent.Govnoblyapotom govnoblyapotom1;
+        private MainComponent.CustomGroupBox customGroupBox1;
     }
 }
 

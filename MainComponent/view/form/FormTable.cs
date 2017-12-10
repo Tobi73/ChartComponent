@@ -13,21 +13,18 @@ namespace MainComponent.view.form
 {
     public partial class FormTable : Form
     {
-        public FormTable(/* График */)
+        public FormTable(ChartModel _chart)
         {
             InitializeComponent();
 
-
+            this.chart = _chart;
         }
 
-        Govnoblyapotom chart;
+        ChartModel chart;
 
         private void FormTable_Load(object sender, EventArgs e)
         {
-            DataGridViewRow row = (DataGridViewRow)dataGridView1.Rows[0].Clone();
-            row.Cells[0].Value = "XYZ";
-            row.Cells[1].Value = 50.2;
-            dataGridView1.Rows.Add(row);
+
         }
     }
 }
