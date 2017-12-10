@@ -9,9 +9,9 @@ namespace ChartComponent
 {
     public partial class Govnoblyapotom : Chart
     {
-        private List<Chart> childs;
+        private List<Govnoblyapotom> childs;
 
-        public List<Chart> Childs
+        public List<Govnoblyapotom> Childs
         {
             get
             {
@@ -28,7 +28,7 @@ namespace ChartComponent
             return childs.ElementAtOrDefault(index);
         }
 
-        public Chart AddChild(Chart chart)
+        public Govnoblyapotom AddChild(Govnoblyapotom chart)
         {
             childs.Add(chart);
             return chart;
