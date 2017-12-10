@@ -32,6 +32,8 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -41,9 +43,38 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="controller\Converter.cs" />
+    <Compile Include="controller\Serializer.cs" />
+    <Compile Include="view\CustomDesigner.cs" />
+    <Compile Include="view\CustomGroupBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="view\CustomGroupBox.Designer.cs">
+      <DependentUpon>CustomGroupBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="view\form\FormCreateGroupBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\form\FormCreateGroupBox.Designer.cs">
+      <DependentUpon>FormCreateGroupBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="view\form\FormForTesting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\form\FormForTesting.Designer.cs">
+      <DependentUpon>FormForTesting.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="view\form\FormCreateGroupBox.resx">
+      <DependentUpon>FormCreateGroupBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view\form\FormForTesting.resx">
+      <DependentUpon>FormForTesting.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

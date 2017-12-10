@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MainComponent
+namespace MainComponent.controller
 {
-    public class Class1
+    class Converter
     {
     }
 }
