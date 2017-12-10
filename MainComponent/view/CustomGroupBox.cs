@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MainComponent.view.form;
 
 namespace MainComponent
 {
@@ -44,6 +45,13 @@ namespace MainComponent
                 btnTable.Visible = false;
             }
 
+        }
+
+        private void btnTable_Click(object sender, EventArgs e)
+        {
+            FormTable ft = new FormTable(/* Передать выбранный график */);
+            ft.ShowDialog();
+            
         }
     }
 }

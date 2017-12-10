@@ -65,7 +65,7 @@
             // 
             // btnConvert
             // 
-            btnConvert.Location = new System.Drawing.Point(314, 220);
+            btnConvert.Location = new System.Drawing.Point(314, 218);
             btnConvert.Name = "btnConvert";
             btnConvert.Size = new System.Drawing.Size(75, 23);
             btnConvert.TabIndex = 1;
@@ -80,6 +80,7 @@
             btnTable.TabIndex = 0;
             btnTable.Text = "table";
             btnTable.UseVisualStyleBackColor = true;
+            btnTable.Click += new System.EventHandler(this.btnTable_Click);
 
             ClientSize = new System.Drawing.Size(480,250);
             MinimumSize = new System.Drawing.Size(480, 250);
