@@ -33,10 +33,12 @@ namespace ChartComponent
                 var s = new Series();
                 s.ChartType = chartModel.ChartType;
                 s.Name = "test";
-                for (var i = 0; i < serie.X.Count; i++)
-                {
-                    s.Points.AddXY(serie.X[i], serie.Y[i]);
-                }
+                //for (var i = 0; i < serie.X.Count; i++)
+                //{
+                //    s.Points.AddXY(serie.X[i], serie.Y[i]);
+                //}
+                s.Points.AddXY("test", 123);
+                s.Points.AddXY("test2", 23123);
                 Series.Add(s);
             }
             Refresh();
