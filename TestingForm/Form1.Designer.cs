@@ -41,22 +41,21 @@
             // 
             chartArea1.Name = "ChartArea1";
             this.govnoblyapotom1.ChartAreas.Add(chartArea1);
-            this.govnoblyapotom1.Childs = null;
             legend1.Name = "Legend1";
             this.govnoblyapotom1.Legends.Add(legend1);
-            this.govnoblyapotom1.Location = new System.Drawing.Point(22, 34);
+            this.govnoblyapotom1.Location = new System.Drawing.Point(12, 0);
             this.govnoblyapotom1.Name = "govnoblyapotom1";
             series1.ChartArea = "ChartArea1";
             series1.Legend = "Legend1";
             series1.Name = "Series1";
             this.govnoblyapotom1.Series.Add(series1);
-            this.govnoblyapotom1.Size = new System.Drawing.Size(120, 40);
+            this.govnoblyapotom1.Size = new System.Drawing.Size(771, 239);
             this.govnoblyapotom1.TabIndex = 0;
             this.govnoblyapotom1.Text = "govnoblyapotom1";
             // 
             // customGroupBox1
             // 
-            this.customGroupBox1.Location = new System.Drawing.Point(167, 34);
+            this.customGroupBox1.Location = new System.Drawing.Point(387, 298);
             this.customGroupBox1.MinimumSize = new System.Drawing.Size(480, 250);
             this.customGroupBox1.Name = "customGroupBox1";
             this.customGroupBox1.Size = new System.Drawing.Size(480, 250);
@@ -69,7 +68,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(719, 392);
+            this.ClientSize = new System.Drawing.Size(997, 586);
             this.Controls.Add(this.customGroupBox1);
             this.Controls.Add(this.govnoblyapotom1);
             this.Name = "Form1";

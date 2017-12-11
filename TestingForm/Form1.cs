@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ChartComponent;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,7 +20,15 @@ namespace TestingForm
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            //govnoblyapotom1.Series[0].Points.AddXY(20, 20);
+            var cm = new ChartModel
+            {
+                Name = "test",
+                ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Column,
+                Children = null,
+                X = new List<double> { 20, 30 },
+                Y = new List<double?> { 30, 40}
+            };
+            govnoblyapotom1.Draw(cm);
         }
     }
 }
