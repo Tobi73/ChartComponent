@@ -28,39 +28,40 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.TreeNode treeNode8 = new System.Windows.Forms.TreeNode("Node1");
-            System.Windows.Forms.TreeNode treeNode9 = new System.Windows.Forms.TreeNode("Node2");
-            System.Windows.Forms.TreeNode treeNode10 = new System.Windows.Forms.TreeNode("Node3");
-            System.Windows.Forms.TreeNode treeNode11 = new System.Windows.Forms.TreeNode("Node4");
-            System.Windows.Forms.TreeNode treeNode12 = new System.Windows.Forms.TreeNode("Node5");
-            System.Windows.Forms.TreeNode treeNode13 = new System.Windows.Forms.TreeNode("Node6");
-            System.Windows.Forms.TreeNode treeNode14 = new System.Windows.Forms.TreeNode("Node0", new System.Windows.Forms.TreeNode[] {
-            treeNode8,
-            treeNode9,
-            treeNode10,
-            treeNode11,
-            treeNode12,
-            treeNode13});
-            System.Windows.Forms.TreeNode treeNode15 = new System.Windows.Forms.TreeNode("Node0");
-            System.Windows.Forms.TreeNode treeNode16 = new System.Windows.Forms.TreeNode("Node2");
-            System.Windows.Forms.TreeNode treeNode17 = new System.Windows.Forms.TreeNode("Node3");
-            System.Windows.Forms.TreeNode treeNode18 = new System.Windows.Forms.TreeNode("Node4");
-            System.Windows.Forms.TreeNode treeNode19 = new System.Windows.Forms.TreeNode("Node5");
-            System.Windows.Forms.TreeNode treeNode20 = new System.Windows.Forms.TreeNode("Node6");
-            System.Windows.Forms.TreeNode treeNode21 = new System.Windows.Forms.TreeNode("Node7");
-            System.Windows.Forms.TreeNode treeNode22 = new System.Windows.Forms.TreeNode("Node8");
-            System.Windows.Forms.TreeNode treeNode23 = new System.Windows.Forms.TreeNode("Node9");
-            System.Windows.Forms.TreeNode treeNode24 = new System.Windows.Forms.TreeNode("Node10");
-            System.Windows.Forms.TreeNode treeNode25 = new System.Windows.Forms.TreeNode("Node1", new System.Windows.Forms.TreeNode[] {
-            treeNode16,
-            treeNode17,
-            treeNode18,
+            this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.TreeNode treeNode19 = new System.Windows.Forms.TreeNode("Node1");
+            System.Windows.Forms.TreeNode treeNode20 = new System.Windows.Forms.TreeNode("Node2");
+            System.Windows.Forms.TreeNode treeNode21 = new System.Windows.Forms.TreeNode("Node3");
+            System.Windows.Forms.TreeNode treeNode22 = new System.Windows.Forms.TreeNode("Node4");
+            System.Windows.Forms.TreeNode treeNode23 = new System.Windows.Forms.TreeNode("Node5");
+            System.Windows.Forms.TreeNode treeNode24 = new System.Windows.Forms.TreeNode("Node6");
+            System.Windows.Forms.TreeNode treeNode25 = new System.Windows.Forms.TreeNode("Node0", new System.Windows.Forms.TreeNode[] {
             treeNode19,
             treeNode20,
             treeNode21,
             treeNode22,
             treeNode23,
             treeNode24});
+            System.Windows.Forms.TreeNode treeNode26 = new System.Windows.Forms.TreeNode("Node0");
+            System.Windows.Forms.TreeNode treeNode27 = new System.Windows.Forms.TreeNode("Node2");
+            System.Windows.Forms.TreeNode treeNode28 = new System.Windows.Forms.TreeNode("Node3");
+            System.Windows.Forms.TreeNode treeNode29 = new System.Windows.Forms.TreeNode("Node4");
+            System.Windows.Forms.TreeNode treeNode30 = new System.Windows.Forms.TreeNode("Node5");
+            System.Windows.Forms.TreeNode treeNode31 = new System.Windows.Forms.TreeNode("Node6");
+            System.Windows.Forms.TreeNode treeNode32 = new System.Windows.Forms.TreeNode("Node7");
+            System.Windows.Forms.TreeNode treeNode33 = new System.Windows.Forms.TreeNode("Node8");
+            System.Windows.Forms.TreeNode treeNode34 = new System.Windows.Forms.TreeNode("Node9");
+            System.Windows.Forms.TreeNode treeNode35 = new System.Windows.Forms.TreeNode("Node10");
+            System.Windows.Forms.TreeNode treeNode36 = new System.Windows.Forms.TreeNode("Node1", new System.Windows.Forms.TreeNode[] {
+            treeNode27,
+            treeNode28,
+            treeNode29,
+            treeNode30,
+            treeNode31,
+            treeNode32,
+            treeNode33,
+            treeNode34,
+            treeNode35});
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -71,6 +72,7 @@
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.button4 = new System.Windows.Forms.Button();
             this.treeView2 = new System.Windows.Forms.TreeView();
+            this.chartTree1 = new TreeComponent.ChartTree(this.components);
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
@@ -131,22 +133,22 @@
             this.treeView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.treeView1.Location = new System.Drawing.Point(3, 3);
             this.treeView1.Name = "treeView1";
-            treeNode8.Name = "Node1";
-            treeNode8.Text = "Node1";
-            treeNode9.Name = "Node2";
-            treeNode9.Text = "Node2";
-            treeNode10.Name = "Node3";
-            treeNode10.Text = "Node3";
-            treeNode11.Name = "Node4";
-            treeNode11.Text = "Node4";
-            treeNode12.Name = "Node5";
-            treeNode12.Text = "Node5";
-            treeNode13.Name = "Node6";
-            treeNode13.Text = "Node6";
-            treeNode14.Name = "Node0";
-            treeNode14.Text = "Node0";
+            treeNode19.Name = "Node1";
+            treeNode19.Text = "Node1";
+            treeNode20.Name = "Node2";
+            treeNode20.Text = "Node2";
+            treeNode21.Name = "Node3";
+            treeNode21.Text = "Node3";
+            treeNode22.Name = "Node4";
+            treeNode22.Text = "Node4";
+            treeNode23.Name = "Node5";
+            treeNode23.Text = "Node5";
+            treeNode24.Name = "Node6";
+            treeNode24.Text = "Node6";
+            treeNode25.Name = "Node0";
+            treeNode25.Text = "Node0";
             this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode14});
+            treeNode25});
             this.treeView1.Size = new System.Drawing.Size(239, 153);
             this.treeView1.TabIndex = 0;
             // 
@@ -158,6 +160,7 @@
             this.tableLayoutPanel3.Controls.Add(this.button3, 0, 1);
             this.tableLayoutPanel3.Controls.Add(this.button4, 1, 1);
             this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanel4, 0, 0);
+            this.tableLayoutPanel3.Controls.Add(this.chartTree1, 1, 0);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel3.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
@@ -205,33 +208,43 @@
             this.treeView2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.treeView2.Location = new System.Drawing.Point(3, 3);
             this.treeView2.Name = "treeView2";
-            treeNode15.Name = "Node0";
-            treeNode15.Text = "Node0";
-            treeNode16.Name = "Node2";
-            treeNode16.Text = "Node2";
-            treeNode17.Name = "Node3";
-            treeNode17.Text = "Node3";
-            treeNode18.Name = "Node4";
-            treeNode18.Text = "Node4";
-            treeNode19.Name = "Node5";
-            treeNode19.Text = "Node5";
-            treeNode20.Name = "Node6";
-            treeNode20.Text = "Node6";
-            treeNode21.Name = "Node7";
-            treeNode21.Text = "Node7";
-            treeNode22.Name = "Node8";
-            treeNode22.Text = "Node8";
-            treeNode23.Name = "Node9";
-            treeNode23.Text = "Node9";
-            treeNode24.Name = "Node10";
-            treeNode24.Text = "Node10";
-            treeNode25.Name = "Node1";
-            treeNode25.Text = "Node1";
+            treeNode26.Name = "Node0";
+            treeNode26.Text = "Node0";
+            treeNode27.Name = "Node2";
+            treeNode27.Text = "Node2";
+            treeNode28.Name = "Node3";
+            treeNode28.Text = "Node3";
+            treeNode29.Name = "Node4";
+            treeNode29.Text = "Node4";
+            treeNode30.Name = "Node5";
+            treeNode30.Text = "Node5";
+            treeNode31.Name = "Node6";
+            treeNode31.Text = "Node6";
+            treeNode32.Name = "Node7";
+            treeNode32.Text = "Node7";
+            treeNode33.Name = "Node8";
+            treeNode33.Text = "Node8";
+            treeNode34.Name = "Node9";
+            treeNode34.Text = "Node9";
+            treeNode35.Name = "Node10";
+            treeNode35.Text = "Node10";
+            treeNode36.Name = "Node1";
+            treeNode36.Text = "Node1";
             this.treeView2.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode15,
-            treeNode25});
+            treeNode26,
+            treeNode36});
             this.treeView2.Size = new System.Drawing.Size(341, 251);
             this.treeView2.TabIndex = 0;
+            // 
+            // chartTree1
+            // 
+            this.chartTree1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.chartTree1.Location = new System.Drawing.Point(356, 3);
+            this.chartTree1.Name = "chartTree1";
+            this.chartTree1.RootName = "Chart Tree";
+            this.chartTree1.Size = new System.Drawing.Size(347, 257);
+            this.chartTree1.TabIndex = 0;
+            this.chartTree1.Text = "chartTreeView";
             // 
             // AndreyFormYoba
             // 
@@ -262,5 +275,6 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
         private System.Windows.Forms.TreeView treeView2;
+        private TreeComponent.ChartTree chartTree1;
     }
 }

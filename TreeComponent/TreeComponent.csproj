@@ -42,7 +42,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ChartTree.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ChartTree.Designer.cs">
+      <DependentUpon>ChartTree.cs</DependentUpon>
+    </Compile>
     <Compile Include="Class1.cs" />
+    <Compile Include="Model\ChartTreeNode.cs" />
+    <Compile Include="Model\ChartTreeRoot.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TestForm.cs">
       <SubType>Form</SubType>
