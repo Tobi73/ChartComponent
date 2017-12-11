@@ -10,7 +10,8 @@ namespace ChartComponent
     public partial class Govnoblyapotom : Chart
     {
         private List<Govnoblyapotom> childs;
-
+        private List<int> ValuesX;
+        private List<int> ValuesY;
         public List<Govnoblyapotom> Childs
         {
             get
