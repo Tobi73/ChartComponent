@@ -17,6 +17,23 @@ namespace ChartComponent
 
         private SeriesChartType chartType;
 
+        private string nameX;
+        private string nameY;
+
+        [DataMember]
+        public string NameX
+        {
+            get { return nameX; }
+            set { nameX = value; }
+        }
+
+        [DataMember]
+        public string NameY
+        {
+            get { return nameY; }
+            set { nameY = value; }
+        }
+
         [DataMember]
         public SeriesChartType ChartType
         {
