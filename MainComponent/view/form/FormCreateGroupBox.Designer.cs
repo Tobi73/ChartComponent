@@ -100,6 +100,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "FormCreateGroupBox";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.FormCreateGroupBox_Load);
             this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
 
