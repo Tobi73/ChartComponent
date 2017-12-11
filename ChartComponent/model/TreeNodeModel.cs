@@ -7,27 +7,45 @@ using System.Threading.Tasks;
 
 namespace ChartComponent
 {
-    public abstract class TreeNodeModel
-    {
-        protected List<ChartModel> children;
-        protected string name;
+    //public abstract class TreeNodeModel
+    //{
+    //    protected List<ChartModel> children;
+    //    protected string name;
 
-        [DataMember]
-        public string Name
-        {
-            get { return name; }
-        }
+    //    public TreeNodeModel()
+    //    {
+    //        children = new List<ChartModel>();
+    //    }
 
-        [DataMember]
-        public List<ChartModel> Children
-        {
-            set { children = value; }
-            get { return children; }
-        }
+    //    [DataMember]
+    //    public string Name
+    //    {
+    //        get
+    //        {
+    //            return name;
+    //        }
+    //        set
+    //        {
+    //            name = value;
+    //        }
+    //    }
 
-        public override string ToString()
-        {
-            return name;
-        }
-    }
+    //    [DataMember]
+    //    public List<ChartModel> Children
+    //    {
+    //        set
+    //        {
+    //            children = value;
+    //        }
+    //        get
+    //        {
+    //            return children;
+    //        }
+    //    }
+
+    //    public override string ToString()
+    //    {
+    //        return Name;
+    //    }
+    //}
 }

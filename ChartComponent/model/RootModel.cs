@@ -8,13 +8,46 @@ using System.IO;
 
 namespace ChartComponent
 {
-    public class RootModel : TreeNodeModel
+    public class RootModel
     {
+        protected List<ChartModel> children;
+        protected string name;
 
         public RootModel()
         {
-            children = new List<ChartModel>();
-            name = "root";
+            Name = "root";
+            Children = new List<ChartModel>();
+        }
+
+        [DataMember]
+        public string Name
+        {
+            get
+            {
+                return name;
+            }
+            set
+            {
+                name = value;
+            }
+        }
+
+        [DataMember]
+        public List<ChartModel> Children
+        {
+            set
+            {
+                children = value;
+            }
+            get
+            {
+                return children;
+            }
+        }
+
+        public override string ToString()
+        {
+            return Name;
         }
     }
 }

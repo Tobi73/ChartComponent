@@ -9,32 +9,6 @@ namespace ChartComponent
 {
     public partial class Govnoblyapotom : Chart
     {
-        private List<Govnoblyapotom> childs;
-        private List<int> ValuesX;
-        private List<int> ValuesY;
-        public List<Govnoblyapotom> Childs
-        {
-            get
-            {
-                return childs;
-            }
-            set
-            {
-                childs = value;
-            }
-        }
-
-        public Chart GetChild(int index)
-        {
-            return childs.ElementAtOrDefault(index);
-        }
-
-        public Govnoblyapotom AddChild(Govnoblyapotom chart)
-        {
-            childs.Add(chart);
-            return chart;
-        }
-
         public Govnoblyapotom()
         {
             InitializeComponent();
@@ -43,7 +17,6 @@ namespace ChartComponent
         public Govnoblyapotom(IContainer container)
         {
             container.Add(this);
-
             InitializeComponent();
         }
 
@@ -52,18 +25,20 @@ namespace ChartComponent
             base.OnPaint(e);
         }
 
-        protected override void OnMouseUp(MouseEventArgs e)
+        public void Draw(ChartModel chartModel)
         {
-            base.OnMouseUp(e);
-            MessageBox.Show(e.X.ToString());
-            var pp = ChartAreas[0].AxisX.PixelPositionToValue(e.X);
-            MessageBox.Show(ChartAreas[0].Position.X.ToString());
-        }
+            Series[0].Name = chartModel.Name;
+            Series[0].ChartType = chartModel.ChartType;
 
-        protected override void OnMouseWheel(MouseEventArgs e)
-        {
-            base.OnMouseWheel(e);
-            MessageBox.Show(e.X.ToString());
+            for (var i = 0; i < chartModel.X.Count; i++)
+            {
+                Series[0].Points.AddXY(chartModel.X[i], chartModel.Y[i]);
+            }
+
+            var s2 = new Series();
+            s2.Points.AddXY(20, 50);
+            Series.Add(s2);
+            Refresh();
         }
 
         protected override void OnMouseMove(MouseEventArgs e)
