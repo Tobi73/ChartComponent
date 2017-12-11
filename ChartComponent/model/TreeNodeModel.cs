@@ -1,24 +1,22 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
-using ChartComponent;
-using System.Runtime.Serialization;
-using System.IO;
 
-namespace TreeComponent
+namespace ChartComponent
 {
-    public class TreeModel
+    public abstract class TreeNodeModel
     {
-        private List<ChartModel> children;
-        private string name = "root";
+        protected List<ChartModel> children;
+        protected string name;
 
         [DataMember]
         public string Name
         {
             get { return name; }
-        } 
+        }
 
         [DataMember]
         public List<ChartModel> Children
@@ -27,9 +25,9 @@ namespace TreeComponent
             get { return children; }
         }
 
-        public TreeModel()
+        public override string ToString()
         {
-            children = new List<ChartModel>();
+            return name;
         }
     }
 }

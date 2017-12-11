@@ -30,7 +30,7 @@ namespace MainComponent
 
         private bool useTable = true;
         private ChartModel chart;
-        private TreeModel tree;
+        private RootModel tree;
 
         [Category("New"), Description("Can user's work with table?")]
         public bool UseTable
@@ -74,7 +74,7 @@ namespace MainComponent
         {
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
-                tree = new TreeModel();
+                tree = new RootModel();
                 tree = Serializer.Deserialize(openFileDialog1.FileName);
                 if(tree.Children.Count == 0)
                 {
