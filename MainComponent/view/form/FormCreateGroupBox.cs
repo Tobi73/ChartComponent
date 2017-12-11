@@ -22,5 +22,10 @@ namespace MainComponent
         {
 
         }
+
+        private void FormCreateGroupBox_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
