@@ -42,9 +42,20 @@ namespace MainComponent
             get { return useTable; }
         }
 
+        private void test()
+        {
+            tree = new RootModel();
+            tree.Children.Add(new ChartModel());
+            tree.Children.Add(new ChartModel());
+            tree.Children.Add(new ChartModel());
+        }
+
         protected override void OnPaint(System.Windows.Forms.PaintEventArgs e) 
         {
+            test();
+
             base.OnPaint(e);
+            
             if (!useTable)
             {
                 btnTable.Visible = false;
