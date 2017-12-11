@@ -75,6 +75,7 @@
             btnConvert.TabIndex = 1;
             btnConvert.Text = "convert";
             btnConvert.UseVisualStyleBackColor = true;
+            btnConvert.Click += new System.EventHandler(this.btnConvert_Click);
             // 
             // btnTable
             // 

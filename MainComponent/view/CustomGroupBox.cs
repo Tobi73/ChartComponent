@@ -94,5 +94,26 @@ namespace MainComponent
             }
         }
 
+        private void btnConvert_Click(object sender, EventArgs e)
+        {
+            Converter conv;
+            saveFileDialog1.Filter = "Excel Files|*.xls;*.xlsx;*.xlsm";
+
+            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                conv = new Converter(saveFileDialog1.FileName, chart);
+
+                conv.buildTableExcel(); // ew - ExcelWorker, работа с отчетами
+                conv.closeFile();
+
+            }
+
+            
+        }
+
+
+        
+
+
     }
 }

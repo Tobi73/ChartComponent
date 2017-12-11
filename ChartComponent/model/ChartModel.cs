@@ -10,6 +10,23 @@ namespace ChartComponent
         private List<double> x = new List<double>();
         private List<double> y = new List<double>();
 
+        private string nameX;
+        private string nameY;
+
+        [DataMember]
+        public string NameX
+        {
+            get { return nameX; }
+            set { nameX = value; }
+        }
+
+        [DataMember]
+        public string NameY
+        {
+            get { return nameY; }
+            set { nameY = value; }
+        }
+
         [DataMember]
         public List<double> X {
             get { return x; }
