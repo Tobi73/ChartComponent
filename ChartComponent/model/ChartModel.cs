@@ -14,21 +14,19 @@ namespace ChartComponent
     {
         private List<double> x = new List<double>();
         private List<double?> y = new List<double?>();
-        private string nameX;
-        private string nameY;
+        private string serieName;
 
         [DataMember]
-        public string NameX
+        public string SerieName
         {
-            get { return nameX; }
-            set { nameX = value; }
-        }
-
-        [DataMember]
-        public string NameY
-        {
-            get { return nameY; }
-            set { nameY = value; }
+            get
+            {
+                return SerieName;
+            }
+            set
+            {
+                serieName = value;
+            }
         }
 
         [DataMember]
@@ -64,6 +62,22 @@ namespace ChartComponent
     {
         public List<Serie> Series;
         private SeriesChartType chartType;
+        private string nameX;
+        private string nameY;
+
+        [DataMember]
+        public string NameX
+        {
+            get { return nameX; }
+            set { nameX = value; }
+        }
+
+        [DataMember]
+        public string NameY
+        {
+            get { return nameY; }
+            set { nameY = value; }
+        }
 
         public ChartModel(string chartName) : base()
         {
