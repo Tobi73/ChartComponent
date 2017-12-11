@@ -10,53 +10,21 @@ namespace ChartComponent
         Pie = 2
     }
 
-    public class ChartModel : RootModel
+    public class Serie
     {
-        private List<double> x = new List<double>();
         private List<double?> y = new List<double?>();
-
-        private SeriesChartType chartType;
-
-        private string nameX;
-        private string nameY;
+        private string serieName;
 
         [DataMember]
-        public string NameX
-        {
-            get { return nameX; }
-            set { nameX = value; }
-        }
-
-        [DataMember]
-        public string NameY
-        {
-            get { return nameY; }
-            set { nameY = value; }
-        }
-
-        [DataMember]
-        public SeriesChartType ChartType
+        public string SerieName
         {
             get
             {
-                return chartType;
+                return SerieName;
             }
             set
             {
-                chartType = value;
-            }
-        }
-
-        [DataMember]
-        public List<double> X
-        {
-            get
-            {
-                return x;
-            }
-            set
-            {
-                x = value;
+                serieName = value;
             }
         }
 
@@ -72,17 +40,77 @@ namespace ChartComponent
                 y = value;
             }
         }
+    }
+
+    public class ChartModel : RootModel
+    {
+        public List<Serie> Series;
+        private SeriesChartType chartType;
+        private string nameX;
+        private string nameY;
+        private List<double> x = new List<double>();
+
+        [DataMember]
+        public List<double> X
+        {
+            get
+            {
+                return x;
+            }
+            set
+            {
+                x = value;
+            }
+        }
+
+        [DataMember]
+        public string NameX
+        {
+            get { return nameX; }
+            set { nameX = value; }
+        }
+
+        [DataMember]
+        public string NameY
+        {
+            get { return nameY; }
+            set { nameY = value; }
+        }
 
         public ChartModel(string chartName) : base()
         {
             Name = chartName;
+            Series = new List<Serie>();
         }
-        public ChartModel() : base() { }
 
-        public void AddValue(double xValue, double? yValue = null)
+        public ChartModel() : base()
         {
-            X.Add(xValue);
-            Y.Add(yValue);
+            Series = new List<Serie>();
+        }
+
+        public void AddValue(int index, double xValue, double? yValue = null)
+        {
+            Series[index].Y.Add(yValue);
+        }
+
+
+
+        public void AddSerie(Serie serie)
+        {
+            Series.Add(serie);
+        }
+
+        [DataMember]
+        public SeriesChartType ChartType
+        {
+            get
+            {
+                return chartType;
+            }
+            set
+            {
+                chartType = value;
+            }
         }
     }
 }
