@@ -7,6 +7,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MainComponent.view.form;
+using ChartComponent;
+using MainComponent.controller;
+using TreeComponent;
 
 namespace MainComponent
 {
@@ -26,6 +29,8 @@ namespace MainComponent
         }
 
         private bool useTable = true;
+        private ChartModel chart;
+        private RootModel tree;
 
         [Category("New"), Description("Can user's work with table?")]
         public bool UseTable
@@ -37,9 +42,20 @@ namespace MainComponent
             get { return useTable; }
         }
 
+        private void test()
+        {
+            tree = new RootModel();
+            tree.Children.Add(new ChartModel());
+            tree.Children.Add(new ChartModel());
+            tree.Children.Add(new ChartModel());
+        }
+
         protected override void OnPaint(System.Windows.Forms.PaintEventArgs e) 
         {
+            test();
+
             base.OnPaint(e);
+            
             if (!useTable)
             {
                 btnTable.Visible = false;
@@ -49,9 +65,34 @@ namespace MainComponent
 
         private void btnTable_Click(object sender, EventArgs e)
         {
-            FormTable ft = new FormTable(/* Передать выбранный график */);
+            FormTable ft = new FormTable(chart);
             ft.ShowDialog();
             
         }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+
+            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                String mes = Serializer.Serialize(tree, saveFileDialog1.FileName);
+                MessageBox.Show(mes);
+            }
+
+        }
+
+        private void btnLoad_Click(object sender, EventArgs e)
+        {
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                tree = new RootModel();
+                tree = Serializer.Deserialize(openFileDialog1.FileName);
+                if(tree.Children.Count == 0)
+                {
+                    MessageBox.Show("не удалось загрузить дерево");
+                }
+            }
+        }
+
     }
 }

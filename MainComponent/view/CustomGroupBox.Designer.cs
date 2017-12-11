@@ -35,6 +35,8 @@
             btnLoad = new System.Windows.Forms.Button();
             btnConvert = new System.Windows.Forms.Button();
             btnTable = new System.Windows.Forms.Button();
+            openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             SuspendLayout();
             // 
             // groupBox1
@@ -53,6 +55,7 @@
             btnSave.TabIndex = 3;
             btnSave.Text = "save";
             btnSave.UseVisualStyleBackColor = true;
+            btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnLoad
             // 
@@ -62,6 +65,7 @@
             btnLoad.TabIndex = 2;
             btnLoad.Text = "load";
             btnLoad.UseVisualStyleBackColor = true;
+            btnLoad.Click += new System.EventHandler(this.btnLoad_Click);
             // 
             // btnConvert
             // 
@@ -81,6 +85,11 @@
             btnTable.Text = "table";
             btnTable.UseVisualStyleBackColor = true;
             btnTable.Click += new System.EventHandler(this.btnTable_Click);
+            // 
+            // openFileDialog1
+            // 
+            openFileDialog1.FileName = "openFileDialog1";
+
 
             ClientSize = new System.Drawing.Size(480,250);
             MinimumSize = new System.Drawing.Size(480, 250);
@@ -92,6 +101,8 @@
         private System.Windows.Forms.Button btnLoad;
         private System.Windows.Forms.Button btnConvert;
         private System.Windows.Forms.Button btnTable;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
 
 
 

@@ -19,7 +19,7 @@ namespace TestingForm
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            govnoblyapotom1.Series[0].Points.AddXY(20, 20);
+            //govnoblyapotom1.Series[0].Points.AddXY(20, 20);
         }
     }
 }

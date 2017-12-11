@@ -1,47 +1,51 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml;
+using ChartComponent;
 
 namespace MainComponent.controller
 {
     class Serializer
     {
-        public static string Serialize(Project project)
+        public static string Serialize(RootModel tree, string path)
         {
             try
             {
                 //     XmlSerializer serializer = new XmlSerializer(typeof(Project));
-                DataContractSerializer serializer = new DataContractSerializer(typeof(Project));
-                using (FileStream fs = new FileStream(project.GetProjectPath() + "\\PeachStudioConfig.xml", FileMode.Create))
+                DataContractSerializer serializer = new DataContractSerializer(typeof(RootModel));
+                using (FileStream fs = new FileStream(path, FileMode.Create))
                 {
                     using (XmlWriter writer = XmlWriter.Create(fs))
                     {
-                        serializer.WriteObject(writer, project);
+                        serializer.WriteObject(writer, tree);
                         //            serializer.Serialize(writer, project);
                     }
                 }
             }
             catch (Exception ex)
             {
-                return "не сохранил настройки в PeachStudioConfig.xml./n" + ex.ToString();
+                return "не сохранил дерефо графиков в" + path + Environment.NewLine + ex.ToString();
             }
             return "Сохранено";
         }
 
-        public static Project Deserialize(string path)
+        public static RootModel Deserialize(string path)
         {
-            Project project = null;
+            RootModel tree = null;
             try
             {
-                DataContractSerializer serializer = new DataContractSerializer(typeof(Project));
+                DataContractSerializer serializer = new DataContractSerializer(typeof(RootModel));
                 //               XmlSerializer serializer = new XmlSerializer(typeof(Project));
-                using (FileStream fs = new FileStream(path + "\\PeachStudioConfig.xml", FileMode.Open))
+                using (FileStream fs = new FileStream(path, FileMode.Open))
                 {
                     using (XmlReader writer = XmlReader.Create(fs))
                     {
-                        project = (Project)serializer.ReadObject(writer);
+                        tree = (RootModel)serializer.ReadObject(writer);
                         //               project = (Project)serializer.Deserialize(writer);
                     }
                 }
@@ -52,7 +56,7 @@ namespace MainComponent.controller
             }
 
             //  if (project == null) project = new Project();
-            return project;
+            return tree;
         }
     }
 }
