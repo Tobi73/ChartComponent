@@ -10,13 +10,10 @@ namespace ChartComponent
         Pie = 2
     }
 
-    public class ChartModel : RootModel
+    public class Serie
     {
         private List<double> x = new List<double>();
         private List<double?> y = new List<double?>();
-
-        private SeriesChartType chartType;
-
         private string nameX;
         private string nameY;
 
@@ -32,19 +29,6 @@ namespace ChartComponent
         {
             get { return nameY; }
             set { nameY = value; }
-        }
-
-        [DataMember]
-        public SeriesChartType ChartType
-        {
-            get
-            {
-                return chartType;
-            }
-            set
-            {
-                chartType = value;
-            }
         }
 
         [DataMember]
@@ -73,16 +57,47 @@ namespace ChartComponent
             }
         }
 
+       
+
+    }
+    public class ChartModel : RootModel
+    {
+        public List<Serie> Series;
+        private SeriesChartType chartType;
+
         public ChartModel(string chartName) : base()
         {
             Name = chartName;
+            Series = new List<Serie>();
         }
-        public ChartModel() : base() { }
 
-        public void AddValue(double xValue, double? yValue = null)
+        public ChartModel() : base()
         {
-            X.Add(xValue);
-            Y.Add(yValue);
+            Series = new List<Serie>();
+        }
+
+        public void AddValue(int index, double xValue, double? yValue = null)
+        {
+            Series[index].X.Add(xValue);
+            Series[index].Y.Add(yValue);
+        }
+
+        public void AddSerie(Serie serie)
+        {
+            Series.Add(serie);
+        }
+
+        [DataMember]
+        public SeriesChartType ChartType
+        {
+            get
+            {
+                return chartType;
+            }
+            set
+            {
+                chartType = value;
+            }
         }
     }
 }

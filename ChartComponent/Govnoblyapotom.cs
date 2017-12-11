@@ -27,17 +27,18 @@ namespace ChartComponent
 
         public void Draw(ChartModel chartModel)
         {
-            Series[0].Name = chartModel.Name;
-            Series[0].ChartType = chartModel.ChartType;
-
-            for (var i = 0; i < chartModel.X.Count; i++)
+            Series.RemoveAt(0);
+            foreach (var serie in chartModel.Series)
             {
-                Series[0].Points.AddXY(chartModel.X[i], chartModel.Y[i]);
+                var s = new Series();
+                s.ChartType = chartModel.ChartType;
+                s.Name = "test";
+                for (var i = 0; i < serie.X.Count; i++)
+                {
+                    s.Points.AddXY(serie.X[i], serie.Y[i]);
+                }
+                Series.Add(s);
             }
-
-            var s2 = new Series();
-            s2.Points.AddXY(20, 50);
-            Series.Add(s2);
             Refresh();
         }
 
