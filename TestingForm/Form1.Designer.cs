@@ -34,6 +34,7 @@
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.govnoblyapotom1 = new ChartComponent.CustomChart(this.components);
             this.customGroupBox1 = new MainComponent.CustomGroupBox(this.components);
+            this.customGroupBox2 = new MainComponent.CustomGroupBox(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.govnoblyapotom1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -43,7 +44,7 @@
             this.govnoblyapotom1.ChartAreas.Add(chartArea1);
             legend1.Name = "Legend1";
             this.govnoblyapotom1.Legends.Add(legend1);
-            this.govnoblyapotom1.Location = new System.Drawing.Point(12, 12);
+            this.govnoblyapotom1.Location = new System.Drawing.Point(12, 0);
             this.govnoblyapotom1.Name = "govnoblyapotom1";
             series1.ChartArea = "ChartArea1";
             series1.Legend = "Legend1";
@@ -60,22 +61,39 @@
             this.customGroupBox1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.customGroupBox1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.customGroupBox1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.customGroupBox1.Location = new System.Drawing.Point(346, 269);
+            this.customGroupBox1.Location = new System.Drawing.Point(505, 284);
             this.customGroupBox1.MinimumSize = new System.Drawing.Size(480, 250);
             this.customGroupBox1.Name = "customGroupBox1";
             this.customGroupBox1.RowCount = 2;
             this.customGroupBox1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 80.4878F));
             this.customGroupBox1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 19.5122F));
-            this.customGroupBox1.Size = new System.Drawing.Size(544, 250);
+            this.customGroupBox1.Size = new System.Drawing.Size(480, 250);
             this.customGroupBox1.TabIndex = 1;
             this.customGroupBox1.Text = "customGroupBox1";
             this.customGroupBox1.UseTable = true;
+            // 
+            // customGroupBox2
+            // 
+            this.customGroupBox2.ColumnCount = 4;
+            this.customGroupBox2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.customGroupBox2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.customGroupBox2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.customGroupBox2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.customGroupBox2.Location = new System.Drawing.Point(19, 267);
+            this.customGroupBox2.Name = "customGroupBox2";
+            this.customGroupBox2.RowCount = 2;
+            this.customGroupBox2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 80.4878F));
+            this.customGroupBox2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 19.5122F));
+            this.customGroupBox2.Size = new System.Drawing.Size(503, 248);
+            this.customGroupBox2.TabIndex = 8;
+            this.customGroupBox2.UseTable = true;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(997, 586);
+            this.Controls.Add(this.customGroupBox2);
             this.Controls.Add(this.customGroupBox1);
             this.Controls.Add(this.govnoblyapotom1);
             this.Name = "Form1";
@@ -90,6 +108,7 @@
 
         private ChartComponent.CustomChart govnoblyapotom1;
         private MainComponent.CustomGroupBox customGroupBox1;
+        private MainComponent.CustomGroupBox customGroupBox2;
     }
 }
 

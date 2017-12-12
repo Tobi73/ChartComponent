@@ -79,17 +79,20 @@ namespace TreeComponent
             tree.Name = "tree";
             tree.Size = new System.Drawing.Size(389, 182);
             tree.TabIndex = 0;
+            tree.LabelEdit = true;
             rootNode.Name = "root";
             rootNode.Text = "Chart Tree";
             tree.Nodes.Add(rootNode);
             tree.NodeMouseClick += new TreeNodeMouseClickEventHandler(NodeClickedEvent);
+            tree.AfterLabelEdit += new NodeLabelEditEventHandler(ChartNodeNameChanged);
+            tree.KeyUp += new KeyEventHandler(OnKeyUp);
             // 
             // controlPanel
             // 
             controlPanel.ColumnCount = 3;
-            controlPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 52F));
-            controlPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 48F));
-            controlPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 263F));
+            controlPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 30F));
+            controlPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 20F));
+            controlPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
             controlPanel.Controls.Add(addButton, 0, 0);
             controlPanel.Controls.Add(chartNameLabel, 1, 0);
             controlPanel.Controls.Add(chartNameTextBox, 2, 0);

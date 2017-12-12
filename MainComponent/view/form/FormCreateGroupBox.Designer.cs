@@ -52,7 +52,7 @@
             // btnSave
             // 
             this.btnSave.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnSave.Location = new System.Drawing.Point(24, 145);
+            this.btnSave.Location = new System.Drawing.Point(26, 122);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(75, 23);
             this.btnSave.TabIndex = 7;
@@ -62,7 +62,7 @@
             // btnLoad
             // 
             this.btnLoad.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnLoad.Location = new System.Drawing.Point(148, 145);
+            this.btnLoad.Location = new System.Drawing.Point(154, 122);
             this.btnLoad.Name = "btnLoad";
             this.btnLoad.Size = new System.Drawing.Size(75, 23);
             this.btnLoad.TabIndex = 6;
@@ -72,7 +72,7 @@
             // btnConvert
             // 
             this.btnConvert.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnConvert.Location = new System.Drawing.Point(272, 145);
+            this.btnConvert.Location = new System.Drawing.Point(282, 122);
             this.btnConvert.Name = "btnConvert";
             this.btnConvert.Size = new System.Drawing.Size(75, 23);
             this.btnConvert.TabIndex = 5;
@@ -82,7 +82,7 @@
             // btnTable
             // 
             this.btnTable.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnTable.Location = new System.Drawing.Point(398, 145);
+            this.btnTable.Location = new System.Drawing.Point(412, 122);
             this.btnTable.Name = "btnTable";
             this.btnTable.Size = new System.Drawing.Size(75, 23);
             this.btnTable.TabIndex = 4;
@@ -107,20 +107,22 @@
             this.tableLayoutPanelMain.RowCount = 2;
             this.tableLayoutPanelMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 80.4878F));
             this.tableLayoutPanelMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 19.5122F));
-            this.tableLayoutPanelMain.Size = new System.Drawing.Size(499, 174);
+            this.tableLayoutPanelMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanelMain.Size = new System.Drawing.Size(515, 149);
             this.tableLayoutPanelMain.TabIndex = 8;
             // 
-            // chartTree1
+            // chartTree
             // 
             this.tableLayoutPanelMain.SetColumnSpan(this.chartTree, 2);
+            this.chartTree.Dock = System.Windows.Forms.DockStyle.Fill;
             this.chartTree.Location = new System.Drawing.Point(3, 3);
             this.chartTree.Name = "chartTree";
             this.chartTree.RootName = "Chart Tree";
-            this.chartTree.Size = new System.Drawing.Size(242, 134);
+            this.chartTree.Size = new System.Drawing.Size(250, 113);
             this.chartTree.TabIndex = 8;
             this.chartTree.Text = "chartTree";
             // 
-            // customchart
+            // customChart
             // 
             this.customChart.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
@@ -130,13 +132,13 @@
             this.tableLayoutPanelMain.SetColumnSpan(this.customChart, 2);
             legend1.Name = "Legend1";
             this.customChart.Legends.Add(legend1);
-            this.customChart.Location = new System.Drawing.Point(251, 3);
+            this.customChart.Location = new System.Drawing.Point(259, 3);
             this.customChart.Name = "customChart";
             series1.ChartArea = "ChartArea1";
             series1.Legend = "Legend1";
             series1.Name = "Series1";
             this.customChart.Series.Add(series1);
-            this.customChart.Size = new System.Drawing.Size(245, 134);
+            this.customChart.Size = new System.Drawing.Size(253, 113);
             this.customChart.TabIndex = 9;
             this.customChart.Text = "customChart";
             // 

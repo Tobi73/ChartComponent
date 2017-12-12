@@ -79,6 +79,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="view\CustomGroupBox.resx">
+      <DependentUpon>CustomGroupBox.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="view\form\FormCreateGroupBox.resx">
       <DependentUpon>FormCreateGroupBox.cs</DependentUpon>
     </EmbeddedResource>
