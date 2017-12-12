@@ -46,7 +46,7 @@
             // btnSave
             // 
             this.btnSave.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnSave.Location = new System.Drawing.Point(87, 218);
+            this.btnSave.Location = new System.Drawing.Point(26, 145);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(75, 23);
             this.btnSave.TabIndex = 3;
@@ -57,7 +57,7 @@
             // btnLoad
             // 
             this.btnLoad.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnLoad.Location = new System.Drawing.Point(6, 218);
+            this.btnLoad.Location = new System.Drawing.Point(154, 145);
             this.btnLoad.Name = "btnLoad";
             this.btnLoad.Size = new System.Drawing.Size(75, 23);
             this.btnLoad.TabIndex = 2;
@@ -68,7 +68,7 @@
             // btnConvert
             // 
             this.btnConvert.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnConvert.Location = new System.Drawing.Point(314, 218);
+            this.btnConvert.Location = new System.Drawing.Point(282, 145);
             this.btnConvert.Name = "btnConvert";
             this.btnConvert.Size = new System.Drawing.Size(75, 23);
             this.btnConvert.TabIndex = 1;
@@ -79,7 +79,7 @@
             // btnTable
             // 
             this.btnTable.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnTable.Location = new System.Drawing.Point(400, 218);
+            this.btnTable.Location = new System.Drawing.Point(412, 145);
             this.btnTable.Name = "btnTable";
             this.btnTable.Size = new System.Drawing.Size(75, 23);
             this.btnTable.TabIndex = 0;
