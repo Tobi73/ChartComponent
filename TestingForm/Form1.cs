@@ -28,6 +28,11 @@ namespace TestingForm
             };
             cm.AddSerie("MySerie");
             cm.AddValue(0, 23, 32);
+            cm.AddValue(0, 25, 37);
+            cm.AddValue(0, 28, 40);
+            cm.AddValue(0, 30, 23);
+            cm.AddValue(0, 50, 32);
+
             govnoblyapotom1.Draw(cm);
         }
     }

@@ -28,16 +28,22 @@ namespace ChartComponent
         public void Draw(ChartModel chartModel)
         {
             Series.RemoveAt(0);
+
             foreach (var serie in chartModel.SeriesList)
             {
                 var newSerie = new Series();
                 newSerie.Name = serie.SerieName;
+                newSerie.ChartType = SeriesChartType.Column;
                 foreach (var value in serie.Y)
                 {
-                    newSerie.Points.AddXY(value.Key, value.Value);
+                    var p = new DataPoint();
+                    p.SetValueXY(value.Key, value.Value);
+                    p.ToolTip = $"x - {value.Key}\ny - {value.Value}";
+                    newSerie.Points.Add(p);
                 }
                 Series.Add(newSerie);
             }
+            ChartAreas[0].AxisX.Minimum = 0;
             Refresh();
         }
 
@@ -45,8 +51,14 @@ namespace ChartComponent
         {
             base.OnMouseMove(e);
             var gr = CreateGraphics();
+
             Refresh();
-            gr.DrawLine(new Pen(Color.Red), 50, 50, e.X, e.Y);
+
+            var dp = new DataPoint(0, 0);
+            gr.DrawLine(new Pen(Color.Red), (float)ChartAreas[0].AxisX.ValueToPixelPosition(0), e.Y, e.X, e.Y);
+            gr.DrawLine(new Pen(Color.Red), e.X, (float)ChartAreas[0].AxisY.ValueToPixelPosition(0), e.X, e.Y);
+
+
         }
 
     }
