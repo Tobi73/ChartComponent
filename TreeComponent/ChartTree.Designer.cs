@@ -90,9 +90,9 @@ namespace TreeComponent
             // controlPanel
             // 
             controlPanel.ColumnCount = 3;
-            controlPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 52F));
-            controlPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 48F));
-            controlPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 263F));
+            controlPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 30F));
+            controlPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 20F));
+            controlPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
             controlPanel.Controls.Add(addButton, 0, 0);
             controlPanel.Controls.Add(chartNameLabel, 1, 0);
             controlPanel.Controls.Add(chartNameTextBox, 2, 0);
