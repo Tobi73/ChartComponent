@@ -111,6 +111,11 @@ namespace MainComponent
             
         }
 
+        /// <summary>
+        /// обработчик события получения выделенного chartModel из chartTree
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         public void takeChartFromTree(object sender, EventArgs e)
         {
             if(chartTree.SelectedChartNode is ChartModel)
