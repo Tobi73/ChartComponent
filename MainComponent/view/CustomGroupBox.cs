@@ -113,8 +113,10 @@ namespace MainComponent
 
         public void takeChartFromTree(object sender, EventArgs e)
         {
-            thisChart
-
+            if(chartTree.SelectedChartNode is ChartModel)
+            {
+                thisChart = chartTree.SelectedChartNode as ChartModel;
+            }
 
         }
 
