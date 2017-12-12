@@ -13,24 +13,24 @@ namespace ChartComponent
     {
 
         protected List<ChartModel> children;
-        protected string name;
+        protected string chartName;
 
         public RootModel()
         {
-            Name = "root";
+            ChartName = "root";
             Children = new List<ChartModel>();
         }
 
         [DataMember]
-        public string Name
+        public string ChartName
         {
             get
             {
-                return name;
+                return chartName;
             }
             set
             {
-                name = value;
+                chartName = value;
             }
         }
 
@@ -49,7 +49,7 @@ namespace ChartComponent
 
         public override string ToString()
         {
-            return Name;
+            return ChartName;
         }
     }
 }

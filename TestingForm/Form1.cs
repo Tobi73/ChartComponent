@@ -22,7 +22,7 @@ namespace TestingForm
         {
             var cm = new ChartModel
             {
-                Name = "test",
+                ChartName = "test",
                 ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Column,
                 Children = null,
                 X = new List<double> { 20, 30 },

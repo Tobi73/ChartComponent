@@ -31,7 +31,7 @@ namespace MainComponent.controller
             xlWorkBook = xlApp.Workbooks.Add(misValue);
             xlDataSheet = (Excel.Worksheet)xlWorkBook.Worksheets.Add();
             this.chart = chart;
-            xlDataSheet.Name = chart.Name;
+            xlDataSheet.Name = chart.ChartName;
 
         }
 

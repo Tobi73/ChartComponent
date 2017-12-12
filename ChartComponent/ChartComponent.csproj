@@ -49,11 +49,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="model\ChartModel.cs" />
-    <Compile Include="Govnoblyapotom.cs">
+    <Compile Include="CustomChart.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Govnoblyapotom.Designer.cs">
-      <DependentUpon>Govnoblyapotom.cs</DependentUpon>
+    <Compile Include="CustomChart.Designer.cs">
+      <DependentUpon>CustomChart.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="model\RootModel.cs" />

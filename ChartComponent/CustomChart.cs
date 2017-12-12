@@ -7,14 +7,14 @@ using System.Drawing;
 
 namespace ChartComponent
 {
-    public partial class Govnoblyapotom : Chart
+    public partial class CustomChart : Chart
     {
-        public Govnoblyapotom()
+        public CustomChart()
         {
             InitializeComponent();
         }
 
-        public Govnoblyapotom(IContainer container)
+        public CustomChart(IContainer container)
         {
             container.Add(this);
             InitializeComponent();

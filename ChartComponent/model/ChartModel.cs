@@ -12,6 +12,7 @@ namespace ChartComponent
 
     public class Serie
     {
+        public Serie() { }
 
         public Serie(string name)
         {
@@ -99,7 +100,7 @@ namespace ChartComponent
 
         public ChartModel(string chartName) : base()
         {
-            Name = chartName;
+            ChartName = chartName;
             seriesList = new List<Serie>();
         }
 
