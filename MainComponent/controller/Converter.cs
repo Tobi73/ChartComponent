@@ -45,13 +45,13 @@ namespace MainComponent.controller
         {
             
 
-            xlDataSheet.Cells[1, 1] = 'X';
-            xlDataSheet.Cells[2, 1] = 'Y';
+            xlDataSheet.Cells[1, 1] = 'X'.ToString();
+            xlDataSheet.Cells[2, 1] = 'Y'.ToString();
             xlDataSheet.Cells[1, 2] = chart.NameX;
             xlDataSheet.Cells[2, 2] = chart.NameY;
 
             int j = 2;
-            int i = 0;
+            int i = 1;
             ///была ли серия написана?
             bool writeSeries = false;
 
@@ -86,8 +86,8 @@ namespace MainComponent.controller
             Excel.ChartObject myChart = xlCharts.Add(10, 80, 300, 250);
             Excel.Chart chartPage = myChart.Chart;
 
-            chartRange = xlDataSheet.get_Range("A3", "B" + (j - 1));
-            chartRange = xlDataSheet.get_Range(xlDataSheet.Cells[3, 3], xlDataSheet.Cells[i-1, j-1]);
+            //chartRange = xlDataSheet.get_Range("A3", "B" + (j - 1));
+            chartRange = xlDataSheet.get_Range(xlDataSheet.Cells[3, 1] as Excel.Range, xlDataSheet.Cells[i-1, j-1] as Excel.Range);
 
 
             chartPage.SetSourceData(chartRange, misValue);

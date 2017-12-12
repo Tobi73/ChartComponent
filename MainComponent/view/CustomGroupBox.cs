@@ -65,8 +65,10 @@ namespace MainComponent
 
         private void btnTable_Click(object sender, EventArgs e)
         {
-            FormTable ft = new FormTable(thisChart);
-            ft.ShowDialog();
+            thisChart = new ChartModel("график движения ребят");
+            testAddData();
+            //FormTable ft = new FormTable(thisChart);
+            //ft.ShowDialog();
             
         }
 
@@ -105,6 +107,7 @@ namespace MainComponent
 
                 conv.buildTableExcel(); // ew - ExcelWorker, работа с отчетами
                 conv.closeFile();
+                MessageBox.Show("Сохранено");
 
             }
 

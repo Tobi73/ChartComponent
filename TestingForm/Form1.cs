@@ -20,20 +20,20 @@ namespace TestingForm
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            var cm = new ChartModel
-            {
-                ChartName = "test",
-                ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Column,
-                Children = null,
-            };
-            cm.AddSerie("MySerie");
-            cm.AddValue(0, 23, 32);
-            cm.AddValue(0, 25, 37);
-            cm.AddValue(0, 28, 40);
-            cm.AddValue(0, 30, 23);
-            cm.AddValue(0, 50, 32);
+            //var cm = new ChartModel
+            //{
+            //    ChartName = "test",
+            //    ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Column,
+            //    Children = null,
+            //};
+            //cm.AddSerie("MySerie");
+            //cm.AddValue(0, 23, 32);
+            //cm.AddValue(0, 25, 37);
+            //cm.AddValue(0, 28, 40);
+            //cm.AddValue(0, 30, 23);
+            //cm.AddValue(0, 50, 32);
 
-            govnoblyapotom1.Draw(cm);
+            //govnoblyapotom1.Draw(cm);
         }
     }
 }

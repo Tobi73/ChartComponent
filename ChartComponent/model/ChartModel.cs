@@ -114,7 +114,7 @@ namespace ChartComponent
             if (indexSerie < seriesList.Count)
             {
                 Serie s = seriesList[indexSerie];
-                if (!s.Y.ContainsKey(xValue))
+                if (!X.Contains(xValue))
                 {
                     x.Add(xValue);
                 }
