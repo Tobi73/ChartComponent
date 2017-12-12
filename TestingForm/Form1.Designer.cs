@@ -43,7 +43,7 @@
             this.govnoblyapotom1.ChartAreas.Add(chartArea1);
             legend1.Name = "Legend1";
             this.govnoblyapotom1.Legends.Add(legend1);
-            this.govnoblyapotom1.Location = new System.Drawing.Point(12, 0);
+            this.govnoblyapotom1.Location = new System.Drawing.Point(12, 12);
             this.govnoblyapotom1.Name = "govnoblyapotom1";
             series1.ChartArea = "ChartArea1";
             series1.Legend = "Legend1";
@@ -55,12 +55,19 @@
             // 
             // customGroupBox1
             // 
-            this.customGroupBox1.Location = new System.Drawing.Point(387, 298);
+            this.customGroupBox1.ColumnCount = 4;
+            this.customGroupBox1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.customGroupBox1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.customGroupBox1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.customGroupBox1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.customGroupBox1.Location = new System.Drawing.Point(346, 269);
             this.customGroupBox1.MinimumSize = new System.Drawing.Size(480, 250);
             this.customGroupBox1.Name = "customGroupBox1";
-            this.customGroupBox1.Size = new System.Drawing.Size(480, 250);
+            this.customGroupBox1.RowCount = 2;
+            this.customGroupBox1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 80.4878F));
+            this.customGroupBox1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 19.5122F));
+            this.customGroupBox1.Size = new System.Drawing.Size(544, 250);
             this.customGroupBox1.TabIndex = 1;
-            this.customGroupBox1.TabStop = false;
             this.customGroupBox1.Text = "customGroupBox1";
             this.customGroupBox1.UseTable = true;
             // 
