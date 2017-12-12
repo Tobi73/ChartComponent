@@ -39,7 +39,7 @@ namespace TreeComponent
             }
         }
 
-        public TreeNode SelectedNode
+        public TreeNode SelectedChartNode
         {
             get { return tree.SelectedNode; }
         }
