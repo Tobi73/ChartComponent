@@ -96,6 +96,7 @@
             this.SetColumnSpan(this.chartTree, 2);
             this.chartTree.Location = new System.Drawing.Point(3, 3);
             this.chartTree.Name = "chartTree";
+            this.chartTree.Dock = System.Windows.Forms.DockStyle.Fill;
             this.chartTree.RootName = "Chart Tree";
             this.chartTree.Size = new System.Drawing.Size(242, 134);
             this.chartTree.TabIndex = 8;

@@ -114,10 +114,11 @@
             // chartTree
             // 
             this.tableLayoutPanelMain.SetColumnSpan(this.chartTree, 2);
+            this.chartTree.Dock = System.Windows.Forms.DockStyle.Fill;
             this.chartTree.Location = new System.Drawing.Point(3, 3);
             this.chartTree.Name = "chartTree";
             this.chartTree.RootName = "Chart Tree";
-            this.chartTree.Size = new System.Drawing.Size(242, 113);
+            this.chartTree.Size = new System.Drawing.Size(250, 113);
             this.chartTree.TabIndex = 8;
             this.chartTree.Text = "chartTree";
             // 
