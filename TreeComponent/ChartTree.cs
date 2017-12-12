@@ -54,11 +54,15 @@ namespace TreeComponent
 
         public TreeNode SelectedChartNode
         {
-            get { return tree.SelectedNode; }
+            get
+            {
+                return tree.SelectedNode;
+            }
         }
 
         private void NodeClickedEvent(object sender, TreeNodeMouseClickEventArgs e)
         {
+            tree.SelectedNode = e.Node;
             if (onChartNodeSelect != null)
             {
                 onChartNodeSelect(this, new EventArgs());
