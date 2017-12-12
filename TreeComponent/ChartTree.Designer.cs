@@ -6,7 +6,7 @@ namespace TreeComponent
 {
     partial class ChartTree
     {
-        private TreeView tree;
+        public TreeView tree;
         private TreeNode rootNode;
         private TableLayoutPanel mainPanel;
         private TableLayoutPanel controlPanel;

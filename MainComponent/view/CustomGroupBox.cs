@@ -65,7 +65,6 @@ namespace MainComponent
 
         private void btnTable_Click(object sender, EventArgs e)
         {
-            thisChart = new ChartModel("график движения ребят");
             testAddData();
             //FormTable ft = new FormTable(thisChart);
             //ft.ShowDialog();

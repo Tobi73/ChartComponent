@@ -1,4 +1,6 @@
-﻿namespace MainComponent
+﻿using System.Windows.Forms;
+
+namespace MainComponent
 {
     partial class CustomGroupBox
     {
@@ -101,6 +103,7 @@
             this.chartTree.Size = new System.Drawing.Size(242, 134);
             this.chartTree.TabIndex = 8;
             this.chartTree.Text = "chartTree";
+            this.chartTree.tree.NodeMouseClick += new TreeNodeMouseClickEventHandler(takeChartFromTree);
             // 
             // customChart
             // 

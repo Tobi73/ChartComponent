@@ -50,6 +50,7 @@ namespace MainComponent.controller
             xlDataSheet.Cells[1, 2] = chart.NameX;
             xlDataSheet.Cells[2, 2] = chart.NameY;
 
+
             int j = 2;
             int i = 1;
             ///была ли серия написана?

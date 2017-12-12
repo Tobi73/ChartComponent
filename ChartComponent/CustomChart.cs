@@ -27,7 +27,10 @@ namespace ChartComponent
 
         public void Draw(ChartModel chartModel)
         {
-            Series.RemoveAt(0);
+            if(Series.Count > 0)
+            {
+                Series.Clear();
+            }
 
             foreach (var serie in chartModel.SeriesList)
             {

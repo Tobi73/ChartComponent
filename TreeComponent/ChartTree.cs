@@ -75,7 +75,8 @@ namespace TreeComponent
             {
                 tree.SelectedNode.Nodes.Add(new ChartModel
                 {
-                    Text = chartNameTextBox.Text
+                    Text = chartNameTextBox.Text,
+                    ChartName = chartNameTextBox.Text
                 });
             }
         }
