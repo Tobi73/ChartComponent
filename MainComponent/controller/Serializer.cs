@@ -16,20 +16,18 @@ namespace MainComponent.controller
         {
             try
             {
-                //     XmlSerializer serializer = new XmlSerializer(typeof(Project));
                 DataContractSerializer serializer = new DataContractSerializer(typeof(RootModel));
                 using (FileStream fs = new FileStream(path, FileMode.Create))
                 {
                     using (XmlWriter writer = XmlWriter.Create(fs))
                     {
                         serializer.WriteObject(writer, tree);
-                        //            serializer.Serialize(writer, project);
                     }
                 }
             }
             catch (Exception ex)
             {
-                return "не сохранил дерефо графиков в" + path + Environment.NewLine + ex.ToString();
+                return "не сохранил дерево графиков в" + path + Environment.NewLine + ex.ToString();
             }
             return "Сохранено";
         }
@@ -40,13 +38,11 @@ namespace MainComponent.controller
             try
             {
                 DataContractSerializer serializer = new DataContractSerializer(typeof(RootModel));
-                //               XmlSerializer serializer = new XmlSerializer(typeof(Project));
                 using (FileStream fs = new FileStream(path, FileMode.Open))
                 {
                     using (XmlReader writer = XmlReader.Create(fs))
                     {
                         tree = (RootModel)serializer.ReadObject(writer);
-                        //               project = (Project)serializer.Deserialize(writer);
                     }
                 }
             }
@@ -55,7 +51,6 @@ namespace MainComponent.controller
                 Console.WriteLine(ex.Message);
             }
 
-            //  if (project == null) project = new Project();
             return tree;
         }
     }
