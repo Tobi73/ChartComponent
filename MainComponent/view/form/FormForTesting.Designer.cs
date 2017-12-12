@@ -34,13 +34,19 @@
             // 
             // customGroupBox1
             // 
-            this.customGroupBox1.Location = new System.Drawing.Point(23, 26);
-            this.customGroupBox1.MinimumSize = new System.Drawing.Size(480, 250);
+            this.customGroupBox1.ColumnCount = 4;
+            this.customGroupBox1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.customGroupBox1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.customGroupBox1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.customGroupBox1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.customGroupBox1.Location = new System.Drawing.Point(32, 21);
             this.customGroupBox1.Name = "customGroupBox1";
-            this.customGroupBox1.Size = new System.Drawing.Size(480, 250);
-            this.customGroupBox1.TabIndex = 0;
-            this.customGroupBox1.TabStop = false;
-            this.customGroupBox1.Text = "customGroupBox1";
+            this.customGroupBox1.RowCount = 2;
+            this.customGroupBox1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 80.4878F));
+            this.customGroupBox1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 19.5122F));
+            this.customGroupBox1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.customGroupBox1.Size = new System.Drawing.Size(514, 224);
+            this.customGroupBox1.TabIndex = 8;
             this.customGroupBox1.UseTable = true;
             // 
             // FormForTesting

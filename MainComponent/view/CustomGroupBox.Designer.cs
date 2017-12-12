@@ -28,25 +28,100 @@
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
-
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-
-            btnSave = new System.Windows.Forms.Button();
-            btnLoad = new System.Windows.Forms.Button();
-            btnConvert = new System.Windows.Forms.Button();
-            btnTable = new System.Windows.Forms.Button();
-            openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
-
-            chartTree = new TreeComponent.ChartTree(this.components);
-            customChart = new ChartComponent.CustomChart(this.components);
+            this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.btnLoad = new System.Windows.Forms.Button();
+            this.btnConvert = new System.Windows.Forms.Button();
+            this.btnTable = new System.Windows.Forms.Button();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.chartTree = new TreeComponent.ChartTree(this.components);
+            this.customChart = new ChartComponent.CustomChart(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.customChart)).BeginInit();
-            SuspendLayout();
+            this.SuspendLayout();
             // 
-            // this
+            // btnSave
+            // 
+            this.btnSave.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnSave.Location = new System.Drawing.Point(87, 218);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(75, 23);
+            this.btnSave.TabIndex = 3;
+            this.btnSave.Text = "save";
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
+            // btnLoad
+            // 
+            this.btnLoad.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnLoad.Location = new System.Drawing.Point(6, 218);
+            this.btnLoad.Name = "btnLoad";
+            this.btnLoad.Size = new System.Drawing.Size(75, 23);
+            this.btnLoad.TabIndex = 2;
+            this.btnLoad.Text = "load";
+            this.btnLoad.UseVisualStyleBackColor = true;
+            this.btnLoad.Click += new System.EventHandler(this.btnLoad_Click);
+            // 
+            // btnConvert
+            // 
+            this.btnConvert.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnConvert.Location = new System.Drawing.Point(314, 218);
+            this.btnConvert.Name = "btnConvert";
+            this.btnConvert.Size = new System.Drawing.Size(75, 23);
+            this.btnConvert.TabIndex = 1;
+            this.btnConvert.Text = "convert";
+            this.btnConvert.UseVisualStyleBackColor = true;
+            this.btnConvert.Click += new System.EventHandler(this.btnConvert_Click);
+            // 
+            // btnTable
+            // 
+            this.btnTable.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnTable.Location = new System.Drawing.Point(400, 218);
+            this.btnTable.Name = "btnTable";
+            this.btnTable.Size = new System.Drawing.Size(75, 23);
+            this.btnTable.TabIndex = 0;
+            this.btnTable.Text = "table";
+            this.btnTable.UseVisualStyleBackColor = true;
+            this.btnTable.Click += new System.EventHandler(this.btnTable_Click);
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            // 
+            // chartTree
+            // 
+            this.SetColumnSpan(this.chartTree, 2);
+            this.chartTree.Location = new System.Drawing.Point(3, 3);
+            this.chartTree.Name = "chartTree";
+            this.chartTree.RootName = "Chart Tree";
+            this.chartTree.Size = new System.Drawing.Size(242, 134);
+            this.chartTree.TabIndex = 8;
+            this.chartTree.Text = "chartTree";
+            // 
+            // customChart
+            // 
+            this.customChart.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            chartArea2.Name = "ChartArea1";
+            this.customChart.ChartAreas.Add(chartArea2);
+            this.SetColumnSpan(this.customChart, 2);
+            legend2.Name = "Legend1";
+            this.customChart.Legends.Add(legend2);
+            this.customChart.Location = new System.Drawing.Point(251, 3);
+            this.customChart.Name = "customChart";
+            series2.ChartArea = "ChartArea1";
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            this.customChart.Series.Add(series2);
+            this.customChart.Size = new System.Drawing.Size(245, 134);
+            this.customChart.TabIndex = 9;
+            this.customChart.Text = "customChart";
+            // 
+            // CustomGroupBox
             // 
             this.ColumnCount = 4;
             this.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
@@ -60,95 +135,15 @@
             this.Controls.Add(this.chartTree, 0, 0);
             this.Controls.Add(this.customChart, 2, 0);
             this.Location = new System.Drawing.Point(66, 60);
-            this.Name = "tableLayoutPanelMain";
             this.RowCount = 2;
             this.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 80.4878F));
             this.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 19.5122F));
+            this.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.Size = new System.Drawing.Size(499, 174);
             this.TabIndex = 8;
+            ((System.ComponentModel.ISupportInitialize)(this.customChart)).EndInit();
+            this.ResumeLayout(false);
 
-            // 
-            // btnSave
-            // 
-            this.btnLoad.Anchor = System.Windows.Forms.AnchorStyles.None;
-            btnSave.Location = new System.Drawing.Point(87, 218);
-            btnSave.Name = "btnSave";
-            btnSave.Size = new System.Drawing.Size(75, 23);
-            btnSave.TabIndex = 3;
-            btnSave.Text = "save";
-            btnSave.UseVisualStyleBackColor = true;
-            btnSave.Click += new System.EventHandler(this.btnSave_Click);
-            // 
-            // btnLoad
-            // 
-            this.btnLoad.Anchor = System.Windows.Forms.AnchorStyles.None;
-            btnLoad.Location = new System.Drawing.Point(6, 218);
-            btnLoad.Name = "btnLoad";
-            btnLoad.Size = new System.Drawing.Size(75, 23);
-            btnLoad.TabIndex = 2;
-            btnLoad.Text = "load";
-            btnLoad.UseVisualStyleBackColor = true;
-            btnLoad.Click += new System.EventHandler(this.btnLoad_Click);
-            // 
-            // btnConvert
-            // 
-            this.btnLoad.Anchor = System.Windows.Forms.AnchorStyles.None;
-            btnConvert.Location = new System.Drawing.Point(314, 218);
-            btnConvert.Name = "btnConvert";
-            btnConvert.Size = new System.Drawing.Size(75, 23);
-            btnConvert.TabIndex = 1;
-            btnConvert.Text = "convert";
-            btnConvert.UseVisualStyleBackColor = true;
-            btnConvert.Click += new System.EventHandler(this.btnConvert_Click);
-            // 
-            // btnTable
-            // 
-            this.btnLoad.Anchor = System.Windows.Forms.AnchorStyles.None;
-            btnTable.Location = new System.Drawing.Point(400, 218);
-            btnTable.Name = "btnTable";
-            btnTable.Size = new System.Drawing.Size(75, 23);
-            btnTable.TabIndex = 0;
-            btnTable.Text = "table";
-            btnTable.UseVisualStyleBackColor = true;
-            btnTable.Click += new System.EventHandler(this.btnTable_Click);
-            // 
-            // openFileDialog1
-            // 
-            openFileDialog1.FileName = "openFileDialog1";
-            // 
-            // chartTree1
-            // 
-            SetColumnSpan(chartTree, 2);
-            chartTree.Location = new System.Drawing.Point(3, 3);
-            chartTree.Name = "chartTree";
-            chartTree.RootName = "Chart Tree";
-            chartTree.Size = new System.Drawing.Size(242, 134);
-            chartTree.TabIndex = 8;
-            chartTree.Text = "chartTree";
-            // 
-            // customchart
-            // 
-            customChart.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
-            | System.Windows.Forms.AnchorStyles.Right)));
-            chartArea1.Name = "ChartArea1";
-            customChart.ChartAreas.Add(chartArea1);
-            SetColumnSpan(this.customChart, 2);
-            legend1.Name = "Legend1";
-            customChart.Legends.Add(legend1);
-            customChart.Location = new System.Drawing.Point(251, 3);
-            customChart.Name = "customChart";
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            customChart.Series.Add(series1);
-            customChart.Size = new System.Drawing.Size(245, 134);
-            customChart.TabIndex = 9;
-            customChart.Text = "customChart";
-
-
-
-            ClientSize = new System.Drawing.Size(480,250);
         }
 
         #endregion
