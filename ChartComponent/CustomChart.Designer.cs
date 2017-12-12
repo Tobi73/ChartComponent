@@ -1,6 +1,6 @@
 ﻿namespace ChartComponent
 {
-    partial class Govnoblyapotom
+    partial class CustomChart
     {
         /// <summary>
         /// Обязательная переменная конструктора.

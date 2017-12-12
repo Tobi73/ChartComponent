@@ -39,10 +39,10 @@
             this.btnConvert = new System.Windows.Forms.Button();
             this.btnTable = new System.Windows.Forms.Button();
             this.tableLayoutPanelMain = new System.Windows.Forms.TableLayoutPanel();
-            this.chartTree1 = new TreeComponent.ChartTree(this.components);
-            this.govnoblyapotom1 = new ChartComponent.Govnoblyapotom(this.components);
+            this.chartTree = new TreeComponent.ChartTree(this.components);
+            this.customChart = new ChartComponent.CustomChart(this.components);
             this.tableLayoutPanelMain.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.govnoblyapotom1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customChart)).BeginInit();
             this.SuspendLayout();
             // 
             // openFileDialog1
@@ -100,8 +100,8 @@
             this.tableLayoutPanelMain.Controls.Add(this.btnConvert, 2, 1);
             this.tableLayoutPanelMain.Controls.Add(this.btnLoad, 1, 1);
             this.tableLayoutPanelMain.Controls.Add(this.btnTable, 3, 1);
-            this.tableLayoutPanelMain.Controls.Add(this.chartTree1, 0, 0);
-            this.tableLayoutPanelMain.Controls.Add(this.govnoblyapotom1, 2, 0);
+            this.tableLayoutPanelMain.Controls.Add(this.chartTree, 0, 0);
+            this.tableLayoutPanelMain.Controls.Add(this.customChart, 2, 0);
             this.tableLayoutPanelMain.Location = new System.Drawing.Point(66, 60);
             this.tableLayoutPanelMain.Name = "tableLayoutPanelMain";
             this.tableLayoutPanelMain.RowCount = 2;
@@ -112,33 +112,33 @@
             // 
             // chartTree1
             // 
-            this.tableLayoutPanelMain.SetColumnSpan(this.chartTree1, 2);
-            this.chartTree1.Location = new System.Drawing.Point(3, 3);
-            this.chartTree1.Name = "chartTree1";
-            this.chartTree1.RootName = "Chart Tree";
-            this.chartTree1.Size = new System.Drawing.Size(242, 134);
-            this.chartTree1.TabIndex = 8;
-            this.chartTree1.Text = "chartTree1";
+            this.tableLayoutPanelMain.SetColumnSpan(this.chartTree, 2);
+            this.chartTree.Location = new System.Drawing.Point(3, 3);
+            this.chartTree.Name = "chartTree1";
+            this.chartTree.RootName = "Chart Tree";
+            this.chartTree.Size = new System.Drawing.Size(242, 134);
+            this.chartTree.TabIndex = 8;
+            this.chartTree.Text = "chartTree1";
             // 
-            // govnoblyapotom1
+            // customchart
             // 
-            this.govnoblyapotom1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.customChart.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             chartArea1.Name = "ChartArea1";
-            this.govnoblyapotom1.ChartAreas.Add(chartArea1);
-            this.tableLayoutPanelMain.SetColumnSpan(this.govnoblyapotom1, 2);
+            this.customChart.ChartAreas.Add(chartArea1);
+            this.tableLayoutPanelMain.SetColumnSpan(this.customChart, 2);
             legend1.Name = "Legend1";
-            this.govnoblyapotom1.Legends.Add(legend1);
-            this.govnoblyapotom1.Location = new System.Drawing.Point(251, 3);
-            this.govnoblyapotom1.Name = "govnoblyapotom1";
+            this.customChart.Legends.Add(legend1);
+            this.customChart.Location = new System.Drawing.Point(251, 3);
+            this.customChart.Name = "customChart";
             series1.ChartArea = "ChartArea1";
             series1.Legend = "Legend1";
             series1.Name = "Series1";
-            this.govnoblyapotom1.Series.Add(series1);
-            this.govnoblyapotom1.Size = new System.Drawing.Size(245, 134);
-            this.govnoblyapotom1.TabIndex = 9;
-            this.govnoblyapotom1.Text = "govnoblyapotom1";
+            this.customChart.Series.Add(series1);
+            this.customChart.Size = new System.Drawing.Size(245, 134);
+            this.customChart.TabIndex = 9;
+            this.customChart.Text = "customChart";
             // 
             // FormCreateGroupBox
             // 
@@ -150,7 +150,7 @@
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.FormCreateGroupBox_Load);
             this.tableLayoutPanelMain.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.govnoblyapotom1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customChart)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -163,7 +163,7 @@
         private System.Windows.Forms.Button btnConvert;
         private System.Windows.Forms.Button btnTable;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanelMain;
-        private TreeComponent.ChartTree chartTree1;
-        private ChartComponent.Govnoblyapotom govnoblyapotom1;
+        private TreeComponent.ChartTree chartTree;
+        private ChartComponent.CustomChart customChart;
     }
 }

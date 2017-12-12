@@ -14,7 +14,7 @@ using TreeComponent;
 namespace MainComponent
 {
     [DesignerAttribute(typeof(CustomDesigner))]
-    public partial class CustomGroupBox : GroupBox
+    public partial class CustomGroupBox : TableLayoutPanel
     {
         public CustomGroupBox()
         {

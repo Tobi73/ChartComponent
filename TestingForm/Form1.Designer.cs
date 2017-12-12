@@ -32,7 +32,7 @@
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            this.govnoblyapotom1 = new ChartComponent.Govnoblyapotom(this.components);
+            this.govnoblyapotom1 = new ChartComponent.CustomChart(this.components);
             this.customGroupBox1 = new MainComponent.CustomGroupBox(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.govnoblyapotom1)).BeginInit();
             this.SuspendLayout();
@@ -81,7 +81,7 @@
 
         #endregion
 
-        private ChartComponent.Govnoblyapotom govnoblyapotom1;
+        private ChartComponent.CustomChart govnoblyapotom1;
         private MainComponent.CustomGroupBox customGroupBox1;
     }
 }
