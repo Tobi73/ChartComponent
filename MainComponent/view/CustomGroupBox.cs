@@ -29,7 +29,7 @@ namespace MainComponent
         }
 
         private bool useTable = true;
-        private ChartModel chart;
+        private ChartModel thisChart;
         private RootModel tree;
 
         [Category("New"), Description("Can user's work with table?")]
@@ -65,7 +65,7 @@ namespace MainComponent
 
         private void btnTable_Click(object sender, EventArgs e)
         {
-            FormTable ft = new FormTable(chart);
+            FormTable ft = new FormTable(thisChart);
             ft.ShowDialog();
             
         }
@@ -101,7 +101,7 @@ namespace MainComponent
 
             if (saveFileDialog1.ShowDialog() == DialogResult.OK)
             {
-                conv = new Converter(saveFileDialog1.FileName, chart);
+                conv = new Converter(saveFileDialog1.FileName, thisChart);
 
                 conv.buildTableExcel(); // ew - ExcelWorker, работа с отчетами
                 conv.closeFile();
@@ -111,8 +111,14 @@ namespace MainComponent
             
         }
 
+        public void takeChartFromTree(object sender, EventArgs e)
+        {
+            thisChart
 
-        
+
+        }
+
+
 
 
     }
