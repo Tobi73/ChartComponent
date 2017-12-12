@@ -18,7 +18,6 @@ namespace MainComponent.controller
         Excel.Workbook xlWorkBook;
         Excel.Worksheet xlDataSheet;
         DateTimeFormatInfo mfi = new DateTimeFormatInfo();
-        string pathToProject = AppDomain.CurrentDomain.BaseDirectory;
         ChartModel chart;
 
 
@@ -44,23 +43,40 @@ namespace MainComponent.controller
 
         public void buildTableExcel()
         {
-            int j = 2;
+            
 
             xlDataSheet.Cells[1, 1] = 'X';
             xlDataSheet.Cells[2, 1] = 'Y';
+            xlDataSheet.Cells[1, 2] = chart.NameX;
+            xlDataSheet.Cells[2, 2] = chart.NameY;
 
-            foreach (var x in chart.X)
+            int j = 2;
+            int i = 0;
+            ///была ли серия написана?
+            bool writeSeries = false;
+
+            //записть всех данных графика
+            foreach (double x in chart.X)
             {
-                xlDataSheet.Cells[1, j] = x.ToString();
+                xlDataSheet.Cells[3, j] = x;
+                i = 4;
+                foreach(Serie s in chart.SeriesList)
+                {
+                    if (!writeSeries)
+                    {
+                        xlDataSheet.Cells[i, 1] = s.SerieName;
+                    }
+                    if (s.Y.ContainsKey(x))
+                    {
+                        xlDataSheet.Cells[i, j] = s.Y[x];
+
+                    }
+                    i++;
+                }
+                writeSeries = true;
                 j++;
             }
-            j = 2;
 
-            //foreach (var y in chart.Y)
-            //{
-            //    xlDataSheet.Cells[2, j] = y.ToString();
-            //    j++;
-            //}
 
 
 
@@ -70,7 +86,10 @@ namespace MainComponent.controller
             Excel.ChartObject myChart = xlCharts.Add(10, 80, 300, 250);
             Excel.Chart chartPage = myChart.Chart;
 
-            chartRange = xlDataSheet.get_Range("A1", "B" + (j - 1));
+            chartRange = xlDataSheet.get_Range("A3", "B" + (j - 1));
+            chartRange = xlDataSheet.get_Range(xlDataSheet.Cells[3, 3], xlDataSheet.Cells[i-1, j-1]);
+
+
             chartPage.SetSourceData(chartRange, misValue);
             chartPage.ChartType = Excel.XlChartType.xlColumnClustered;
             var yAxis = (Excel.Axis)chartPage.Axes(Excel.XlAxisType.xlValue, Excel.XlAxisGroup.xlPrimary);
@@ -79,7 +98,7 @@ namespace MainComponent.controller
             xAxis.AxisTitle.Text = chart.NameX;
             yAxis.HasTitle = true;
             yAxis.AxisTitle.Text = chart.NameY;
-            chartPage.Export(pathToProject + "chartSales.bmp", "BMP", misValue);
+            //chartPage.Export(pathToProject + "chartSales.bmp", "BMP", misValue);
         }
     }
 
