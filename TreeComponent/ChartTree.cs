@@ -40,6 +40,11 @@ namespace TreeComponent
             }
         }
 
+        public TreeNode SelectedNode
+        {
+            get { return selectedNode; }
+        }
+
         private void NodeClickedEvent(object sender, TreeNodeMouseClickEventArgs e)
         {
             selectedNode = e.Node;
@@ -53,6 +58,33 @@ namespace TreeComponent
                 {
                     Text = chartNameTextBox.Text
                 });
+            }
+        }
+
+        private void ChartNodeNameChanged(object sender, NodeLabelEditEventArgs e)
+        {
+            if (e.Node is ChartModel)
+            {
+                (e.Node as ChartModel).ChartName = e.Label;
+                e.CancelEdit = false;
+            } else
+            {
+                e.CancelEdit = true;
+            }
+        }
+
+        private void OnKeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Delete)
+            {
+                if (selectedNode != null && selectedNode is ChartModel)
+                {
+                    var parent = selectedNode.Parent;
+                    selectedNode.Remove();
+                    selectedNode = parent;
+                    tree.SelectedNode = selectedNode;
+                    tree.Invalidate();
+                }
             }
         }
 
