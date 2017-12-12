@@ -28,7 +28,7 @@ namespace ChartComponent
         public void Draw(ChartModel chartModel)
         {
             Series.RemoveAt(0);
-            foreach (var serie in chartModel.Series)
+            foreach (var serie in chartModel.SeriesList)
             {
                 var s = new Series();
                 s.ChartType = chartModel.ChartType;

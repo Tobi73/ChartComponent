@@ -1,5 +1,6 @@
-﻿using System.Windows.Forms;
-using TreeComponent.Model;
+﻿using ChartComponent;
+using System.Windows.Forms;
+
 
 namespace TreeComponent
 {
@@ -44,7 +45,7 @@ namespace TreeComponent
             mainPanel = new TableLayoutPanel();
             controlPanel = new TableLayoutPanel();
             tree = new TreeView();
-            rootNode = new ChartTreeRoot();
+            rootNode = new RootModel();
             addButton = new Button();
             chartNameLabel = new Label();
 

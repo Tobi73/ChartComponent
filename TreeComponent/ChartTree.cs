@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ChartComponent;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics;
@@ -6,7 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using TreeComponent.Model;
 
 namespace TreeComponent
 {
@@ -38,18 +38,24 @@ namespace TreeComponent
                 rootNode.Text = value;
                 Invalidate();
             }
-        }        private void NodeClickedEvent(object sender, TreeNodeMouseClickEventArgs e)
+        }
+
+        private void NodeClickedEvent(object sender, TreeNodeMouseClickEventArgs e)
         {
             selectedNode = e.Node;
-        }        private void AddButtonClicked(object sender, EventArgs e)
+        }
+
+        private void AddButtonClicked(object sender, EventArgs e)
         {
             if (selectedNode != null)
             {
-                selectedNode.Nodes.Add(new ChartTreeNode
+                selectedNode.Nodes.Add(new ChartModel
                 {
                     Text = chartNameTextBox.Text
                 });
             }
-        }
+        }
+
+
     }
 }

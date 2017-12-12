@@ -12,7 +12,14 @@ namespace ChartComponent
 
     public class Serie
     {
-        private List<double?> y = new List<double?>();
+
+        public Serie(string name)
+        {
+            y = new Dictionary<double, double>();
+            serieName = name;
+        }
+
+        private Dictionary<double, double> y;
         private string serieName;
 
         [DataMember]
@@ -29,7 +36,7 @@ namespace ChartComponent
         }
 
         [DataMember]
-        public List<double?> Y
+        public Dictionary<double, double> Y
         {
             get
             {
@@ -44,11 +51,24 @@ namespace ChartComponent
 
     public class ChartModel : RootModel
     {
-        public List<Serie> Series;
+        private List<Serie> seriesList;
         private SeriesChartType chartType;
         private string nameX;
         private string nameY;
         private List<double> x = new List<double>();
+
+        [DataMember]
+        public List<Serie> SeriesList
+        {
+            get
+            {
+                return seriesList;
+            }
+            set
+            {
+                seriesList = value;
+            }
+        }
 
         [DataMember]
         public List<double> X
@@ -80,24 +100,40 @@ namespace ChartComponent
         public ChartModel(string chartName) : base()
         {
             Name = chartName;
-            Series = new List<Serie>();
+            seriesList = new List<Serie>();
         }
 
         public ChartModel() : base()
         {
-            Series = new List<Serie>();
+            seriesList = new List<Serie>();
         }
 
-        public void AddValue(int index, double xValue, double? yValue = null)
+        public void AddValue(int indexSerie, double xValue, double yValue)
         {
-            Series[index].Y.Add(yValue);
+            if (indexSerie <= seriesList.Count)
+            {
+                Serie s = seriesList[indexSerie];
+
+                if (s.Y.ContainsKey(xValue))
+                {
+                    s.Y[xValue] = yValue;
+                }
+                else
+                {
+                    this.x.Add(xValue);
+                    s.Y.Add(xValue, yValue);
+                }
+            }
         }
 
 
 
-        public void AddSerie(Serie serie)
+
+
+        public void AddSerie(string name)
         {
-            Series.Add(serie);
+            Serie serie = new Serie(name);
+            seriesList.Add(serie);
         }
 
         [DataMember]

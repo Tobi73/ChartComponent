@@ -56,11 +56,11 @@ namespace MainComponent.controller
             }
             j = 2;
 
-            foreach (var y in chart.Y)
-            {
-                xlDataSheet.Cells[2, j] = y.ToString();
-                j++;
-            }
+            //foreach (var y in chart.Y)
+            //{
+            //    xlDataSheet.Cells[2, j] = y.ToString();
+            //    j++;
+            //}
 
 
 

@@ -5,11 +5,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Runtime.Serialization;
 using System.IO;
+using System.Windows.Forms;
 
 namespace ChartComponent
 {
-    public class RootModel
+    public class RootModel : TreeNode
     {
+
         protected List<ChartModel> children;
         protected string name;
 

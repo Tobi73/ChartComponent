@@ -26,7 +26,7 @@ namespace TestingForm
                 ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Column,
                 Children = null,
                 X = new List<double> { 20, 30 },
-                Y = new List<double?> { 30, 40}
+                //Y = new List<double?> { 30, 40}
             };
             govnoblyapotom1.Draw(cm);
         }
