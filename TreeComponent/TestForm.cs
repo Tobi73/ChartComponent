@@ -27,5 +27,20 @@ namespace TreeComponent
         {
 
         }
+
+        private void treeView1_AfterLabelEdit(object sender, NodeLabelEditEventArgs e)
+        {
+
+        }
+
+        private void treeView1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+        }
+
+        private void treeView1_KeyDown(object sender, KeyEventArgs e)
+        {
+
+        }
     }
 }
