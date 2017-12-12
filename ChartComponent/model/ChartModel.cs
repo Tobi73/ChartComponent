@@ -114,16 +114,11 @@ namespace ChartComponent
             if (indexSerie <= seriesList.Count)
             {
                 Serie s = seriesList[indexSerie];
-
-                if (s.Y.ContainsKey(xValue))
+                if (!s.Y.ContainsKey(xValue))
                 {
-                    s.Y[xValue] = yValue;
+                    x.Add(xValue);
                 }
-                else
-                {
-                    this.x.Add(xValue);
-                    s.Y.Add(xValue, yValue);
-                }
+                s.Y[xValue] = yValue;
             }
         }
 

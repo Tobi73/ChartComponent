@@ -30,16 +30,13 @@ namespace ChartComponent
             Series.RemoveAt(0);
             foreach (var serie in chartModel.SeriesList)
             {
-                var s = new Series();
-                s.ChartType = chartModel.ChartType;
-                s.Name = "test";
-                //for (var i = 0; i < serie.X.Count; i++)
-                //{
-                //    s.Points.AddXY(serie.X[i], serie.Y[i]);
-                //}
-                s.Points.AddXY("test", 123);
-                s.Points.AddXY("test2", 23123);
-                Series.Add(s);
+                var newSerie = new Series();
+                newSerie.Name = serie.SerieName;
+                foreach (var value in serie.Y)
+                {
+                    newSerie.Points.AddXY(value.Key, value.Value);
+                }
+                Series.Add(newSerie);
             }
             Refresh();
         }
@@ -49,7 +46,7 @@ namespace ChartComponent
             base.OnMouseMove(e);
             var gr = CreateGraphics();
             Refresh();
-            gr.DrawLine(new Pen(Color.Red), ChartAreas[0].Position.X, ChartAreas[0].Position.Y, e.X, e.Y);
+            gr.DrawLine(new Pen(Color.Red), 50, 50, e.X, e.Y);
         }
 
     }
