@@ -12,7 +12,6 @@ namespace TreeComponent
 {
     public partial class ChartTree : Control
     {
-        TreeNode selectedNode;
 
         public ChartTree()
         {
@@ -42,19 +41,19 @@ namespace TreeComponent
 
         public TreeNode SelectedNode
         {
-            get { return selectedNode; }
+            get { return tree.SelectedNode; }
         }
 
         private void NodeClickedEvent(object sender, TreeNodeMouseClickEventArgs e)
         {
-            selectedNode = e.Node;
+            // selectedNode = e.Node;
         }
 
         private void AddButtonClicked(object sender, EventArgs e)
         {
-            if (selectedNode != null)
+            if (tree.SelectedNode != null)
             {
-                selectedNode.Nodes.Add(new ChartModel
+                tree.SelectedNode.Nodes.Add(new ChartModel
                 {
                     Text = chartNameTextBox.Text
                 });
@@ -77,12 +76,11 @@ namespace TreeComponent
         {
             if (e.KeyCode == Keys.Delete)
             {
-                if (selectedNode != null && selectedNode is ChartModel)
+                if (tree.SelectedNode != null && tree.SelectedNode is ChartModel)
                 {
-                    var parent = selectedNode.Parent;
-                    selectedNode.Remove();
-                    selectedNode = parent;
-                    tree.SelectedNode = selectedNode;
+                    var parent = tree.SelectedNode.Parent;
+                    tree.SelectedNode.Remove();
+                    tree.SelectedNode = parent;
                     tree.Invalidate();
                 }
             }
