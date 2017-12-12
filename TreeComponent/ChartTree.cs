@@ -12,6 +12,7 @@ namespace TreeComponent
 {
     public partial class ChartTree : Control
     {
+        private event EventHandler onChartNodeSelect;
 
         public ChartTree()
         {
@@ -25,7 +26,19 @@ namespace TreeComponent
             InitializeComponent();
         }
 
-        [Category("Tree Info"), Description("Specifies the name of the root node.")]
+        [Category("Chart Selection"), Description("Event on chart node selection")]
+        public event EventHandler OnChartNodeSelect
+        {
+            add
+            {
+                onChartNodeSelect += value;
+            }
+            remove
+            {
+                onChartNodeSelect -= value;
+            }
+        }
+
         public string RootName
         {
             get
@@ -46,7 +59,10 @@ namespace TreeComponent
 
         private void NodeClickedEvent(object sender, TreeNodeMouseClickEventArgs e)
         {
-            // selectedNode = e.Node;
+            if (onChartNodeSelect != null)
+            {
+                onChartNodeSelect(this, new EventArgs());
+            }
         }
 
         private void AddButtonClicked(object sender, EventArgs e)
