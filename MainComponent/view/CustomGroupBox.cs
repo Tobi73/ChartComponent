@@ -121,8 +121,37 @@ namespace MainComponent
             if(chartTree.SelectedChartNode is ChartModel)
             {
                 thisChart = chartTree.SelectedChartNode as ChartModel;
+                customChart.Draw(thisChart);
             }
 
+        }
+
+        /// <summary>
+        /// примерные действия программиста для заполнения ChartModel
+        /// </summary>
+        private void testAddData()
+        {
+            thisChart.AddSerie("пешеход");
+            thisChart.AddSerie("велосипедист");
+            thisChart.AddSerie("мотоциклист");
+            thisChart.NameX = "T(час)";
+            thisChart.NameY = "S(км)";
+            thisChart.AddValue(0, 1, 5);
+            thisChart.AddValue(0, 2, 10);
+            thisChart.AddValue(0, 3, 15);
+            thisChart.AddValue(0, 4, 20);
+
+            thisChart.AddValue(1, 1, 20);
+            thisChart.AddValue(1, 2, 40);
+            thisChart.AddValue(1, 3, 60);
+            thisChart.AddValue(1, 4, 80);
+
+            thisChart.AddValue(2, 1, 50);
+            thisChart.AddValue(2, 2, 100);
+            thisChart.AddValue(2, 3, 150);
+            thisChart.AddValue(2, 4, 200);
+
+            customChart.Draw(thisChart);
         }
 
 
