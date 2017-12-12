@@ -111,12 +111,20 @@ namespace ChartComponent
 
         public void AddValue(int indexSerie, double xValue, double yValue)
         {
-            if (indexSerie < seriesList.Count)
+            if (indexSerie <= seriesList.Count)
             {
                 Serie s = seriesList[indexSerie];
+                if (!s.Y.ContainsKey(xValue))
+                {
+                    x.Add(xValue);
+                }
                 s.Y[xValue] = yValue;
             }
         }
+
+
+
+
 
         public void AddSerie(string name)
         {
