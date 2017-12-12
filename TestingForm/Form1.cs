@@ -25,8 +25,9 @@ namespace TestingForm
                 ChartName = "test",
                 ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Column,
                 Children = null,
-                
             };
+            cm.AddSerie("MySerie");
+            cm.AddValue(0, 23, 32);
             govnoblyapotom1.Draw(cm);
         }
     }
