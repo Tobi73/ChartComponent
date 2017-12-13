@@ -43,7 +43,7 @@ namespace MainComponent.controller
 
         public void buildTableExcel()
         {
-            
+
 
             xlDataSheet.Cells[1, 1] = 'X'.ToString();
             xlDataSheet.Cells[2, 1] = 'Y'.ToString();
@@ -52,34 +52,36 @@ namespace MainComponent.controller
 
 
             int j = 2;
-            int i = 1;
-            ///была ли серия написана?
-            bool writeSeries = false;
+            int i = 4;
 
-            //записть всех данных графика
-            foreach (double x in chart.X)
+            ///записть данных в таблицу
+            foreach (Serie s in chart.SeriesList)
             {
-                xlDataSheet.Cells[3, j] = x;
-                i = 4;
-                foreach(Serie s in chart.SeriesList)
+
+                xlDataSheet.Cells[i, 1] = s.SerieName;
+
+                foreach (var point in s.PointsList)
                 {
-                    if (!writeSeries)
+                    for (j = 2; ; j++)
                     {
-                        xlDataSheet.Cells[i, 1] = s.SerieName;
-                    }
-                    if (s.PointsList.ContainsKey(x))
-                    {
-                        xlDataSheet.Cells[i, j] = s.PointsList[x];
+                        //var value = xlDataSheet.Cells[3, j] as Excel.Range;
+                        //var t = (xlDataSheet.Cells[3, j] as Excel.Range);
+                        //var f = value?.Value2 == null;
+                        if ((xlDataSheet.Cells[3, j] as Excel.Range)?.Value2 == null)
+                        {
+                            xlDataSheet.Cells[3, j] = point.Key;
+                        }
 
+                        if ((xlDataSheet.Cells[3, j] as Excel.Range).Value == point.Key)
+                        {
+                            xlDataSheet.Cells[i, j] = point.Value;
+                            break;
+                        }
                     }
-                    i++;
                 }
-                writeSeries = true;
-                j++;
+
+                i++;
             }
-
-
-
 
             Excel.Range chartRange;
 
@@ -88,7 +90,7 @@ namespace MainComponent.controller
             Excel.Chart chartPage = myChart.Chart;
 
             //chartRange = xlDataSheet.get_Range("A3", "B" + (j - 1));
-            chartRange = xlDataSheet.get_Range(xlDataSheet.Cells[3, 1] as Excel.Range, xlDataSheet.Cells[i-1, j-1] as Excel.Range);
+            chartRange = xlDataSheet.get_Range(xlDataSheet.Cells[3, 1] as Excel.Range, xlDataSheet.Cells[i - 1, j] as Excel.Range);
 
 
             chartPage.SetSourceData(chartRange, misValue);

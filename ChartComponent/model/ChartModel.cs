@@ -59,14 +59,8 @@ namespace ChartComponent
         private SeriesChartType chartType;
         private string nameX;
         private string nameY;
-        private List<double> x = new List<double>();
 
-        [DataMember]
-        public List<double> X
-        {
-            get { return x; }
-            set { x = value; }
-        }
+
 
         [DataMember]
         public List<Serie> SeriesList
@@ -111,11 +105,6 @@ namespace ChartComponent
             if (indexSerie < seriesList.Count)
             {
                 Serie s = seriesList[indexSerie];
-
-                if (!X.Contains(xValue))
-                {
-                    x.Add(xValue);
-                }
                 s.PointsList[xValue] = yValue;
             }
         }
