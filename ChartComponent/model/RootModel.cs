@@ -32,6 +32,7 @@ namespace ChartComponent
             set
             {
                 chartName = value;
+                Text = value;
             }
         }
 

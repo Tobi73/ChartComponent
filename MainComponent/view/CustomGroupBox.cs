@@ -164,18 +164,18 @@ namespace MainComponent
             thisChart.NameX = "T(час)";
             thisChart.NameY = "S(км)";
             thisChart.AddValue(0, 1.ToString(), 5);
-            thisChart.AddValue(0, 2.ToString(), 10);
+            //thisChart.AddValue(0, 2.ToString(), 10);
             thisChart.AddValue(0, 3.ToString(), 15);
-            thisChart.AddValue(0, 4.ToString(), 20);
+            //thisChart.AddValue(0, 4.ToString(), 20);
 
-            thisChart.AddValue(1, 1.ToString(), 20);
+            //thisChart.AddValue(1, 1.ToString(), 20);
             thisChart.AddValue(1, 2.ToString(), 40);
             thisChart.AddValue(1, 3.ToString(), 60);
-            thisChart.AddValue(1, 4.ToString(), 80);
+            //thisChart.AddValue(1, 4.ToString(), 80);
 
             thisChart.AddValue(2, 1.ToString(), 50);
             thisChart.AddValue(2, 2.ToString(), 100);
-            thisChart.AddValue(2, 3.ToString(), 150);
+            //thisChart.AddValue(2, 3.ToString(), 150);
             thisChart.AddValue(2, 4.ToString(), 200);
 
 

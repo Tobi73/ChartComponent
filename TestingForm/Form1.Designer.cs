@@ -39,15 +39,15 @@
             this.customGroupBox1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.customGroupBox1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.customGroupBox1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.customGroupBox1.Location = new System.Drawing.Point(370, 114);
+            this.customGroupBox1.Location = new System.Drawing.Point(71, 47);
             this.customGroupBox1.Name = "customGroupBox1";
             this.customGroupBox1.RowCount = 2;
             this.customGroupBox1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 80.4878F));
             this.customGroupBox1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 19.5122F));
             this.customGroupBox1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.customGroupBox1.Size = new System.Drawing.Size(499, 174);
+            this.customGroupBox1.Size = new System.Drawing.Size(773, 326);
             this.customGroupBox1.TabIndex = 8;
-            this.customGroupBox1.TypeOfChart = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Point;
+            this.customGroupBox1.TypeOfChart = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Column;
             this.customGroupBox1.UseTable = true;
             // 
             // Form1

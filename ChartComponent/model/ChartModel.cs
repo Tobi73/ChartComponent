@@ -84,6 +84,7 @@ namespace ChartComponent
         public ChartModel(string chartName) : base()
         {
             ChartName = chartName;
+            Text = chartName;
             seriesList = new List<Serie>();
         }
 

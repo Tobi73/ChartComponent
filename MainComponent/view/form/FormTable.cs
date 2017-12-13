@@ -29,6 +29,22 @@ namespace MainComponent.view.form
 
         private void FormTable_Load(object sender, EventArgs e)
         {
+            writeTable();
+        }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            save = true;
+            Close();
+        }
+
+        private void writeTable()
+        {
             List<string> xList = new List<string>();
 
             dataGridView1.Columns.Add("c0", "");
@@ -40,7 +56,8 @@ namespace MainComponent.view.form
             {
                 foreach (var point in s.PointsList)
                 {
-                    if (!xList.Contains(point.Key)){
+                    if (!xList.Contains(point.Key))
+                    {
                         xList.Add(point.Key);
                         dataGridView1.Columns.Add("c" + j, "");
                         j++;
@@ -71,19 +88,38 @@ namespace MainComponent.view.form
                     j++;
                 }
                 dataGridView1.Rows.Add(row);
-                
+
             }
         }
 
-        private void btnBack_Click(object sender, EventArgs e)
+        private void changeChart()
         {
-            Close();
+            chart = new ChartModel(chart.ChartName);
+            for(int i = 1; i < dataGridView1.Rows.Count; i++)
+            {
+                chart.AddSerie(dataGridView1[i, 0].ToString());
+
+                for(int j = 1; j < dataGridView1.Columns.Count; j++)
+                {
+                    if(dataGridView1[i, j] != null)
+                    {
+                        double y;
+                        double.TryParse(dataGridView1[i, j].ToString(),out y);
+                        chart.AddValue(i - 1, dataGridView1[0, j].ToString(), y);
+                    }
+                }
+            }
         }
 
-        private void btnSave_Click(object sender, EventArgs e)
+        private void btnAddColumn_Click(object sender, EventArgs e)
         {
-            save = true;
-            Close();
+            dataGridView1.Columns.Add("c" + dataGridView1.Columns.Count, "");
+        }
+
+        private void btnDeleteColumn_Click(object sender, EventArgs e)
+        {
+            dataGridView1.Columns.RemoveAt(dataGridView1.ColumnCount-1);
+
         }
     }
 }

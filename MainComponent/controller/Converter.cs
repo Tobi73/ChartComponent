@@ -47,8 +47,8 @@ namespace MainComponent.controller
 
             xlDataSheet.Cells[1, 1] = 'X'.ToString();
             xlDataSheet.Cells[2, 1] = 'Y'.ToString();
-            xlDataSheet.Cells[1, 2] = chart.NameX;
-            xlDataSheet.Cells[2, 2] = chart.NameY;
+            xlDataSheet.Cells[1, 2] = chart?.NameX;
+            xlDataSheet.Cells[2, 2] = chart?.NameY;
 
 
             int k = 1;
