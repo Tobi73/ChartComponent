@@ -20,11 +20,62 @@ namespace MainComponent.view.form
             this.chart = _chart;
         }
 
-        ChartModel chart;
+        private ChartModel chart;
+        public bool save = false;
+        public ChartModel Chart
+        {
+            get { return chart; }
+        }
 
         private void FormTable_Load(object sender, EventArgs e)
         {
+            List<double> xList = new List<double>();
 
+            dataGridView1.Columns.Add("c0", "");
+
+
+            int j = 1;
+            foreach (Serie s in chart.SeriesList)
+            {
+                foreach (var point in s.PointsList)
+                {
+                    if (!xList.Contains(point.Key)){
+                        xList.Add(point.Key);
+                        dataGridView1.Columns.Add("c" + j, "");
+                        j++;
+                    }
+                }
+            }
+
+
+
+            foreach (Serie s in chart.SeriesList)
+            {
+                string[] row = new string[xList.Count + 1];
+                row[0] = s.SerieName;
+                j = 1;
+                foreach (var x in xList)
+                {
+                    if (s.PointsList.ContainsKey(x))
+                    {
+                        row[j] = s.PointsList[x].ToString();
+                    }
+                    j++;
+                }
+                dataGridView1.Rows.Add(row);
+                
+            }
+        }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            save = true;
+            Close();
         }
     }
 }

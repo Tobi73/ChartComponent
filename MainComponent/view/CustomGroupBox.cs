@@ -87,8 +87,12 @@ namespace MainComponent
         private void btnTable_Click(object sender, EventArgs e)
         {
             testAddData();
-            //FormTable ft = new FormTable(thisChart);
-            //ft.ShowDialog();
+            FormTable ft = new FormTable(thisChart);
+            ft.ShowDialog();
+            if (ft.save)
+            {
+                thisChart = ft.Chart;
+            }
             
         }
 
@@ -159,20 +163,20 @@ namespace MainComponent
             thisChart.AddSerie("мотоциклист");
             thisChart.NameX = "T(час)";
             thisChart.NameY = "S(км)";
-            //thisChart.AddValue(0, 1, 5);
-            //thisChart.AddValue(0, 2, 10);
+            thisChart.AddValue(0, 1, 5);
+            thisChart.AddValue(0, 2, 10);
             thisChart.AddValue(0, 3, 15);
             thisChart.AddValue(0, 4, 20);
 
             thisChart.AddValue(1, 1, 20);
             thisChart.AddValue(1, 2, 40);
-            //thisChart.AddValue(1, 3, 60);
+            thisChart.AddValue(1, 3, 60);
             thisChart.AddValue(1, 4, 80);
 
             thisChart.AddValue(2, 1, 50);
             thisChart.AddValue(2, 2, 100);
             thisChart.AddValue(2, 3, 150);
-            //thisChart.AddValue(2, 4, 200);
+            thisChart.AddValue(2, 4, 200);
 
 
             if (chartTree.SelectedChartNode is ChartModel)

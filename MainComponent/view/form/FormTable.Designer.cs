@@ -50,6 +50,7 @@
             this.btnSave.TabIndex = 1;
             this.btnSave.Text = "save";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnBack
             // 
@@ -59,6 +60,7 @@
             this.btnBack.TabIndex = 2;
             this.btnBack.Text = "back";
             this.btnBack.UseVisualStyleBackColor = true;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // FormTable
             // 

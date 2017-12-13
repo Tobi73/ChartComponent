@@ -57,20 +57,16 @@ namespace MainComponent.controller
             ///записть данных в таблицу
             foreach (Serie s in chart.SeriesList)
             {
-
                 xlDataSheet.Cells[i, 1] = s.SerieName;
-
                 foreach (var point in s.PointsList)
                 {
                     for (int j = 2; ; j++)
                     {
-
                         if ((xlDataSheet.Cells[3, j] as Excel.Range)?.Value2 == null)
                         {
                             xlDataSheet.Cells[3, j] = point.Key;
                             k++;
                         }
-
                         if ((xlDataSheet.Cells[3, j] as Excel.Range).Value == point.Key)
                         {
                             xlDataSheet.Cells[i, j] = point.Value;
@@ -78,7 +74,6 @@ namespace MainComponent.controller
                         }
                     }
                 }
-
                 i++;
             }
 
