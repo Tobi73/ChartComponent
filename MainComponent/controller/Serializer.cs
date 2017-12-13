@@ -7,22 +7,27 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml;
 using ChartComponent;
-
+using Newtonsoft.Json;
 namespace MainComponent.controller
 {
     class Serializer
     {
         public static string Serialize(RootModel tree, string path)
         {
+            //JsonConvert.SerializeObject(tree).ToString();
             try
             {
-                DataContractSerializer serializer = new DataContractSerializer(typeof(RootModel));
+                //DataContractSerializer serializer = new DataContractSerializer(typeof(RootModel));
                 using (FileStream fs = new FileStream(path, FileMode.Create))
                 {
-                    using (XmlWriter writer = XmlWriter.Create(fs))
+                    using (StreamWriter sw = new StreamWriter(fs))
                     {
-                        serializer.WriteObject(writer, tree);
+                        sw.Write(JsonConvert.SerializeObject(tree).ToString());
                     }
+                    //using (XmlWriter writer = XmlWriter.Create(fs))
+                    //{
+                    //    serializer.WriteObject(writer, tree);
+                    //}
                 }
             }
             catch (Exception ex)
@@ -40,9 +45,13 @@ namespace MainComponent.controller
                 DataContractSerializer serializer = new DataContractSerializer(typeof(RootModel));
                 using (FileStream fs = new FileStream(path, FileMode.Open))
                 {
-                    using (XmlReader writer = XmlReader.Create(fs))
+                    //using (XmlReader writer = XmlReader.Create(fs))
+                    //{
+                    //    tree = (RootModel)serializer.ReadObject(writer);
+                    //}
+                    using (StreamReader sr = new StreamReader(fs))
                     {
-                        tree = (RootModel)serializer.ReadObject(writer);
+                        tree = JsonConvert.DeserializeObject<RootModel>(sr.ReadToEnd());
                     }
                 }
             }

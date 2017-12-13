@@ -161,6 +161,7 @@ namespace MainComponent
         /// </summary>
         private void testAddData()
         {
+            thisChart.SeriesList.Clear();
             thisChart.AddSerie("пешеход");
             thisChart.AddSerie("велосипедист");
             thisChart.AddSerie("мотоциклист");
@@ -179,7 +180,7 @@ namespace MainComponent
             thisChart.AddValue(2, 1.ToString(), 50);
             thisChart.AddValue(2, 2.ToString(), 100);
             //thisChart.AddValue(2, 3.ToString(), 150);
-            thisChart.AddValue(2, 4.ToString(), 200);
+            //thisChart.AddValue(2, 4.ToString(), 200);
 
 
             if (chartTree.SelectedChartNode is ChartModel)
