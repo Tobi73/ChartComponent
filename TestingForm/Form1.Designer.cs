@@ -39,7 +39,7 @@
             this.customGroupBox1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.customGroupBox1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.customGroupBox1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.customGroupBox1.Location = new System.Drawing.Point(252, 143);
+            this.customGroupBox1.Location = new System.Drawing.Point(370, 114);
             this.customGroupBox1.Name = "customGroupBox1";
             this.customGroupBox1.RowCount = 2;
             this.customGroupBox1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 80.4878F));

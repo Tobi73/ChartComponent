@@ -67,7 +67,15 @@ namespace MainComponent.controller
                             xlDataSheet.Cells[3, j] = point.Key;
                             k++;
                         }
-                        if ((xlDataSheet.Cells[3, j] as Excel.Range).Value == point.Key)
+                        ///.Value.ToString()
+                        var a = xlDataSheet.Cells[3, j];
+                        var b = a as Excel.Range;
+                        var c = b.Value;
+                        var c2 = b.Value2;
+                        var d = c.ToString();
+                        var e = d.Equals(point.Key);
+
+                        if (((xlDataSheet.Cells[3, j] as Excel.Range).Value.ToString()).Equals(point.Key))
                         {
                             xlDataSheet.Cells[i, j] = point.Value;
                             break;
