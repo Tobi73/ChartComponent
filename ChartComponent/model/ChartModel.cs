@@ -4,13 +4,6 @@ using System.Windows.Forms.DataVisualization.Charting;
 
 namespace ChartComponent
 {
-    
-    public enum ChartType
-    {
-        Column = 1,
-        Pie = 2
-    }
-
     [DataContract]
     public class Serie
     {
@@ -56,7 +49,6 @@ namespace ChartComponent
     public class ChartModel : RootModel
     {
         private List<Serie> seriesList;
-        private SeriesChartType chartType;
         private string nameX;
         private string nameY;
 
@@ -116,17 +108,5 @@ namespace ChartComponent
             seriesList.Add(serie);
         }
 
-        [IgnoreDataMember]
-        public SeriesChartType ChartType
-        {
-            get
-            {
-                return chartType;
-            }
-            set
-            {
-                chartType = value;
-            }
-        }
     }
 }

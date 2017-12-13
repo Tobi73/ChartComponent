@@ -25,6 +25,20 @@ namespace ChartComponent
             base.OnPaint(e);
         }
 
+        private SeriesChartType typeOfChart;
+
+        public SeriesChartType TypeOfChart
+        {
+            set
+            {
+                typeOfChart = value;
+            }
+            get
+            {
+                return typeOfChart;
+            }
+        }
+
         public void Draw(ChartModel chartModel)
         {
             if(Series.Count > 0)
@@ -36,7 +50,7 @@ namespace ChartComponent
             {
                 var newSerie = new Series();
                 newSerie.Name = serie.SerieName;
-                newSerie.ChartType = SeriesChartType.Column;
+                newSerie.ChartType = typeOfChart;
                 foreach (var value in serie.PointsList)
                 {
                     var p = new DataPoint();

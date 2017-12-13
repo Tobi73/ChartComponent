@@ -10,6 +10,7 @@ using MainComponent.view.form;
 using ChartComponent;
 using MainComponent.controller;
 using TreeComponent;
+using System.Windows.Forms.DataVisualization.Charting;
 
 namespace MainComponent
 {
@@ -32,6 +33,8 @@ namespace MainComponent
         private ChartModel thisChart;
         private RootModel tree;
 
+        
+
         [Category("New"), Description("Can user's work with table?")]
         public bool UseTable
         {
@@ -40,6 +43,19 @@ namespace MainComponent
                 Invalidate();
             }
             get { return useTable; }
+        }
+
+        [Category("New"), Description("Select type of chart")]
+        public SeriesChartType TypeOfChart
+        {
+            set
+            {
+                customChart.TypeOfChart = value;
+            }
+            get
+            {
+                return customChart.TypeOfChart;
+            }
         }
 
         private void test()
@@ -56,9 +72,14 @@ namespace MainComponent
 
             base.OnPaint(e);
             
-            if (!useTable)
+            if (useTable)
+            {
+                btnTable.Visible = true;
+            }
+            else
             {
                 btnTable.Visible = false;
+
             }
 
         }
@@ -138,20 +159,20 @@ namespace MainComponent
             thisChart.AddSerie("мотоциклист");
             thisChart.NameX = "T(час)";
             thisChart.NameY = "S(км)";
-            thisChart.AddValue(0, 1, 5);
-            thisChart.AddValue(0, 2, 10);
+            //thisChart.AddValue(0, 1, 5);
+            //thisChart.AddValue(0, 2, 10);
             thisChart.AddValue(0, 3, 15);
             thisChart.AddValue(0, 4, 20);
 
             thisChart.AddValue(1, 1, 20);
             thisChart.AddValue(1, 2, 40);
-            thisChart.AddValue(1, 3, 60);
+            //thisChart.AddValue(1, 3, 60);
             thisChart.AddValue(1, 4, 80);
 
             thisChart.AddValue(2, 1, 50);
             thisChart.AddValue(2, 2, 100);
             thisChart.AddValue(2, 3, 150);
-            thisChart.AddValue(2, 4, 200);
+            //thisChart.AddValue(2, 4, 200);
 
 
             if (chartTree.SelectedChartNode is ChartModel)

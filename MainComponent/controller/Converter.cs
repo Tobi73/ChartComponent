@@ -51,7 +51,7 @@ namespace MainComponent.controller
             xlDataSheet.Cells[2, 2] = chart.NameY;
 
 
-            int j = 2;
+            int k = 1;
             int i = 4;
 
             ///записть данных в таблицу
@@ -62,14 +62,13 @@ namespace MainComponent.controller
 
                 foreach (var point in s.PointsList)
                 {
-                    for (j = 2; ; j++)
+                    for (int j = 2; ; j++)
                     {
-                        //var value = xlDataSheet.Cells[3, j] as Excel.Range;
-                        //var t = (xlDataSheet.Cells[3, j] as Excel.Range);
-                        //var f = value?.Value2 == null;
+
                         if ((xlDataSheet.Cells[3, j] as Excel.Range)?.Value2 == null)
                         {
                             xlDataSheet.Cells[3, j] = point.Key;
+                            k++;
                         }
 
                         if ((xlDataSheet.Cells[3, j] as Excel.Range).Value == point.Key)
@@ -89,8 +88,7 @@ namespace MainComponent.controller
             Excel.ChartObject myChart = xlCharts.Add(10, 80, 300, 250);
             Excel.Chart chartPage = myChart.Chart;
 
-            //chartRange = xlDataSheet.get_Range("A3", "B" + (j - 1));
-            chartRange = xlDataSheet.get_Range(xlDataSheet.Cells[3, 1] as Excel.Range, xlDataSheet.Cells[i - 1, j] as Excel.Range);
+            chartRange = xlDataSheet.get_Range(xlDataSheet.Cells[3, 1] as Excel.Range, xlDataSheet.Cells[i - 1, k] as Excel.Range);
 
 
             chartPage.SetSourceData(chartRange, misValue);
