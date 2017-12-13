@@ -11,11 +11,11 @@ namespace ChartComponent
 
         public Serie(string name)
         {
-            pointsList = new Dictionary<double, double>();
+            pointsList = new Dictionary<string, double>();
             serieName = name;
         }
 
-        private Dictionary<double, double> pointsList;
+        private Dictionary<string, double> pointsList;
         private string serieName;
 
         [DataMember]
@@ -32,7 +32,7 @@ namespace ChartComponent
         }
 
         [DataMember]
-        public Dictionary<double, double> PointsList
+        public Dictionary<string, double> PointsList
         {
             get
             {
@@ -92,7 +92,7 @@ namespace ChartComponent
             seriesList = new List<Serie>();
         }
 
-        public void AddValue(int indexSerie, double xValue, double yValue)
+        public void AddValue(int indexSerie, string xValue, double yValue)
         {
             if (indexSerie < seriesList.Count)
             {

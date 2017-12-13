@@ -29,12 +29,13 @@ namespace MainComponent.view.form
 
         private void FormTable_Load(object sender, EventArgs e)
         {
-            List<double> xList = new List<double>();
+            List<string> xList = new List<string>();
 
             dataGridView1.Columns.Add("c0", "");
 
 
             int j = 1;
+            string[] row;
             foreach (Serie s in chart.SeriesList)
             {
                 foreach (var point in s.PointsList)
@@ -46,16 +47,23 @@ namespace MainComponent.view.form
                     }
                 }
             }
+            xList.Insert(0, "");
+            dataGridView1.Rows.Add(xList.ToArray());
+            xList.RemoveAt(0);
 
-
-
+            bool isFirstRow = true;
+            string[] firtsRow = new string[xList.Count + 1];
             foreach (Serie s in chart.SeriesList)
             {
-                string[] row = new string[xList.Count + 1];
+                row = new string[xList.Count + 1];
                 row[0] = s.SerieName;
                 j = 1;
                 foreach (var x in xList)
                 {
+                    if (isFirstRow)
+                    {
+
+                    }
                     if (s.PointsList.ContainsKey(x))
                     {
                         row[j] = s.PointsList[x].ToString();
