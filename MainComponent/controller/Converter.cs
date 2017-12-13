@@ -67,9 +67,9 @@ namespace MainComponent.controller
                     {
                         xlDataSheet.Cells[i, 1] = s.SerieName;
                     }
-                    if (s.Y.ContainsKey(x))
+                    if (s.PointsList.ContainsKey(x))
                     {
-                        xlDataSheet.Cells[i, j] = s.Y[x];
+                        xlDataSheet.Cells[i, j] = s.PointsList[x];
 
                     }
                     i++;

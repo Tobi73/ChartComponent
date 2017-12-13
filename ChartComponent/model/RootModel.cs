@@ -9,6 +9,7 @@ using System.Windows.Forms;
 
 namespace ChartComponent
 {
+    [DataContract]
     public class RootModel : TreeNode
     {
 

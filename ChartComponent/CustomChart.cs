@@ -37,7 +37,7 @@ namespace ChartComponent
                 var newSerie = new Series();
                 newSerie.Name = serie.SerieName;
                 newSerie.ChartType = SeriesChartType.Column;
-                foreach (var value in serie.Y)
+                foreach (var value in serie.PointsList)
                 {
                     var p = new DataPoint();
                     p.SetValueXY(value.Key, value.Value);

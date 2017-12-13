@@ -153,7 +153,11 @@ namespace MainComponent
             thisChart.AddValue(2, 3, 150);
             thisChart.AddValue(2, 4, 200);
 
-            customChart.Draw(thisChart);
+
+            if (chartTree.SelectedChartNode is ChartModel)
+            {
+                customChart.Draw(thisChart);
+            }
         }
 
 

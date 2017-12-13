@@ -4,23 +4,25 @@ using System.Windows.Forms.DataVisualization.Charting;
 
 namespace ChartComponent
 {
+    
     public enum ChartType
     {
         Column = 1,
         Pie = 2
     }
 
+    [DataContract]
     public class Serie
     {
         public Serie() { }
 
         public Serie(string name)
         {
-            y = new Dictionary<double, double>();
+            pointsList = new Dictionary<double, double>();
             serieName = name;
         }
 
-        private Dictionary<double, double> y;
+        private Dictionary<double, double> pointsList;
         private string serieName;
 
         [DataMember]
@@ -37,26 +39,34 @@ namespace ChartComponent
         }
 
         [DataMember]
-        public Dictionary<double, double> Y
+        public Dictionary<double, double> PointsList
         {
             get
             {
-                return y;
+                return pointsList;
             }
             set
             {
-                y = value;
+                pointsList = value;
             }
         }
     }
 
+    [DataContract]
     public class ChartModel : RootModel
     {
         private List<Serie> seriesList;
         private SeriesChartType chartType;
         private string nameX;
         private string nameY;
-        private List<double> x = new List<double>();
+        private List<double> x;
+
+        [DataMember]
+        public List<double> X
+        {
+            get { return x; }
+            set { x = value; }
+        }
 
         [DataMember]
         public List<Serie> SeriesList
@@ -68,19 +78,6 @@ namespace ChartComponent
             set
             {
                 seriesList = value;
-            }
-        }
-
-        [DataMember]
-        public List<double> X
-        {
-            get
-            {
-                return x;
-            }
-            set
-            {
-                x = value;
             }
         }
 
@@ -114,13 +111,15 @@ namespace ChartComponent
             if (indexSerie < seriesList.Count)
             {
                 Serie s = seriesList[indexSerie];
-                if (!X.Contains(xValue))
+
+                if (!x.Contains(xValue))
                 {
                     x.Add(xValue);
                 }
-                s.Y[xValue] = yValue;
+                s.PointsList[xValue] = yValue;
             }
         }
+
 
         public void AddSerie(string name)
         {
@@ -128,7 +127,7 @@ namespace ChartComponent
             seriesList.Add(serie);
         }
 
-        [DataMember]
+        [IgnoreDataMember]
         public SeriesChartType ChartType
         {
             get
