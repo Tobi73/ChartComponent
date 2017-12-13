@@ -59,7 +59,7 @@ namespace ChartComponent
         private SeriesChartType chartType;
         private string nameX;
         private string nameY;
-        private List<double> x;
+        private List<double> x = new List<double>();
 
         [DataMember]
         public List<double> X
@@ -112,7 +112,7 @@ namespace ChartComponent
             {
                 Serie s = seriesList[indexSerie];
 
-                if (!x.Contains(xValue))
+                if (!X.Contains(xValue))
                 {
                     x.Add(xValue);
                 }
