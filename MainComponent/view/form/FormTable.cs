@@ -96,17 +96,18 @@ namespace MainComponent.view.form
         private void changeChart()
         {
             chart = new ChartModel(chart.ChartName);
-            for(int i = 1; i < dataGridView1.Rows.Count; i++)
+            for(int j = 1; j < dataGridView1.Rows.Count-1; j++)
             {
-                chart.AddSerie(dataGridView1[i, 0].ToString());
+                chart.AddSerie(dataGridView1[0, j].Value.ToString());
 
-                for(int j = 1; j < dataGridView1.Columns.Count; j++)
+                for(int i = 1; i < dataGridView1.Columns.Count; i++)
                 {
-                    if(dataGridView1[i, j] != null)
+                    if(dataGridView1[i, j].Value != null)
                     {
                         double y;
-                        double.TryParse(dataGridView1[i, j].ToString(),out y);
-                        chart.AddValue(i - 1, dataGridView1[0, j].ToString(), y);
+                        string s = dataGridView1[i, j].Value.ToString();
+                        double.TryParse(s,out y);
+                        chart.AddValue(j - 1, dataGridView1[i, 0].Value.ToString(), y);
                     }
                 }
             }
@@ -119,7 +120,7 @@ namespace MainComponent.view.form
 
         private void btnDeleteColumn_Click(object sender, EventArgs e)
         {
-            dataGridView1.Columns.RemoveAt(dataGridView1.ColumnCount-1);
+            dataGridView1.Columns.Remove(dataGridView1.SelectedCells[0].OwningColumn);
 
         }
     }

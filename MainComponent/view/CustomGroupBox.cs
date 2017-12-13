@@ -68,7 +68,6 @@ namespace MainComponent
 
         protected override void OnPaint(System.Windows.Forms.PaintEventArgs e) 
         {
-            test();
 
             base.OnPaint(e);
             
@@ -86,19 +85,23 @@ namespace MainComponent
 
         private void btnTable_Click(object sender, EventArgs e)
         {
-            testAddData();
             FormTable ft = new FormTable(thisChart);
             ft.ShowDialog();
             if (ft.save)
             {
                 thisChart = ft.Chart;
             }
-            
+
+            if (chartTree.SelectedChartNode is ChartModel)
+            {
+                customChart.Draw(thisChart);
+            }
+
         }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-
+            testAddData();
             if (saveFileDialog1.ShowDialog() == DialogResult.OK)
             {
                 String mes = Serializer.Serialize(tree, saveFileDialog1.FileName);
