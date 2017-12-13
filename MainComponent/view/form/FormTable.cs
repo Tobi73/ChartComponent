@@ -40,6 +40,7 @@ namespace MainComponent.view.form
         private void btnSave_Click(object sender, EventArgs e)
         {
             save = true;
+            changeChart();
             Close();
         }
 
