@@ -26,6 +26,11 @@ namespace TreeComponent
             InitializeComponent();
         }
 
+        public RootModel RootNode
+        {
+            get { return rootNode as RootModel; }
+        }
+        
         [Category("Chart Selection"), Description("Event on chart node selection")]
         public event EventHandler OnChartNodeSelect
         {
