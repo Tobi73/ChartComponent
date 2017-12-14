@@ -162,6 +162,7 @@ namespace MainComponent
         /// </summary>
         private void testAddData()
         {
+            thisChart.SeriesList.Clear();
             thisChart.AddSerie("пешеход");
             thisChart.AddSerie("велосипедист");
             thisChart.AddSerie("мотоциклист");

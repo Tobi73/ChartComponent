@@ -51,7 +51,7 @@ namespace ChartComponent
         private List<Serie> seriesList;
         private string nameX;
         private string nameY;
-
+        public List<string> AxisX;
 
 
         [DataMember]
@@ -86,11 +86,13 @@ namespace ChartComponent
             ChartName = chartName;
             Text = chartName;
             seriesList = new List<Serie>();
+            AxisX = new List<string>();
         }
 
         public ChartModel() : base()
         {
             seriesList = new List<Serie>();
+            AxisX = new List<string>();
         }
 
         public void AddValue(int indexSerie, string xValue, double yValue)
@@ -99,9 +101,12 @@ namespace ChartComponent
             {
                 Serie s = seriesList[indexSerie];
                 s.PointsList[xValue] = yValue;
+                if (!AxisX.Contains(xValue))
+                {
+                    AxisX.Add(xValue);
+                }
             }
         }
-
 
         public void AddSerie(string name)
         {

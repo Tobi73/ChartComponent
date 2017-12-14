@@ -45,19 +45,30 @@ namespace ChartComponent
             {
                 Series.Clear();
             }
-
+            
             foreach (var serie in chartModel.SeriesList)
             {
                 var newSerie = new Series();
                 newSerie.Name = serie.SerieName;
                 newSerie.ChartType = typeOfChart;
-                foreach (var value in serie.PointsList)
+                foreach (var x in chartModel.AxisX)
                 {
                     var p = new DataPoint();
-                    p.SetValueXY(value.Key, value.Value);
-                    p.ToolTip = $"x - {value.Key}\ny - {value.Value}";
+                    double yValue;
+                    if(serie.PointsList.TryGetValue(x, out yValue))
+                    {
+                        p.SetValueXY(x, yValue);
+                        p.ToolTip = $"x - {x}\ny - {yValue}";
+                    }
                     newSerie.Points.Add(p);
                 }
+                //foreach (var value in serie.PointsList)
+                //{
+                //    var p = new DataPoint();
+                //    p.SetValueXY(value.Key, value.Value);
+                //    p.ToolTip = $"x - {value.Key}\ny - {value.Value}";
+                //    newSerie.Points.Add(p);
+                //}
                 Series.Add(newSerie);
             }
             ChartAreas[0].AxisX.Minimum = 0;
