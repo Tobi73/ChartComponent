@@ -1,4 +1,5 @@
-﻿using System.Windows.Forms;
+﻿using System;
+using System.Windows.Forms;
 
 namespace MainComponent
 {
@@ -55,7 +56,8 @@ namespace MainComponent
             this.chartTree.Size = new System.Drawing.Size(242, 172);
             this.chartTree.TabIndex = 8;
             this.chartTree.Text = "chartTree";
-            this.chartTree.tree.NodeMouseClick += new TreeNodeMouseClickEventHandler(takeChartFromTree);
+            // this.chartTree.tree.NodeMouseClick += new TreeNodeMouseClickEventHandler(takeChartFromTree);
+            this.chartTree.OnChartNodeSelect += new EventHandler(takeChartFromTree);
             // 
             // customChart
             // 
