@@ -44,6 +44,12 @@
   <ItemGroup>
     <Compile Include="ChartAddEventArgs.cs" />
     <Compile Include="ChartEditEventArgs.cs" />
+    <Compile Include="ChartEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChartEditForm.Designer.cs">
+      <DependentUpon>ChartEditForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="ChartTree.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -57,6 +63,11 @@
       <Project>{e5d6011e-b123-4974-9915-a7e505761eb1}</Project>
       <Name>ChartComponent</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ChartEditForm.resx">
+      <DependentUpon>ChartEditForm.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

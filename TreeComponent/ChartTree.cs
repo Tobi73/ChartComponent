@@ -64,7 +64,7 @@ namespace TreeComponent
             }
         }
 
-        public event ChartTreeEditEventHandler OnChartRemove
+        public event ChartTreeEditEventHandler OnChartEdit
         {
             add
             {
@@ -106,30 +106,6 @@ namespace TreeComponent
             }
         }
 
-        private void AddButtonClicked(object sender, EventArgs e)
-        {
-            if (tree.SelectedNode != null)
-            {
-                tree.SelectedNode.Nodes.Add(new ChartModel
-                {
-                    Text = chartNameTextBox.Text,
-                    ChartName = chartNameTextBox.Text
-                });
-            }
-        }
-
-        private void ChartNodeNameChanged(object sender, NodeLabelEditEventArgs e)
-        {
-            if (e.Node is ChartModel)
-            {
-                (e.Node as ChartModel).ChartName = e.Label;
-                e.CancelEdit = false;
-            } else
-            {
-                e.CancelEdit = true;
-            }
-        }
-
         private void OnKeyUp(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Delete)
@@ -155,10 +131,9 @@ namespace TreeComponent
                 }
                 else
                 {
-                    // Default chartNode handler
-                    chartNode = null;
+                    chartNode = OpenChartAddForm();
                 }
-                if (chartNode == null) throw new Exception("New chart model cannot be null");
+                if (chartNode == null) return;
                 chartNode.ContextMenuStrip = chartNodeMenu;
                 tree.SelectedNode.Nodes.Add(chartNode);
             }
@@ -174,11 +149,22 @@ namespace TreeComponent
                 }
                 else
                 {
-                    // Default chartNode handler
+                    OpenChartEditForm();
                 }
             }
         }
 
+        private void OpenChartEditForm()
+        {
+            var editForm = new ChartEditForm(tree.SelectedNode as ChartModel);
+            editForm.ShowDialog();
+        }
 
+        private ChartModel OpenChartAddForm()
+        {
+            var addForm = new ChartEditForm();
+            addForm.ShowDialog();
+            return addForm.ChartModel;
+        }
     }
 }

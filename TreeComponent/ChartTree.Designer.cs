@@ -9,14 +9,11 @@ namespace TreeComponent
         public TreeView tree;
         private TreeNode rootNode;
         private TableLayoutPanel mainPanel;
-        private TableLayoutPanel controlPanel;
-        private Button addButton;
-        private Label chartNameLabel;
-        private TextBox chartNameTextBox;
         private ContextMenuStrip chartNodeMenu;
         private ContextMenuStrip rootNodeMenu;
-        private ToolStripMenuItem editMenuItem;
         private ToolStripMenuItem addMenuItem;
+        private ToolStripMenuItem editMenuItem;
+        private ToolStripMenuItem rootAddMenuItem;
 
 
         /// <summary>
@@ -47,22 +44,15 @@ namespace TreeComponent
         {
             components = new System.ComponentModel.Container();
             mainPanel = new TableLayoutPanel();
-            controlPanel = new TableLayoutPanel();
             tree = new TreeView();
             rootNode = new RootModel();
-            addButton = new Button();
-            chartNameLabel = new Label();
             chartNodeMenu = new ContextMenuStrip();
             rootNodeMenu = new ContextMenuStrip();
             editMenuItem = new ToolStripMenuItem();
             addMenuItem = new ToolStripMenuItem();
-
-            chartNameTextBox = new TextBox();
-            chartNameTextBox.Multiline = true;
-            chartNameTextBox.Dock = DockStyle.Fill;
+            rootAddMenuItem = new ToolStripMenuItem();
 
             mainPanel.SuspendLayout();
-            controlPanel.SuspendLayout();
             chartNodeMenu.SuspendLayout();
             SuspendLayout();
             // 
@@ -72,12 +62,10 @@ namespace TreeComponent
             mainPanel.ColumnCount = 1;
             mainPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
             mainPanel.Controls.Add(this.tree, 0, 0);
-            mainPanel.Controls.Add(this.controlPanel, 0, 1);
             mainPanel.Location = new System.Drawing.Point(87, 38);
             mainPanel.Name = "mainPanel";
-            mainPanel.RowCount = 2;
+            mainPanel.RowCount = 1;
             mainPanel.RowStyles.Add(new RowStyle(SizeType.Percent, 41.01123F));
-            mainPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 41F));
             mainPanel.Size = new System.Drawing.Size(422, 243);
             mainPanel.TabIndex = 0;
             // 
@@ -94,56 +82,17 @@ namespace TreeComponent
             rootNode.ContextMenuStrip = rootNodeMenu;
             tree.Nodes.Add(rootNode);
             tree.NodeMouseClick += new TreeNodeMouseClickEventHandler(NodeClickedEvent);
-            tree.AfterLabelEdit += new NodeLabelEditEventHandler(ChartNodeNameChanged);
             tree.KeyUp += new KeyEventHandler(OnKeyUp);
-            // 
-            // controlPanel
-            // 
-            controlPanel.ColumnCount = 3;
-            controlPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 30F));
-            controlPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 20F));
-            controlPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-            controlPanel.Controls.Add(addButton, 0, 0);
-            controlPanel.Controls.Add(chartNameLabel, 1, 0);
-            controlPanel.Controls.Add(chartNameTextBox, 2, 0);
-            controlPanel.Dock = DockStyle.Fill;
-            controlPanel.Location = new System.Drawing.Point(3, 205);
-            controlPanel.Name = "controlPanel";
-            controlPanel.RowCount = 1;
-            controlPanel.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
-            controlPanel.Size = new System.Drawing.Size(416, 35);
-            controlPanel.TabIndex = 1;
-            // 
-            // addButton
-            // 
-            addButton.Dock = DockStyle.Fill;
-            addButton.Location = new System.Drawing.Point(3, 3);
-            addButton.Name = "addButton";
-            addButton.Size = new System.Drawing.Size(73, 29);
-            addButton.TabIndex = 0;
-            addButton.Text = "Добавить";
-            addButton.UseVisualStyleBackColor = true;
-            addButton.Click += new System.EventHandler(AddButtonClicked);
-            // 
-            // chartNameLabel
-            // 
-            chartNameLabel.Dock = DockStyle.Fill;
-            chartNameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            chartNameLabel.Location = new System.Drawing.Point(82, 3);
-            chartNameLabel.Name = "chartNameLabel";
-            chartNameLabel.Size = new System.Drawing.Size(67, 29);
-            chartNameLabel.TabIndex = 1;
-            chartNameLabel.Text = "Название:";
             // 
             // chartNodeMenu
             // 
-            chartNodeMenu.Items.AddRange(new ToolStripItem[] { editMenuItem, addMenuItem});
+            chartNodeMenu.Items.AddRange(new ToolStripItem[] { editMenuItem, addMenuItem });
             chartNodeMenu.Name = "chartNodeMenu";
             chartNodeMenu.Size = new System.Drawing.Size(155, 70);
             // 
             // rootNodeMenu
             // 
-            rootNodeMenu.Items.AddRange(new ToolStripItem[] { addMenuItem });
+            rootNodeMenu.Items.AddRange(new ToolStripItem[] { rootAddMenuItem });
             rootNodeMenu.Name = "rootNodeMenu";
             rootNodeMenu.Size = new System.Drawing.Size(155, 70);
             // 
@@ -154,12 +103,19 @@ namespace TreeComponent
             this.editMenuItem.Text = "Редактировать";
             this.editMenuItem.Click += new System.EventHandler(EditChartButtonClick);
             // 
+            // rootAddMenuItem
+            // 
+            this.rootAddMenuItem.Name = "rootAddMenuItem";
+            this.rootAddMenuItem.Size = new System.Drawing.Size(154, 22);
+            this.rootAddMenuItem.Text = "Добавить";
+            this.rootAddMenuItem.Click += new System.EventHandler(AddChartButtonClick);
+            // 
             // addMenuItem
             // 
-            this.addMenuItem.Name = "addMenuItem";
-            this.addMenuItem.Size = new System.Drawing.Size(154, 22);
-            this.addMenuItem.Text = "Добавить";
-            this.addMenuItem.Click += new System.EventHandler(AddChartButtonClick);
+            addMenuItem.Name = "addMenuItem";
+            addMenuItem.Size = new System.Drawing.Size(154, 22);
+            addMenuItem.Text = "Добавить";
+            addMenuItem.Click += new System.EventHandler(AddChartButtonClick);
             // 
             // component
             // 
@@ -168,7 +124,6 @@ namespace TreeComponent
             Name = "chartTreeView";
             Text = "chartTreeView";
             mainPanel.ResumeLayout(false);
-            controlPanel.ResumeLayout(false);
             chartNodeMenu.ResumeLayout(false);
             ResumeLayout(false);
         }
