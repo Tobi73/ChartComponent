@@ -13,6 +13,10 @@ namespace TreeComponent
         private Button addButton;
         private Label chartNameLabel;
         private TextBox chartNameTextBox;
+        private ContextMenuStrip chartNodeMenu;
+        private ContextMenuStrip rootNodeMenu;
+        private ToolStripMenuItem editMenuItem;
+        private ToolStripMenuItem addMenuItem;
 
 
         /// <summary>
@@ -48,6 +52,10 @@ namespace TreeComponent
             rootNode = new RootModel();
             addButton = new Button();
             chartNameLabel = new Label();
+            chartNodeMenu = new ContextMenuStrip();
+            rootNodeMenu = new ContextMenuStrip();
+            editMenuItem = new ToolStripMenuItem();
+            addMenuItem = new ToolStripMenuItem();
 
             chartNameTextBox = new TextBox();
             chartNameTextBox.Multiline = true;
@@ -55,6 +63,7 @@ namespace TreeComponent
 
             mainPanel.SuspendLayout();
             controlPanel.SuspendLayout();
+            chartNodeMenu.SuspendLayout();
             SuspendLayout();
             // 
             // mainPanel
@@ -82,6 +91,7 @@ namespace TreeComponent
             tree.LabelEdit = true;
             rootNode.Name = "root";
             rootNode.Text = "Chart Tree";
+            rootNode.ContextMenuStrip = rootNodeMenu;
             tree.Nodes.Add(rootNode);
             tree.NodeMouseClick += new TreeNodeMouseClickEventHandler(NodeClickedEvent);
             tree.AfterLabelEdit += new NodeLabelEditEventHandler(ChartNodeNameChanged);
@@ -125,6 +135,32 @@ namespace TreeComponent
             chartNameLabel.TabIndex = 1;
             chartNameLabel.Text = "Название:";
             // 
+            // chartNodeMenu
+            // 
+            chartNodeMenu.Items.AddRange(new ToolStripItem[] { editMenuItem, addMenuItem});
+            chartNodeMenu.Name = "chartNodeMenu";
+            chartNodeMenu.Size = new System.Drawing.Size(155, 70);
+            // 
+            // rootNodeMenu
+            // 
+            rootNodeMenu.Items.AddRange(new ToolStripItem[] { addMenuItem });
+            rootNodeMenu.Name = "rootNodeMenu";
+            rootNodeMenu.Size = new System.Drawing.Size(155, 70);
+            // 
+            // editMenuItem
+            // 
+            this.editMenuItem.Name = "editMenuItem";
+            this.editMenuItem.Size = new System.Drawing.Size(154, 22);
+            this.editMenuItem.Text = "Редактировать";
+            this.editMenuItem.Click += new System.EventHandler(EditChartButtonClick);
+            // 
+            // addMenuItem
+            // 
+            this.addMenuItem.Name = "addMenuItem";
+            this.addMenuItem.Size = new System.Drawing.Size(154, 22);
+            this.addMenuItem.Text = "Добавить";
+            this.addMenuItem.Click += new System.EventHandler(AddChartButtonClick);
+            // 
             // component
             // 
             ClientSize = new System.Drawing.Size(600, 310);
@@ -133,6 +169,7 @@ namespace TreeComponent
             Text = "chartTreeView";
             mainPanel.ResumeLayout(false);
             controlPanel.ResumeLayout(false);
+            chartNodeMenu.ResumeLayout(false);
             ResumeLayout(false);
         }
 

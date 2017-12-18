@@ -12,7 +12,11 @@ namespace TreeComponent
 {
     public partial class ChartTree : Control
     {
-        private event EventHandler onChartNodeSelect;
+        public delegate void ChartTreeEditEventHandler(object sender, ChartEditEventArgs a);
+        public delegate ChartModel ChartTreeAddEventHandler(object sender, ChartAddEventArgs a);
+        event EventHandler onChartNodeSelect;
+        event ChartTreeAddEventHandler onChartAdd;
+        event ChartTreeEditEventHandler onChartEdit;
 
         public ChartTree()
         {
@@ -30,8 +34,12 @@ namespace TreeComponent
         {
             get { return rootNode as RootModel; }
         }
+
+        public TreeView ChartTreeView
+        {
+            get { return tree; }
+        }
         
-        [Category("Chart Selection"), Description("Event on chart node selection")]
         public event EventHandler OnChartNodeSelect
         {
             add
@@ -41,6 +49,30 @@ namespace TreeComponent
             remove
             {
                 onChartNodeSelect -= value;
+            }
+        }
+
+        public event ChartTreeAddEventHandler OnChartAdd
+        {
+            add
+            {
+                onChartAdd += value;
+            }
+            remove
+            {
+                onChartAdd -= value;
+            }
+        }
+
+        public event ChartTreeEditEventHandler OnChartRemove
+        {
+            add
+            {
+                onChartEdit += value;
+            }
+            remove
+            {
+                onChartEdit -= value;
             }
         }
 
@@ -108,6 +140,41 @@ namespace TreeComponent
                     tree.SelectedNode.Remove();
                     tree.SelectedNode = parent;
                     tree.Invalidate();
+                }
+            }
+        }
+
+        private void AddChartButtonClick(object sender, EventArgs e)
+        {
+            if (tree.SelectedNode != null)
+            {
+                ChartModel chartNode;
+                if (onChartAdd != null)
+                {
+                    chartNode = onChartAdd(this, new ChartAddEventArgs());
+                }
+                else
+                {
+                    // Default chartNode handler
+                    chartNode = null;
+                }
+                if (chartNode == null) throw new Exception("New chart model cannot be null");
+                chartNode.ContextMenuStrip = chartNodeMenu;
+                tree.SelectedNode.Nodes.Add(chartNode);
+            }
+        }
+
+        private void EditChartButtonClick(object sender, EventArgs e)
+        {
+            if (tree.SelectedNode != null)
+            {
+                if (onChartAdd != null)
+                {
+                    onChartEdit(this, new ChartEditEventArgs(tree.SelectedNode as ChartModel));
+                }
+                else
+                {
+                    // Default chartNode handler
                 }
             }
         }
