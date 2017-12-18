@@ -76,7 +76,6 @@ namespace TreeComponent
             tree.Name = "tree";
             tree.Size = new System.Drawing.Size(389, 182);
             tree.TabIndex = 0;
-            tree.LabelEdit = true;
             rootNode.Name = "root";
             rootNode.Text = "Chart Tree";
             rootNode.ContextMenuStrip = rootNodeMenu;
