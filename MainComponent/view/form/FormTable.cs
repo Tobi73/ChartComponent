@@ -98,7 +98,7 @@ namespace MainComponent.view.form
             chart = new ChartModel(chart.ChartName);
             for(int j = 1; j < dataGridView1.Rows.Count-1; j++)
             {
-                chart.AddSerie(dataGridView1[0, j].Value.ToString());
+                chart.AddSerie(new Serie(dataGridView1[0, j].Value.ToString()));
 
                 for(int i = 1; i < dataGridView1.Columns.Count; i++)
                 {

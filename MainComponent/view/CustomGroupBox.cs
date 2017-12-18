@@ -11,6 +11,7 @@ using ChartComponent;
 using MainComponent.controller;
 using TreeComponent;
 using System.Windows.Forms.DataVisualization.Charting;
+using System.Drawing;
 
 namespace MainComponent
 {
@@ -102,9 +103,9 @@ namespace MainComponent
         public void testAddData()
         {
             thisChart.SeriesList.Clear();
-            thisChart.AddSerie("пешеход");
-            thisChart.AddSerie("велосипедист");
-            thisChart.AddSerie("мотоциклист");
+            thisChart.AddSerie(new Serie("пешеход"));
+            thisChart.AddSerie(new Serie("велосипедист"));
+            thisChart.AddSerie(new Serie("мотоциклист", Color.Red));
             thisChart.NameX = "T(час)";
             thisChart.NameY = "S(км)";
             thisChart.AddValue(0, 1.ToString(), 5);

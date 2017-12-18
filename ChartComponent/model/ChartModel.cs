@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Drawing;
 using System.Runtime.Serialization;
 using System.Windows.Forms.DataVisualization.Charting;
 
@@ -9,12 +11,22 @@ namespace ChartComponent
     {
         public Serie() { }
 
-        public Serie(string name)
+        public Serie(string name, Color c)
         {
             pointsList = new Dictionary<string, double>();
             serieName = name;
+            color = c;
         }
 
+        public Serie(string name)
+        {
+            Random r = new Random(255);
+            pointsList = new Dictionary<string, double>();
+            serieName = name;
+            color = Color.FromArgb(r.Next());
+        }
+
+        private Color color;
         private Dictionary<string, double> pointsList;
         private string serieName;
 
@@ -29,6 +41,12 @@ namespace ChartComponent
             {
                 serieName = value;
             }
+        }
+
+        public Color Color
+        {
+            get { return color; }
+            set { color = value; }
         }
 
         [DataMember]
@@ -108,10 +126,9 @@ namespace ChartComponent
             }
         }
 
-        public void AddSerie(string name)
+        public void AddSerie(Serie s)
         {
-            Serie serie = new Serie(name);
-            seriesList.Add(serie);
+            seriesList.Add(s);
         }
 
     }
