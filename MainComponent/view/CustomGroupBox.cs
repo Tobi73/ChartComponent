@@ -69,13 +69,24 @@ namespace MainComponent
         /// <param name="e"></param>
         public void takeChartFromTree(object sender, EventArgs e)
         {
+            takeTree();
+            takeChartFromTreeMeth();
+
+        }
+
+        public void takeTree()
+        {
             tree = chartTree.RootNode;
-            if(chartTree.SelectedChartNode is ChartModel)
+
+        }
+
+        public void takeChartFromTreeMeth()
+        {
+            if (chartTree.SelectedChartNode is ChartModel)
             {
                 thisChart = chartTree.SelectedChartNode as ChartModel;
                 customChart.Draw(thisChart);
             }
-
         }
 
         /// <summary>
