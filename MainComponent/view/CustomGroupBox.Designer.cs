@@ -47,12 +47,12 @@ namespace MainComponent
             // 
             // chartTree
             // 
-            this.SetColumnSpan(this.chartTree, 2);
+            this.SetColumnSpan(this.chartTree, 1);
             this.chartTree.Location = new System.Drawing.Point(3, 3);
             this.chartTree.Name = "chartTree";
             this.chartTree.Dock = System.Windows.Forms.DockStyle.Fill;
             this.chartTree.RootName = "Chart Tree";
-            this.chartTree.Size = new System.Drawing.Size(242, 134);
+            this.chartTree.Size = new System.Drawing.Size(242, 172);
             this.chartTree.TabIndex = 8;
             this.chartTree.Text = "chartTree";
             this.chartTree.tree.NodeMouseClick += new TreeNodeMouseClickEventHandler(takeChartFromTree);
@@ -64,7 +64,7 @@ namespace MainComponent
             | System.Windows.Forms.AnchorStyles.Right)));
             chartArea2.Name = "ChartArea1";
             this.customChart.ChartAreas.Add(chartArea2);
-            this.SetColumnSpan(this.customChart, 2);
+            this.SetColumnSpan(this.customChart, 1);
             legend2.Name = "Legend1";
             this.customChart.Legends.Add(legend2);
             this.customChart.Location = new System.Drawing.Point(251, 3);
@@ -73,24 +73,21 @@ namespace MainComponent
             series2.Legend = "Legend1";
             series2.Name = "Series1";
             this.customChart.Series.Add(series2);
-            this.customChart.Size = new System.Drawing.Size(245, 134);
+            this.customChart.Size = new System.Drawing.Size(245, 172);
             this.customChart.TabIndex = 9;
             this.customChart.Text = "customChart";
             // 
             // CustomGroupBox
             // 
-            this.ColumnCount = 4;
-            this.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.ColumnCount = 2;
+            this.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.Controls.Add(this.chartTree, 0, 0);
-            this.Controls.Add(this.customChart, 2, 0);
+            this.Controls.Add(this.customChart, 1, 0);
             this.Location = new System.Drawing.Point(66, 60);
-            this.RowCount = 2;
-            this.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 80.4878F));
-            this.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 19.5122F));
-            this.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.RowCount = 1;
+            this.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+
             this.Size = new System.Drawing.Size(499, 174);
             this.TabIndex = 8;
             ((System.ComponentModel.ISupportInitialize)(this.customChart)).EndInit();

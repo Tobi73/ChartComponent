@@ -185,7 +185,6 @@
             this.customGroupBox1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.customGroupBox1.Size = new System.Drawing.Size(607, 202);
             this.customGroupBox1.TabIndex = 8;
-            this.customGroupBox1.UseTable = true;
             // 
             // AndreyFormYoba
             // 
