@@ -28,34 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.customGroupBox1 = new MainComponent.CustomGroupBox(this.components);
             this.SuspendLayout();
-            // 
-            // customGroupBox1
-            // 
-            this.customGroupBox1.ColumnCount = 4;
-            this.customGroupBox1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.customGroupBox1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.customGroupBox1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.customGroupBox1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.customGroupBox1.Location = new System.Drawing.Point(63, 35);
-            this.customGroupBox1.Name = "customGroupBox1";
-            this.customGroupBox1.RowCount = 2;
-            this.customGroupBox1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 80.4878F));
-            this.customGroupBox1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 19.5122F));
-            this.customGroupBox1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.customGroupBox1.Size = new System.Drawing.Size(499, 174);
-            this.customGroupBox1.TabIndex = 8;
-            this.customGroupBox1.TypeOfChart = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Point;
-            this.customGroupBox1.UseTable = true;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(997, 586);
-            this.Controls.Add(this.customGroupBox1);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -64,8 +43,6 @@
         }
 
         #endregion
-
-        private MainComponent.CustomGroupBox customGroupBox1;
     }
 }
 

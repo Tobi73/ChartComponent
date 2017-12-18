@@ -29,21 +29,10 @@ namespace MainComponent
             InitializeComponent();
         }
 
-        private bool useTable = true;
         private ChartModel thisChart;
         private RootModel tree;
 
-        
 
-        [Category("New"), Description("Can user's work with table?")]
-        public bool UseTable
-        {
-            set {
-                useTable = value;
-                Invalidate();
-            }
-            get { return useTable; }
-        }
 
         [Category("New"), Description("Select type of chart")]
         public SeriesChartType TypeOfChart
@@ -70,75 +59,7 @@ namespace MainComponent
         {
 
             base.OnPaint(e);
-            
-            if (useTable)
-            {
-                btnTable.Visible = true;
-            }
-            else
-            {
-                btnTable.Visible = false;
 
-            }
-
-        }
-
-        private void btnTable_Click(object sender, EventArgs e)
-        {
-            FormTable ft = new FormTable(thisChart);
-            ft.ShowDialog();
-            if (ft.save)
-            {
-                thisChart = ft.Chart;
-            }
-
-            if (chartTree.SelectedChartNode is ChartModel)
-            {
-                customChart.Draw(thisChart);
-            }
-
-        }
-
-        private void btnSave_Click(object sender, EventArgs e)
-        {
-            testAddData();
-            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
-            {
-                String mes = Serializer.Serialize(tree, saveFileDialog1.FileName);
-                MessageBox.Show(mes);
-            }
-
-        }
-
-        private void btnLoad_Click(object sender, EventArgs e)
-        {
-            if (openFileDialog1.ShowDialog() == DialogResult.OK)
-            {
-                tree = new RootModel();
-                tree = Serializer.Deserialize(openFileDialog1.FileName);
-                if(tree.Children.Count == 0)
-                {
-                    MessageBox.Show("не удалось загрузить дерево");
-                }
-            }
-        }
-
-        private void btnConvert_Click(object sender, EventArgs e)
-        {
-            Converter conv;
-            saveFileDialog1.Filter = "Excel Files|*.xls;*.xlsx;*.xlsm";
-
-            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
-            {
-                conv = new Converter(saveFileDialog1.FileName, thisChart);
-
-                conv.buildTableExcel(); // ew - ExcelWorker, работа с отчетами
-                conv.closeFile();
-                MessageBox.Show("Сохранено");
-
-            }
-
-            
         }
 
         /// <summary>
@@ -190,8 +111,57 @@ namespace MainComponent
             }
         }
 
+        public void serializeXml()
+        {
+            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                String mes = Serializer.Serialize(tree, saveFileDialog1.FileName);
+                MessageBox.Show(mes);
+            }
+        }
 
+        public void deSerializeXml()
+        {
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                tree = new RootModel();
+                tree = Serializer.Deserialize(openFileDialog1.FileName);
+                if (tree.Children.Count == 0)
+                {
+                    MessageBox.Show("не удалось загрузить дерево");
+                }
+            }
+        }
 
+        public void convertToExcel()
+        {
+            Converter conv;
+            saveFileDialog1.Filter = "Excel Files|*.xls;*.xlsx;*.xlsm";
 
+            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                conv = new Converter(saveFileDialog1.FileName, thisChart);
+
+                conv.buildTableExcel(); // ew - ExcelWorker, работа с отчетами
+                conv.closeFile();
+                MessageBox.Show("Сохранено");
+
+            }
+        }
+
+        public void showTable()
+        {
+            FormTable ft = new FormTable(thisChart);
+            ft.ShowDialog();
+            if (ft.save)
+            {
+                thisChart = ft.Chart;
+            }
+
+            if (chartTree.SelectedChartNode is ChartModel)
+            {
+                customChart.Draw(thisChart);
+            }
+        }
     }
 }
