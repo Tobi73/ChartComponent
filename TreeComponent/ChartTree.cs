@@ -15,6 +15,7 @@ namespace TreeComponent
         public delegate void ChartTreeEditEventHandler(object sender, ChartEditEventArgs a);
         public delegate ChartModel ChartTreeAddEventHandler(object sender, ChartAddEventArgs a);
         event EventHandler onChartNodeSelect;
+        event EventHandler onChartNodeDelete;
         event ChartTreeAddEventHandler onChartAdd;
         event ChartTreeEditEventHandler onChartEdit;
 
@@ -49,6 +50,18 @@ namespace TreeComponent
             remove
             {
                 onChartNodeSelect -= value;
+            }
+        }
+
+        public event EventHandler OnChartNodeDelete
+        {
+            add
+            {
+                onChartNodeDelete += value;
+            }
+            remove
+            {
+                onChartNodeDelete -= value;
             }
         }
 
@@ -115,6 +128,10 @@ namespace TreeComponent
                     var parent = tree.SelectedNode.Parent;
                     tree.SelectedNode.Remove();
                     tree.SelectedNode = parent;
+                    if (onChartNodeDelete != null)
+                    {
+                        onChartNodeDelete(this, new EventArgs());
+                    }
                     tree.Invalidate();
                 }
             }

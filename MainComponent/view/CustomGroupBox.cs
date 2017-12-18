@@ -74,10 +74,15 @@ namespace MainComponent
 
         }
 
+        public void deleteChartNodeEvent(object sender, EventArgs e)
+        {
+            takeTree();
+            takeChartFromTreeMeth();
+        }
+
         public void takeTree()
         {
             tree = chartTree.RootNode;
-
         }
 
         public void takeChartFromTreeMeth()
@@ -89,10 +94,12 @@ namespace MainComponent
             }
         }
 
+        
+
         /// <summary>
         /// примерные действия программиста для заполнения ChartModel
         /// </summary>
-        private void testAddData()
+        public void testAddData()
         {
             thisChart.SeriesList.Clear();
             thisChart.AddSerie("пешеход");

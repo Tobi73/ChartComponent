@@ -58,6 +58,7 @@ namespace MainComponent
             this.chartTree.Text = "chartTree";
             // this.chartTree.tree.NodeMouseClick += new TreeNodeMouseClickEventHandler(takeChartFromTree);
             this.chartTree.OnChartNodeSelect += new EventHandler(takeChartFromTree);
+            this.chartTree.OnChartNodeDelete += new EventHandler(deleteChartNodeEvent);
             // 
             // customChart
             // 

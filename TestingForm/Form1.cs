@@ -34,6 +34,12 @@ namespace TestingForm
             //cm.AddValue(0, 50, 32);
 
             //govnoblyapotom1.Draw(cm);
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            customGroupBox1.testAddData();
         }
     }
 }
