@@ -11,6 +11,7 @@ namespace MainComponent.controller
 {
     /// <summary>
     /// класс использует Microsoft библиотеку. Больше не используется в проекте. Удалять жалко.
+    /// паскуда гит не захотел комитить то, как я тебя переименовал
     /// </summary>
     class MicrosoftXmlWorker
     {
