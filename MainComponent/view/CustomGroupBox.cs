@@ -173,8 +173,8 @@ namespace MainComponent
                 ///с библиотекой Microsoft
                 else
                 {
-                    Converter conv;
-                    conv = new Converter(saveFileDialog1.FileName, thisChart);
+                    MicrosoftXmlWorker conv;
+                    conv = new MicrosoftXmlWorker(saveFileDialog1.FileName, thisChart);
 
                     conv.buildTableExcel(); // ew - ExcelWorker, работа с отчетами
                     conv.closeFile();
