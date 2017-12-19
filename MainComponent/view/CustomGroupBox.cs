@@ -154,15 +154,32 @@ namespace MainComponent
 
         public void convertToExcel()
         {
-            Converter conv;
+            ///выбор библиотеки
+            bool convertWithEPPlus = true;
+            
             saveFileDialog1.Filter = "Excel Files|*.xls;*.xlsx;*.xlsm";
-
+            if(thisChart == null)
+            {
+                MessageBox.Show("график не выбран");
+                return;
+            }
             if (saveFileDialog1.ShowDialog() == DialogResult.OK)
             {
-                conv = new Converter(saveFileDialog1.FileName, thisChart);
+                if (convertWithEPPlus) {
+                    EPPlusXmlWorker converter = new EPPlusXmlWorker();
 
-                conv.buildTableExcel(); // ew - ExcelWorker, работа с отчетами
-                conv.closeFile();
+                    converter.convert(saveFileDialog1.FileName, thisChart);
+                }
+                ///с библиотекой Microsoft
+                else
+                {
+                    Converter conv;
+                    conv = new Converter(saveFileDialog1.FileName, thisChart);
+
+                    conv.buildTableExcel(); // ew - ExcelWorker, работа с отчетами
+                    conv.closeFile();
+                }
+
                 MessageBox.Show("Сохранено");
 
             }

@@ -9,7 +9,10 @@ using ChartComponent;
 
 namespace MainComponent.controller
 {
-    class Converter
+    /// <summary>
+    /// класс использует Microsoft библиотеку. Больше не используется в проекте. Удалять жалко.
+    /// </summary>
+    class MicrosoftXmlWorker
     {
 
         string filename;
@@ -21,9 +24,9 @@ namespace MainComponent.controller
         ChartModel chart;
 
 
-        public Converter() { }
+        public MicrosoftXmlWorker() { }
 
-        public Converter(string filename, ChartModel chart)
+        public MicrosoftXmlWorker(string filename, ChartModel chart)
         {
             xlApp = new Excel.Application();
             this.filename = filename;
