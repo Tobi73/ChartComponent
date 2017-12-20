@@ -10,6 +10,7 @@ using ChartComponent;
 using Newtonsoft.Json;
 using System.Windows.Forms;
 using System.Web.Script.Serialization;
+using ChartComponent.model;
 
 namespace MainComponent.controller
 {
@@ -17,28 +18,18 @@ namespace MainComponent.controller
     {
         public static string Serialize(RootModel tree, string path)
         {
-            //JsonConvert.SerializeObject(tree).ToString();
             try
             {
                 var settings = new JsonSerializerSettings()
                 {
                     TypeNameHandling = TypeNameHandling.Objects
                 };
-                var c = new Control();
-                var rm = new RootModel();
-                //JavaScriptSerializer jss = new JavaScriptSerializer();
-                //var s = jss.Serialize(tree);
-                //DataContractSerializer serializer = new DataContractSerializer(typeof(RootModel));
                 using (FileStream fs = new FileStream(path, FileMode.Create))
                 {
                     using (StreamWriter sw = new StreamWriter(fs))
                     {
-                        sw.Write(JsonConvert.SerializeObject(tree, settings).ToString());
+                        sw.Write(JsonConvert.SerializeObject(tree.ToDTO(), settings).ToString());
                     }
-                    //using (XmlWriter writer = XmlWriter.Create(fs))
-                    //{
-                    //    serializer.WriteObject(writer, tree);
-                    //}
                 }
             }
             catch (Exception ex)
@@ -50,28 +41,15 @@ namespace MainComponent.controller
 
         public static RootModel Deserialize(string path)
         {
-            RootModel tree = null;
-            try
+            using (FileStream fs = new FileStream(path, FileMode.Open))
             {
-                DataContractSerializer serializer = new DataContractSerializer(typeof(RootModel));
-                using (FileStream fs = new FileStream(path, FileMode.Open))
+                using (StreamReader sr = new StreamReader(fs))
                 {
-                    //using (XmlReader writer = XmlReader.Create(fs))
-                    //{
-                    //    tree = (RootModel)serializer.ReadObject(writer);
-                    //}
-                    using (StreamReader sr = new StreamReader(fs))
-                    {
-                        tree = JsonConvert.DeserializeObject<RootModel>(sr.ReadToEnd());
-                    }
+                    var dto = JsonConvert.DeserializeObject<RootModelDTO>(sr.ReadToEnd());
+                    var tree = new RootModel(dto);
+                    return tree;
                 }
             }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-            }
-
-            return tree;
         }
     }
 }

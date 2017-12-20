@@ -130,12 +130,20 @@ namespace MainComponent
             }
         }
 
-        public void serializeXml()
+        public void serializeToJson()
         {
             if (saveFileDialog1.ShowDialog() == DialogResult.OK)
             {
-                String mes = Serializer.Serialize(tree, saveFileDialog1.FileName);
+                string mes = Serializer.Serialize(tree, saveFileDialog1.FileName);
                 MessageBox.Show(mes);
+            }
+        }
+
+        public void deserializeFromJson()
+        {
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                tree = Serializer.Deserialize(openFileDialog1.FileName);
             }
         }
 

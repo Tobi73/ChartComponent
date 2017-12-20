@@ -57,6 +57,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="dto\ChartModelDTO.cs" />
     <Compile Include="model\ChartModel.cs" />
     <Compile Include="CustomChart.cs">
       <SubType>Component</SubType>
@@ -64,7 +65,7 @@
     <Compile Include="CustomChart.Designer.cs">
       <DependentUpon>CustomChart.cs</DependentUpon>
     </Compile>
-    <Compile Include="model\TreeNodeConverter.cs" />
+    <Compile Include="dto\RootModelDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="model\RootModel.cs" />
   </ItemGroup>
