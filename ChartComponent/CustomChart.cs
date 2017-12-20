@@ -39,6 +39,10 @@ namespace ChartComponent
             }
         }
 
+        /// <summary>
+        /// Creating chart by chart model
+        /// </summary>
+        /// <param name="chartModel"></param>
         public void Draw(ChartModel chartModel)
         {
             if(Series.Count > 0)
@@ -70,18 +74,18 @@ namespace ChartComponent
             Refresh();
         }
 
+        /// <summary>
+        /// Drawing lines from cursor to axisX and axisY
+        /// </summary>
+        /// <param name="e"></param>
         protected override void OnMouseMove(MouseEventArgs e)
         {
             base.OnMouseMove(e);
             var gr = CreateGraphics();
-
             Refresh();
-
             var dp = new DataPoint(0, 0);
             gr.DrawLine(new Pen(Color.Red), (float)ChartAreas[0].AxisX.ValueToPixelPosition(0), e.Y, e.X, e.Y);
             gr.DrawLine(new Pen(Color.Red), e.X, (float)ChartAreas[0].AxisY.ValueToPixelPosition(0), e.X, e.Y);
-
-
         }
 
     }
