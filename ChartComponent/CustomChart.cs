@@ -62,13 +62,8 @@ namespace ChartComponent
                     }
                     newSerie.Points.Add(p);
                 }
-                //foreach (var value in serie.PointsList)
-                //{
-                //    var p = new DataPoint();
-                //    p.SetValueXY(value.Key, value.Value);
-                //    p.ToolTip = $"x - {value.Key}\ny - {value.Value}";
-                //    newSerie.Points.Add(p);
-                //}
+                if (serie.Color != null)
+                    newSerie.Color = serie.Color;
                 Series.Add(newSerie);
             }
             ChartAreas[0].AxisX.Minimum = 0;

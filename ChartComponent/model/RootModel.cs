@@ -6,16 +6,16 @@ using System.Threading.Tasks;
 using System.Runtime.Serialization;
 using System.IO;
 using System.Windows.Forms;
+using Newtonsoft.Json;
 
 namespace ChartComponent
 {
-    [DataContract]
+    [JsonObject]
     public class RootModel : TreeNode
     {
 
         protected List<ChartModel> children;
         protected string chartName;
-
         public RootModel()
         {
             ChartName = "root";

@@ -112,7 +112,6 @@ namespace ChartComponent
             seriesList = new List<Serie>();
             AxisX = new List<string>();
         }
-
         public void AddValue(int indexSerie, string xValue, double yValue)
         {
             if (indexSerie < seriesList.Count)

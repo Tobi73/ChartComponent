@@ -8,6 +8,9 @@ using System.Threading.Tasks;
 using System.Xml;
 using ChartComponent;
 using Newtonsoft.Json;
+using System.Windows.Forms;
+using System.Web.Script.Serialization;
+
 namespace MainComponent.controller
 {
     class Serializer
@@ -17,12 +20,20 @@ namespace MainComponent.controller
             //JsonConvert.SerializeObject(tree).ToString();
             try
             {
+                var settings = new JsonSerializerSettings()
+                {
+                    TypeNameHandling = TypeNameHandling.Objects
+                };
+                var c = new Control();
+                var rm = new RootModel();
+                //JavaScriptSerializer jss = new JavaScriptSerializer();
+                //var s = jss.Serialize(tree);
                 //DataContractSerializer serializer = new DataContractSerializer(typeof(RootModel));
                 using (FileStream fs = new FileStream(path, FileMode.Create))
                 {
                     using (StreamWriter sw = new StreamWriter(fs))
                     {
-                        sw.Write(JsonConvert.SerializeObject(tree).ToString());
+                        sw.Write(JsonConvert.SerializeObject(tree, settings).ToString());
                     }
                     //using (XmlWriter writer = XmlWriter.Create(fs))
                     //{

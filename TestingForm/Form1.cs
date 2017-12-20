@@ -46,5 +46,10 @@ namespace TestingForm
         {
             customGroupBox1.convertToExcel();
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            customGroupBox1.serializeXml();
+        }
     }
 }
