@@ -45,6 +45,7 @@ namespace ChartComponent
             }
         }
 
+        [DataMember]
         public Color Color
         {
             get { return color; }
@@ -142,6 +143,7 @@ namespace ChartComponent
             nameX = dto.NameX;
             nameY = dto.NameY;
             chartName = dto.ChartName;
+            Text = dto.ChartName;
             foreach(ChartModelDTO child in dto.Children)
             {
                 Nodes.Add(new ChartModel(child));

@@ -76,6 +76,7 @@ namespace ChartComponent
         public void FromDTO(RootModelDTO dto)
         {
             chartName = dto.ChartName;
+            Text = dto.ChartName;
             foreach(ChartModelDTO child in dto.Children)
             {
                 Nodes.Add(new ChartModel(child));
