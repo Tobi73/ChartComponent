@@ -143,7 +143,9 @@ namespace MainComponent
         {
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
-                tree = Serializer.Deserialize(openFileDialog1.FileName);
+                var deserialised = Serializer.Deserialize(openFileDialog1.FileName);
+                tree = deserialised;
+                chartTree.RootNode = deserialised;
             }
         }
 

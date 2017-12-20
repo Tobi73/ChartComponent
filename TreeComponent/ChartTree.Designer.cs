@@ -7,7 +7,7 @@ namespace TreeComponent
     partial class ChartTree
     {
         public TreeView tree;
-        private TreeNode rootNode;
+        private RootModel rootNode;
         private TableLayoutPanel mainPanel;
         private ContextMenuStrip chartNodeMenu;
         private ContextMenuStrip rootNodeMenu;
@@ -78,6 +78,7 @@ namespace TreeComponent
             tree.TabIndex = 0;
             rootNode.Name = "root";
             rootNode.Text = "Chart Tree";
+            rootNode.ChartName = "Chart Tree";
             rootNode.ContextMenuStrip = rootNodeMenu;
             tree.Nodes.Add(rootNode);
             tree.NodeMouseClick += new TreeNodeMouseClickEventHandler(NodeClickedEvent);

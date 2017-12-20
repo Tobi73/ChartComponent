@@ -48,11 +48,13 @@ namespace TreeComponent
                 {
                     model = new ChartModel()
                     {
-                        ChartName = chartNameTextBox.Text
+                        ChartName = chartNameTextBox.Text,
+                        Text = chartNameTextBox.Text
                     };
                 } else
                 {
                     model.Text = chartNameTextBox.Text;
+                    model.ChartName = chartNameTextBox.Text;
                 }
                 Close();
             } else

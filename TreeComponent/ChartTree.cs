@@ -34,6 +34,14 @@ namespace TreeComponent
         public RootModel RootNode
         {
             get { return rootNode as RootModel; }
+            set
+            {
+                rootNode = value;
+                validateNodes(rootNode.Nodes);
+                tree.Nodes.Clear();
+                tree.Nodes.Add(rootNode);
+                Invalidate();
+            }
         }
 
         public TreeView ChartTreeView
@@ -97,6 +105,7 @@ namespace TreeComponent
             }
             set
             {
+                rootNode.ChartName = value;
                 rootNode.Text = value;
                 Invalidate();
             }
@@ -107,6 +116,21 @@ namespace TreeComponent
             get
             {
                 return tree.SelectedNode;
+            }
+        }
+
+        public void AddNode(RootModel parent, ChartModel child)
+        {
+            child.ContextMenuStrip = chartNodeMenu;
+            parent.Nodes.Add(child);
+        }
+
+        private void validateNodes(TreeNodeCollection charts)
+        {
+            foreach(TreeNode chart in charts)
+            {
+                chart.ContextMenuStrip = chartNodeMenu;
+                validateNodes(chart.Nodes);
             }
         }
 
@@ -151,8 +175,7 @@ namespace TreeComponent
                     chartNode = OpenChartAddForm();
                 }
                 if (chartNode == null) return;
-                chartNode.ContextMenuStrip = chartNodeMenu;
-                tree.SelectedNode.Nodes.Add(chartNode);
+                AddNode(tree.SelectedNode as RootModel, chartNode);
             }
         }
 
