@@ -49,7 +49,12 @@ namespace TestingForm
 
         private void button3_Click(object sender, EventArgs e)
         {
-            customGroupBox1.serializeXml();
+            customGroupBox1.serializeToJson();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            customGroupBox1.deserializeFromJson();
         }
     }
 }

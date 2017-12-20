@@ -1,4 +1,6 @@
-﻿using System;
+﻿using ChartComponent.dto;
+using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Runtime.Serialization;
@@ -64,6 +66,8 @@ namespace ChartComponent
     }
 
     [DataContract]
+    [JsonObject]
+    [Serializable]
     public class ChartModel : RootModel
     {
         private List<Serie> seriesList;
@@ -112,6 +116,12 @@ namespace ChartComponent
             seriesList = new List<Serie>();
             AxisX = new List<string>();
         }
+
+        public ChartModel(ChartModelDTO dto)
+        {
+            FromDTO(dto);
+        }
+
         public void AddValue(int indexSerie, string xValue, double yValue)
         {
             if (indexSerie < seriesList.Count)
@@ -123,6 +133,38 @@ namespace ChartComponent
                     AxisX.Add(xValue);
                 }
             }
+        }
+
+        public void FromDTO(ChartModelDTO dto)
+        {
+            seriesList = dto.SeriesList;
+            AxisX = dto.AxisX;
+            nameX = dto.NameX;
+            nameY = dto.NameY;
+            chartName = dto.ChartName;
+            foreach(ChartModelDTO child in dto.Children)
+            {
+                Nodes.Add(new ChartModel(child));
+            }
+        }
+
+        public new ChartModelDTO ToDTO()
+        {
+            var dto = new ChartModelDTO
+            {
+                SeriesList = seriesList,
+                AxisX = AxisX,
+                NameX = nameX,
+                NameY = nameY,
+                ChartName = chartName,
+            };
+            var children = new List<ChartModelDTO>();
+            foreach(ChartModel child in Nodes)
+            {
+                children.Add(child.ToDTO());
+            }
+            dto.Children = children;
+            return dto;
         }
 
         public void AddSerie(Serie s)
