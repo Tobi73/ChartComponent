@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>CourseWork.ChartComponent</id>
-    <version>1.0.1.0</version>
+    <version>1.0.3.0</version>
     <title>$title$</title>
     <authors>ar az df</authors>
     <owners>ar az df</owners>
@@ -16,8 +16,8 @@
     <tags>Tag1 Tag2</tags>
   </metadata>
   <files>
-    <file src='ChartComponent/bin/Release/ChartComponent.dll' target='lib' />
-    <file src='TreeComponent/bin/Release/TreeComponent.dll' target='lib' />
-    <file src='MainComponent/bin/Release/MainComponent.dll' target='lib' />
+    <file src='bin/Release/ChartComponent.dll' target='lib' />
+    <file src='bin/Release/MainComponent.dll' target='lib' />
+    <file src='bin/Release/TreeComponent.dll' target='lib' />
   </files>
 </package>
