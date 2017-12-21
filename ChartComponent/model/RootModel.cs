@@ -18,31 +18,16 @@ namespace ChartComponent
     {
 
         protected List<ChartModel> children;
-        protected string chartName;
 
         public RootModel()
         {
-            ChartName = "root";
+            Text = "root";
             Children = new List<ChartModel>();
         }
 
         public RootModel(RootModelDTO dto)
         {
             FromDTO(dto);
-        }
-
-        [DataMember]
-        public string ChartName
-        {
-            get
-            {
-                return chartName;
-            }
-            set
-            {
-                chartName = value;
-                Text = value;
-            }
         }
 
         [DataMember]
@@ -62,7 +47,7 @@ namespace ChartComponent
         {
             var dto = new RootModelDTO
             {
-                ChartName = chartName
+                ChartName = Text
             };
             var children = new List<ChartModelDTO>();
             foreach(ChartModel child in Nodes)
@@ -75,7 +60,7 @@ namespace ChartComponent
 
         public void FromDTO(RootModelDTO dto)
         {
-            chartName = dto.ChartName;
+            Text = dto.ChartName;
             Text = dto.ChartName;
             foreach(ChartModelDTO child in dto.Children)
             {
@@ -85,7 +70,7 @@ namespace ChartComponent
 
         public override string ToString()
         {
-            return ChartName;
+            return Text;
         }
     }
 }

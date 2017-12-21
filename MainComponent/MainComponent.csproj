@@ -62,7 +62,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="controller\MicrosoftXmlWorker.cs" />
     <Compile Include="controller\EPPlusXmlWorker.cs" />
     <Compile Include="controller\Serializer.cs" />
     <Compile Include="view\CustomDesigner.cs" />

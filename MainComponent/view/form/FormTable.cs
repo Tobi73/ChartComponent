@@ -95,7 +95,7 @@ namespace MainComponent.view.form
 
         private void changeChart()
         {
-            chart = new ChartModel(chart.ChartName);
+            chart = new ChartModel(chart.Text);
             for(int j = 1; j < dataGridView1.Rows.Count-1; j++)
             {
                 chart.AddSerie(new Serie(dataGridView1[0, j].Value.ToString()));

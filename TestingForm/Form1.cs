@@ -44,17 +44,17 @@ namespace TestingForm
 
         private void button2_Click(object sender, EventArgs e)
         {
-            customGroupBox1.convertToExcel();
+            customGroupBox1.ConvertToExcel();
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            customGroupBox1.serializeToJson();
+            customGroupBox1.SerializeJson();
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            customGroupBox1.deserializeFromJson();
+            customGroupBox1.DeserializeJson();
         }
     }
 }

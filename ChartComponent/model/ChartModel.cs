@@ -106,7 +106,6 @@ namespace ChartComponent
 
         public ChartModel(string chartName) : base()
         {
-            ChartName = chartName;
             Text = chartName;
             seriesList = new List<Serie>();
             AxisX = new List<string>();
@@ -142,7 +141,7 @@ namespace ChartComponent
             AxisX = dto.AxisX;
             nameX = dto.NameX;
             nameY = dto.NameY;
-            chartName = dto.ChartName;
+            Text = dto.ChartName;
             Text = dto.ChartName;
             foreach(ChartModelDTO child in dto.Children)
             {
@@ -158,7 +157,7 @@ namespace ChartComponent
                 AxisX = AxisX,
                 NameX = nameX,
                 NameY = nameY,
-                ChartName = chartName,
+                ChartName = Text,
             };
             var children = new List<ChartModelDTO>();
             foreach(ChartModel child in Nodes)

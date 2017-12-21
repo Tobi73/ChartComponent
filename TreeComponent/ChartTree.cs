@@ -37,6 +37,7 @@ namespace TreeComponent
             set
             {
                 rootNode = value;
+                rootNode.ContextMenuStrip = rootNodeMenu;
                 validateNodes(rootNode.Nodes);
                 tree.Nodes.Clear();
                 tree.Nodes.Add(rootNode);
@@ -105,7 +106,6 @@ namespace TreeComponent
             }
             set
             {
-                rootNode.ChartName = value;
                 rootNode.Text = value;
                 Invalidate();
             }

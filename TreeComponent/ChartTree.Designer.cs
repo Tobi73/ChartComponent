@@ -78,7 +78,7 @@ namespace TreeComponent
             tree.TabIndex = 0;
             rootNode.Name = "root";
             rootNode.Text = "Chart Tree";
-            rootNode.ChartName = "Chart Tree";
+            rootNode.Text = "Chart Tree";
             rootNode.ContextMenuStrip = rootNodeMenu;
             tree.Nodes.Add(rootNode);
             tree.NodeMouseClick += new TreeNodeMouseClickEventHandler(NodeClickedEvent);

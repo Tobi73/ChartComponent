@@ -16,27 +16,20 @@ namespace MainComponent.controller
 {
     class Serializer
     {
-        public static string Serialize(RootModel tree, string path)
+        public static void Serialize(RootModel tree, string path)
         {
-            try
+            var settings = new JsonSerializerSettings()
             {
-                var settings = new JsonSerializerSettings()
+                TypeNameHandling = TypeNameHandling.Objects
+            };
+            using (FileStream fs = new FileStream(path, FileMode.Create))
+            {
+                using (StreamWriter sw = new StreamWriter(fs))
                 {
-                    TypeNameHandling = TypeNameHandling.Objects
-                };
-                using (FileStream fs = new FileStream(path, FileMode.Create))
-                {
-                    using (StreamWriter sw = new StreamWriter(fs))
-                    {
-                        sw.Write(JsonConvert.SerializeObject(tree.ToDTO(), settings).ToString());
-                    }
+                    sw.Write(JsonConvert.SerializeObject(tree.ToDTO(), settings).ToString());
                 }
             }
-            catch (Exception ex)
-            {
-                return "не сохранил дерево графиков в" + path + Environment.NewLine + ex.ToString();
-            }
-            return "Сохранено";
+
         }
 
         public static RootModel Deserialize(string path)
