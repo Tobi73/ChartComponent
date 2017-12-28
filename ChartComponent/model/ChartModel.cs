@@ -26,7 +26,8 @@ namespace ChartComponent
         {
             pointsList = new Dictionary<string, double>();
             serieName = name;
-            color = Color.FromArgb(r.Next());
+            //color = Color.FromArgb(r.Next());
+            color = Color.FromArgb(r.Next(230), r.Next(230), r.Next(230));
         }
 
         private Color color;
