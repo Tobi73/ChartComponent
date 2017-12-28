@@ -75,6 +75,7 @@ namespace TestingForm
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             customGroupBox1.TypeOfChart = (SeriesChartType)comboBox1.SelectedItem;
+            customGroupBox1.Invalidate();
         }
     }
 }

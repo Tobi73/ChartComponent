@@ -156,10 +156,15 @@ namespace MainComponent
             }
         }
 
-        //protected override void OnPaint(System.Windows.Forms.PaintEventArgs e) 
-        //{
-        //    base.OnPaint(e);
-        //}
+        protected override void OnPaint(System.Windows.Forms.PaintEventArgs e)
+        {
+            base.OnPaint(e);
+            customChart.Invalidate();
+            if (thisChart != null)
+            {
+                customChart.Draw(thisChart);
+            }
+        }
 
         /// <summary>
         /// обработчик события получения выделенного chartModel из chartTree
