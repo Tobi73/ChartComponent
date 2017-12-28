@@ -48,18 +48,26 @@ namespace TreeComponent
                 {
                     model = new ChartModel()
                     {
-                        ChartName = chartNameTextBox.Text,
                         Text = chartNameTextBox.Text
                     };
                 } else
                 {
                     model.Text = chartNameTextBox.Text;
-                    model.ChartName = chartNameTextBox.Text;
                 }
                 Close();
             } else
             {
                 MessageBox.Show("Введите название графика!");
+            }
+        }
+
+        private void buttonOpenTable_Click(object sender, EventArgs e)
+        {
+            FormTable ft = new FormTable(new ChartModel(chartNameTextBox.Text));
+            ft.ShowDialog();
+            if (ft.save)
+            {
+                model = ft.Chart;
             }
         }
     }

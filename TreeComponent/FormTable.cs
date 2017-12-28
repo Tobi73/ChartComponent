@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using ChartComponent;
 
-namespace MainComponent.view.form
+namespace TreeComponent
 {
     public partial class FormTable : Form
     {
@@ -46,6 +46,10 @@ namespace MainComponent.view.form
 
         private void writeTable()
         {
+            if(chart == null)
+            {
+                return;
+            }
             List<string> xList = new List<string>();
 
             dataGridView1.Columns.Add("c0", "");
@@ -95,7 +99,7 @@ namespace MainComponent.view.form
 
         private void changeChart()
         {
-            chart = new ChartModel(chart.ChartName);
+            chart = new ChartModel(chart.Text);
             for(int j = 1; j < dataGridView1.Rows.Count-1; j++)
             {
                 chart.AddSerie(new Serie(dataGridView1[0, j].Value.ToString()));

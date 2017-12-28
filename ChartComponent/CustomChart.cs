@@ -20,10 +20,10 @@ namespace ChartComponent
             InitializeComponent();
         }
 
-        protected override void OnPaint(PaintEventArgs e)
-        {
-            base.OnPaint(e);
-        }
+        //protected override void OnPaint(PaintEventArgs e)
+        //{
+        //    base.OnPaint(e);
+        //}
 
         private SeriesChartType typeOfChart;
 
@@ -45,10 +45,7 @@ namespace ChartComponent
         /// <param name="chartModel"></param>
         public void Draw(ChartModel chartModel)
         {
-            if(Series.Count > 0)
-            {
-                Series.Clear();
-            }
+            Series.Clear();
             
             foreach (var serie in chartModel.SeriesList)
             {

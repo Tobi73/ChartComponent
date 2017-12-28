@@ -22,11 +22,11 @@ namespace MainComponent.controller
             using (ExcelPackage eP = new ExcelPackage())
             {
                 eP.Workbook.Properties.Author = "qwe";
-                eP.Workbook.Properties.Title = chart.ChartName;
+                eP.Workbook.Properties.Title = chart.Text;
                 eP.Workbook.Properties.Company = "NewSystems";
 
 
-                var sheet = eP.Workbook.Worksheets.Add(chart.ChartName);
+                var sheet = eP.Workbook.Worksheets.Add(chart.Text);
                 var graph = sheet.Drawings.AddChart("chart1", eChartType.Line);
                 // Устанавливаем положение и размер
                 graph.SetPosition(0, 300);

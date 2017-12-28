@@ -6,7 +6,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using MainComponent.view.form;
 using ChartComponent;
 using MainComponent.controller;
 using TreeComponent;
@@ -35,7 +34,7 @@ namespace MainComponent
 
 
 
-        [Category("New"), Description("Select type of chart")]
+        [Category("CustomChart"), Description("Select type of chart")]
         public SeriesChartType TypeOfChart
         {
             set
@@ -48,20 +47,103 @@ namespace MainComponent
             }
         }
 
-        private void test()
+        [Category("CustomChart"), Description("Select borders color")]
+        public Color BorderColorChart
         {
-            tree = new RootModel();
-            tree.Children.Add(new ChartModel());
-            tree.Children.Add(new ChartModel());
-            tree.Children.Add(new ChartModel());
+            set
+            {
+                customChart.BorderlineColor = value;
+            }
+            get
+            {
+                return customChart.BorderlineColor;
+            }
         }
 
-        protected override void OnPaint(System.Windows.Forms.PaintEventArgs e) 
+        [Category("CustomChart"), Description("Select borders width")]
+        public int BorderWidthChart
         {
-
-            base.OnPaint(e);
-
+            set
+            {
+                customChart.BorderlineWidth = value;
+            }
+            get
+            {
+                return customChart.BorderlineWidth;
+            }
         }
+
+        [Category("CustomChart"), Description("Select back color")]
+        public Color BackColorChart
+        {
+            set
+            {
+                customChart.BackColor = value;
+            }
+            get
+            {
+                return customChart.BackColor;
+            }
+        }
+
+        [Category("CustomChart"), Description("Select BackgroundImage")]
+        public Image BackgroundImageChart
+        {
+            set
+            {
+                customChart.BackgroundImage = value;
+            }
+            get
+            {
+                return customChart.BackgroundImage;
+            }
+        }
+
+        [Category("CustomTree"), Description("Select back color")]
+        public Color BackColorTree
+        {
+            set
+            {
+                chartTree.BackColor = value;
+                
+            }
+            get
+            {
+                return chartTree.BackColor;
+            }
+        }
+
+        [Category("CustomTree"), Description("Select BackgroundImage")]
+        public Image BackgroundImageTree
+        {
+            set
+            {
+                chartTree.BackgroundImage = value;
+            }
+            get
+            {
+                return chartTree.BackgroundImage;
+            }
+        }
+
+        [Category("CustomTree"), Description("Select Font")]
+        public Font FontTree
+        {
+            set
+            {
+                chartTree.Font = value;
+                
+            }
+            get
+            {
+                return chartTree.Font;
+            }
+        }
+
+        //protected override void OnPaint(System.Windows.Forms.PaintEventArgs e) 
+        //{
+        //    base.OnPaint(e);
+        //}
 
         /// <summary>
         /// обработчик события получения выделенного chartModel из chartTree
@@ -103,8 +185,8 @@ namespace MainComponent
         public void testAddData()
         {
             thisChart.SeriesList.Clear();
-            thisChart.AddSerie(new Serie("пешеход"));
-            thisChart.AddSerie(new Serie("велосипедист"));
+            thisChart.AddSerie(new Serie("пешеход", Color.Blue));
+            thisChart.AddSerie(new Serie("велосипедист", Color.Brown));
             thisChart.AddSerie(new Serie("мотоциклист", Color.Red));
             thisChart.NameX = "T(час)";
             thisChart.NameY = "S(км)";
@@ -130,43 +212,40 @@ namespace MainComponent
             }
         }
 
-        public void serializeToJson()
+        public void SerializeJson()
         {
             if (saveFileDialog1.ShowDialog() == DialogResult.OK)
             {
-                string mes = Serializer.Serialize(tree, saveFileDialog1.FileName);
-                MessageBox.Show(mes);
-            }
-        }
-
-        public void deserializeFromJson()
-        {
-            if (openFileDialog1.ShowDialog() == DialogResult.OK)
-            {
-                var deserialised = Serializer.Deserialize(openFileDialog1.FileName);
-                tree = deserialised;
-                chartTree.RootNode = deserialised;
-            }
-        }
-
-        public void deSerializeXml()
-        {
-            if (openFileDialog1.ShowDialog() == DialogResult.OK)
-            {
-                tree = new RootModel();
-                tree = Serializer.Deserialize(openFileDialog1.FileName);
-                if (tree.Children.Count == 0)
+                try
                 {
-                    MessageBox.Show("не удалось загрузить дерево");
+                    Serializer.Serialize(tree, saveFileDialog1.FileName);
+                }
+                catch(Exception e)
+                {
+                    MessageBox.Show($"Ошибка:{e.ToString()}");
                 }
             }
         }
 
-        public void convertToExcel()
+        public void DeserializeJson()
         {
-            ///выбор библиотеки
-            bool convertWithEPPlus = true;
-            
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    var deserialised = Serializer.Deserialize(openFileDialog1.FileName);
+                    tree = deserialised;
+                    chartTree.RootNode = deserialised;
+                } catch(Exception e)
+                {
+                    MessageBox.Show($"Ошибка:{e.ToString()}");
+                }
+               
+            }
+        }
+
+        public void ConvertToExcel()
+        {
             saveFileDialog1.Filter = "Excel Files|*.xls;*.xlsx;*.xlsm";
             if(thisChart == null)
             {
@@ -175,27 +254,14 @@ namespace MainComponent
             }
             if (saveFileDialog1.ShowDialog() == DialogResult.OK)
             {
-                if (convertWithEPPlus) {
-                    EPPlusXmlWorker converter = new EPPlusXmlWorker();
-
-                    converter.convert(saveFileDialog1.FileName, thisChart);
-                }
-                ///с библиотекой Microsoft
-                else
-                {
-                    MicrosoftXmlWorker conv;
-                    conv = new MicrosoftXmlWorker(saveFileDialog1.FileName, thisChart);
-
-                    conv.buildTableExcel(); // ew - ExcelWorker, работа с отчетами
-                    conv.closeFile();
-                }
-
+                EPPlusXmlWorker converter = new EPPlusXmlWorker();
+                converter.convert(saveFileDialog1.FileName, thisChart);
                 MessageBox.Show("Сохранено");
-
             }
+            saveFileDialog1.Filter = null;
         }
 
-        public void showTable()
+        public void ShowTable()
         {
             FormTable ft = new FormTable(thisChart);
             ft.ShowDialog();

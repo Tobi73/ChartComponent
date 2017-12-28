@@ -34,6 +34,7 @@
             this.button3 = new System.Windows.Forms.Button();
             this.customGroupBox1 = new MainComponent.CustomGroupBox(this.components);
             this.button4 = new System.Windows.Forms.Button();
+            this.customGroupBox2 = new MainComponent.CustomGroupBox(this.components);
             this.SuspendLayout();
             // 
             // button1
@@ -42,7 +43,7 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 9;
-            this.button1.Text = "button1";
+            this.button1.Text = " ";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -52,7 +53,7 @@
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 10;
-            this.button2.Text = "button2";
+            this.button2.Text = "Xlsx";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
@@ -79,6 +80,10 @@
             this.customGroupBox1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.customGroupBox1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.customGroupBox1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.customGroupBox1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.customGroupBox1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.customGroupBox1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.customGroupBox1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.customGroupBox1.Location = new System.Drawing.Point(26, 22);
             this.customGroupBox1.Name = "customGroupBox1";
             this.customGroupBox1.RowCount = 1;
@@ -87,9 +92,11 @@
             this.customGroupBox1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.customGroupBox1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.customGroupBox1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.customGroupBox1.Size = new System.Drawing.Size(487, 212);
+            this.customGroupBox1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.customGroupBox1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.customGroupBox1.Size = new System.Drawing.Size(469, 310);
             this.customGroupBox1.TabIndex = 8;
-            this.customGroupBox1.TypeOfChart = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Point;
+            this.customGroupBox1.TypeOfChart = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Column;
             // 
             // button4
             // 
@@ -101,11 +108,32 @@
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
+            // customGroupBox2
+            // 
+            this.customGroupBox2.BackColorChart = System.Drawing.Color.Black;
+            this.customGroupBox2.BackColorTree = System.Drawing.Color.Fuchsia;
+            this.customGroupBox2.BackgroundImageChart = null;
+            this.customGroupBox2.BackgroundImageTree = null;
+            this.customGroupBox2.BorderColorChart = System.Drawing.Color.White;
+            this.customGroupBox2.BorderWidthChart = 1;
+            this.customGroupBox2.ColumnCount = 2;
+            this.customGroupBox2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.customGroupBox2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.customGroupBox2.FontTree = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.customGroupBox2.Location = new System.Drawing.Point(547, 42);
+            this.customGroupBox2.Name = "customGroupBox2";
+            this.customGroupBox2.RowCount = 1;
+            this.customGroupBox2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.customGroupBox2.Size = new System.Drawing.Size(499, 174);
+            this.customGroupBox2.TabIndex = 8;
+            this.customGroupBox2.TypeOfChart = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Point;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(997, 586);
+            this.Controls.Add(this.customGroupBox2);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
@@ -125,6 +153,7 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
+        private MainComponent.CustomGroupBox customGroupBox2;
     }
 }
 
