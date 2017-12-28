@@ -1,11 +1,6 @@
 ﻿using ChartComponent;
 using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace TreeComponent
@@ -18,6 +13,7 @@ namespace TreeComponent
         event EventHandler onChartNodeDelete;
         event ChartTreeAddEventHandler onChartAdd;
         event ChartTreeEditEventHandler onChartEdit;
+        Func<string, ChartModel> fileLoad;
 
         public ChartTree()
         {
@@ -33,7 +29,10 @@ namespace TreeComponent
 
         public RootModel RootNode
         {
-            get { return rootNode as RootModel; }
+            get
+            {
+                return rootNode as RootModel;
+            }
             set
             {
                 rootNode = value;
@@ -45,9 +44,17 @@ namespace TreeComponent
             }
         }
 
+        public void SetFileLoadFunc(Func<string, ChartModel> func)
+        {
+            fileLoad = func;
+        }
+
         public TreeView ChartTreeView
         {
-            get { return tree; }
+            get
+            {
+                return tree;
+            }
         }
         
         public event EventHandler OnChartNodeSelect
@@ -172,7 +179,7 @@ namespace TreeComponent
                 }
                 else
                 {
-                    chartNode = OpenChartAddForm();
+                    chartNode = OpenChartAddForm(fileLoad);
                 }
                 if (chartNode == null) return;
                 AddNode(tree.SelectedNode as RootModel, chartNode);
@@ -203,6 +210,13 @@ namespace TreeComponent
         private ChartModel OpenChartAddForm()
         {
             var addForm = new ChartEditForm();
+            addForm.ShowDialog();
+            return addForm.ChartModel;
+        }
+
+        private ChartModel OpenChartAddForm(Func<string, ChartModel> func)
+        {
+            var addForm = new ChartEditForm(func);
             addForm.ShowDialog();
             return addForm.ChartModel;
         }

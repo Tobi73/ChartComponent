@@ -1,11 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using ChartComponent;
 
@@ -48,12 +42,11 @@ namespace TreeComponent
         {
             if(chart == null)
             {
-                return;
+                chart = new ChartModel();
             }
             List<string> xList = new List<string>();
 
             dataGridView1.Columns.Add("c0", "");
-
 
             int j = 1;
             string[] row;
@@ -125,7 +118,6 @@ namespace TreeComponent
         private void btnDeleteColumn_Click(object sender, EventArgs e)
         {
             dataGridView1.Columns.Remove(dataGridView1.SelectedCells[0].OwningColumn);
-
         }
     }
 }

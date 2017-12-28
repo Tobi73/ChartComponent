@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace TreeComponent
 {
-    public class ChartAddEventArgs: EventArgs
-    { 
+    public class ChartAddEventArgs : EventArgs
+    {
     }
 }

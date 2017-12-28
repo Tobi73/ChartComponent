@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using OfficeOpenXml;
-using OfficeOpenXml.Style;
+﻿using OfficeOpenXml;
 using ChartComponent;
 using System.IO;
 using OfficeOpenXml.Drawing.Chart;
@@ -12,12 +6,16 @@ using OfficeOpenXml.Drawing.Chart;
 namespace MainComponent.controller
 {
     /// <summary>
-    /// Используется для конвертации chartModel в xml формат
+    /// Используется выгрузки диаграммы и данных для неё в xlsx файл
     /// </summary>
-    public class EPPlusXmlWorker
+    public class XlsxExporter
     {
-
-        public void convert(string fName, ChartModel chart)
+        /// <summary>
+        /// Создание xlsx-файла с диаграммой и данными из объекта ChartModel
+        /// </summary>
+        /// <param name="fName">Путь к записываемому файлу</param>
+        /// <param name="chart">Модель с данными для диаграммы</param>
+        public void export(string fName, ChartModel chart)
         {
             using (ExcelPackage eP = new ExcelPackage())
             {
@@ -54,14 +52,7 @@ namespace MainComponent.controller
                                 sheet.Cells[3, j].Value = point.Key;
                                 k++;
                             }
-                            ///.Value.ToString()
-                            //var a = sheet.Cells[3, j];
-                            //var b = a as Excel.Range;
-                            //var c = b.Value;
-                            //var c2 = b.Value2;
-                            //var d = c.ToString();
-                            //var e = d.Equals(point.Key);
-
+                            
                             if (sheet.Cells[3, j].Value.ToString().Equals(point.Key))
                             {
                                 sheet.Cells[i, j].Value = point.Value;
@@ -70,8 +61,6 @@ namespace MainComponent.controller
                             }
                         }
                     }
-                    
-
                     i++;
                 }
 
@@ -82,8 +71,6 @@ namespace MainComponent.controller
                     serie.HeaderAddress = sheet.Cells[i, 1];
                     i++;
                 }
-
-
 
                 var bin = eP.GetAsByteArray();
                 File.WriteAllBytes(fName, bin);

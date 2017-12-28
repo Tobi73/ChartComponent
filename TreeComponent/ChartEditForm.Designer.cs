@@ -173,6 +173,7 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "ChartEditForm";
             this.Text = "Редактирование графика";
+            this.Load += new System.EventHandler(this.ChartEditForm_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);

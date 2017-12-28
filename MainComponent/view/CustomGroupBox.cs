@@ -32,6 +32,10 @@ namespace MainComponent
         private ChartModel thisChart;
         private RootModel tree;
 
+        public void SetFileLoadFunction(Func<string, ChartModel> func)
+        {
+            chartTree.SetFileLoadFunc(func);
+        }
         [Category("New"), Description("Select width CustomChart (%)")]
         public float widthChart
         {
@@ -266,8 +270,8 @@ namespace MainComponent
             }
             if (saveFileDialog1.ShowDialog() == DialogResult.OK)
             {
-                EPPlusXmlWorker converter = new EPPlusXmlWorker();
-                converter.convert(saveFileDialog1.FileName, thisChart);
+                XlsxExporter converter = new XlsxExporter();
+                converter.export(saveFileDialog1.FileName, thisChart);
                 MessageBox.Show("Сохранено");
             }
             saveFileDialog1.Filter = null;

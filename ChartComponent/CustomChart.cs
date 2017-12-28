@@ -20,11 +20,6 @@ namespace ChartComponent
             InitializeComponent();
         }
 
-        //protected override void OnPaint(PaintEventArgs e)
-        //{
-        //    base.OnPaint(e);
-        //}
-
         private SeriesChartType typeOfChart;
 
         public SeriesChartType TypeOfChart

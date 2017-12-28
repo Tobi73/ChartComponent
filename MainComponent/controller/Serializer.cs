@@ -8,8 +8,6 @@ using System.Threading.Tasks;
 using System.Xml;
 using ChartComponent;
 using Newtonsoft.Json;
-using System.Windows.Forms;
-using System.Web.Script.Serialization;
 using ChartComponent.model;
 
 namespace MainComponent.controller

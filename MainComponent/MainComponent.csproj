@@ -62,7 +62,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="controller\EPPlusXmlWorker.cs" />
+    <Compile Include="controller\XlsxExporter.cs" />
     <Compile Include="controller\Serializer.cs" />
     <Compile Include="view\CustomDesigner.cs" />
     <Compile Include="view\CustomGroupBox.cs">

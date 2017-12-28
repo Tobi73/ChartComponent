@@ -34,7 +34,7 @@ namespace TestingForm
             //cm.AddValue(0, 50, 32);
 
             //govnoblyapotom1.Draw(cm);
-
+            customGroupBox1.SetFileLoadFunction(lalal);
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -58,6 +58,10 @@ namespace TestingForm
             //customGroupBox1.chartTree.ba
         }
 
-        
+        public ChartModel lalal(string filepath)
+        {
+            MessageBox.Show(filepath);
+            return new ChartModel();
+        }
     }
 }

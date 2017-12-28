@@ -1,12 +1,5 @@
 ﻿using ChartComponent;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace TreeComponent
@@ -14,12 +7,20 @@ namespace TreeComponent
     public partial class ChartEditForm : Form
     {
         ChartModel model;
+        Func<string, ChartModel> loadFileFunction;
 
-        public ChartEditForm(ChartModel model)
+        public ChartEditForm(ChartModel model, Func<string, ChartModel> func = null)
         {
             InitializeComponent();
             this.model = model;
             chartNameTextBox.Text = model.Text;
+            loadFileFunction = func;
+        }
+
+        public ChartEditForm(Func<string, ChartModel> func = null)
+        {
+            InitializeComponent();
+            loadFileFunction = func;
         }
 
         public ChartEditForm()
@@ -63,7 +64,7 @@ namespace TreeComponent
 
         private void buttonOpenTable_Click(object sender, EventArgs e)
         {
-            FormTable ft = new FormTable(new ChartModel(chartNameTextBox.Text));
+            FormTable ft = new FormTable(model);
             ft.ShowDialog();
             if (ft.save)
             {
@@ -73,7 +74,7 @@ namespace TreeComponent
 
         public virtual ChartModel LoadChart(string fname)
         {
-            return new ChartModel();
+            return loadFileFunction(fname);
         }
 
         private void buttonLoad_Click(object sender, EventArgs e)
@@ -82,8 +83,7 @@ namespace TreeComponent
             {
                 try
                 {
-                    model = LoadChart(openFileDialog1.FileName);
-                    
+                    model = loadFileFunction(openFileDialog1.FileName);
                 }
                 catch (Exception ex)
                 {
@@ -91,6 +91,11 @@ namespace TreeComponent
                 }
 
             }
+        }
+
+        private void ChartEditForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
