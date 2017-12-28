@@ -35,7 +35,7 @@ namespace MainComponent
 
 
 
-        [Category("New"), Description("Select type of chart")]
+        [Category("CustomChart"), Description("Select type of chart")]
         public SeriesChartType TypeOfChart
         {
             set
@@ -45,6 +45,99 @@ namespace MainComponent
             get
             {
                 return customChart.TypeOfChart;
+            }
+        }
+
+        [Category("CustomChart"), Description("Select borders color")]
+        public Color BorderColorChart
+        {
+            set
+            {
+                customChart.BorderlineColor = value;
+            }
+            get
+            {
+                return customChart.BorderlineColor;
+            }
+        }
+
+        [Category("CustomChart"), Description("Select borders width")]
+        public int BorderWidthChart
+        {
+            set
+            {
+                customChart.BorderlineWidth = value;
+            }
+            get
+            {
+                return customChart.BorderlineWidth;
+            }
+        }
+
+        [Category("CustomChart"), Description("Select back color")]
+        public Color BackColorChart
+        {
+            set
+            {
+                customChart.BackColor = value;
+            }
+            get
+            {
+                return customChart.BackColor;
+            }
+        }
+
+        [Category("CustomChart"), Description("Select BackgroundImage")]
+        public Image BackgroundImageChart
+        {
+            set
+            {
+                customChart.BackgroundImage = value;
+            }
+            get
+            {
+                return customChart.BackgroundImage;
+            }
+        }
+
+        [Category("CustomTree"), Description("Select back color")]
+        public Color BackColorTree
+        {
+            set
+            {
+                chartTree.BackColor = value;
+                
+            }
+            get
+            {
+                return chartTree.BackColor;
+            }
+        }
+
+        [Category("CustomTree"), Description("Select BackgroundImage")]
+        public Image BackgroundImageTree
+        {
+            set
+            {
+                chartTree.BackgroundImage = value;
+            }
+            get
+            {
+                return chartTree.BackgroundImage;
+            }
+        }
+
+        [Category("CustomTree"), Description("Select Font")]
+        public Font FontTree
+        {
+            set
+            {
+                chartTree.Font = value;
+                
+            }
+            get
+            {
+                return chartTree.Font;
             }
         }
 

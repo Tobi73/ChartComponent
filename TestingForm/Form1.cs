@@ -55,6 +55,9 @@ namespace TestingForm
         private void button4_Click(object sender, EventArgs e)
         {
             customGroupBox1.DeserializeJson();
+            //customGroupBox1.chartTree.ba
         }
+
+        
     }
 }
