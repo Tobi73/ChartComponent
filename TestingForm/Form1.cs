@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.DataVisualization.Charting;
 
 namespace TestingForm
 {
@@ -35,6 +36,13 @@ namespace TestingForm
 
             //govnoblyapotom1.Draw(cm);
             customGroupBox1.SetFileLoadFunction(lalal);
+            foreach (var a in Enum.GetValues(typeof(SeriesChartType)))
+            {
+                comboBox1.Items.Add(a);
+            }
+
+            
+            
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -62,6 +70,11 @@ namespace TestingForm
         {
             MessageBox.Show(filepath);
             return new ChartModel();
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            customGroupBox1.TypeOfChart = (SeriesChartType)comboBox1.SelectedItem;
         }
     }
 }
