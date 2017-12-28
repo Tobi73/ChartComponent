@@ -11,6 +11,8 @@ namespace ChartComponent
     [DataContract]
     public class Serie
     {
+        static Random r = new Random(230);
+        
         public Serie() { }
 
         public Serie(string name, Color c)
@@ -22,7 +24,6 @@ namespace ChartComponent
 
         public Serie(string name)
         {
-            Random r = new Random(255);
             pointsList = new Dictionary<string, double>();
             serieName = name;
             color = Color.FromArgb(r.Next());

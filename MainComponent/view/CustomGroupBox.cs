@@ -6,7 +6,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using MainComponent.view.form;
 using ChartComponent;
 using MainComponent.controller;
 using TreeComponent;

@@ -1,4 +1,4 @@
-﻿namespace MainComponent.view.form
+﻿namespace TreeComponent
 {
     partial class FormTable
     {

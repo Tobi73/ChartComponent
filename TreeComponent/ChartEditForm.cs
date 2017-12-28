@@ -60,5 +60,15 @@ namespace TreeComponent
                 MessageBox.Show("Введите название графика!");
             }
         }
+
+        private void buttonOpenTable_Click(object sender, EventArgs e)
+        {
+            FormTable ft = new FormTable(new ChartModel(chartNameTextBox.Text));
+            ft.ShowDialog();
+            if (ft.save)
+            {
+                model = ft.Chart;
+            }
+        }
     }
 }
