@@ -94,7 +94,7 @@
             this.customGroupBox1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.customGroupBox1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.customGroupBox1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.customGroupBox1.Size = new System.Drawing.Size(469, 310);
+            this.customGroupBox1.Size = new System.Drawing.Size(449, 310);
             this.customGroupBox1.TabIndex = 8;
             this.customGroupBox1.TypeOfChart = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Column;
             // 

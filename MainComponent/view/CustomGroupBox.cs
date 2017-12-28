@@ -32,7 +32,19 @@ namespace MainComponent
         private ChartModel thisChart;
         private RootModel tree;
 
-
+        [Category("New"), Description("Select width CustomChart (%)")]
+        public float widthChart
+        {
+            set
+            {
+                ColumnStyles[1].Width = value;
+                ColumnStyles[0].Width = 100-value;
+            }
+            get
+            {
+                return ColumnStyles[1].Width;
+            }
+        }
 
         [Category("CustomChart"), Description("Select type of chart")]
         public SeriesChartType TypeOfChart
