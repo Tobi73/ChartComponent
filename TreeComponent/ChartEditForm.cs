@@ -66,10 +66,9 @@ namespace TreeComponent
         {
             FormTable ft = new FormTable(model);
             ft.ShowDialog();
-            if (ft.save)
-            {
+            
                 model = ft.Chart;
-            }
+            
         }
 
         public virtual ChartModel LoadChart(string fname)

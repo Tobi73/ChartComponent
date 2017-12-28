@@ -281,10 +281,9 @@ namespace MainComponent
         {
             FormTable ft = new FormTable(thisChart);
             ft.ShowDialog();
-            if (ft.save)
-            {
+            
                 thisChart = ft.Chart;
-            }
+            
 
             if (chartTree.SelectedChartNode is ChartModel)
             {

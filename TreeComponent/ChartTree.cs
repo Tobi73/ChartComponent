@@ -183,6 +183,7 @@ namespace TreeComponent
                 }
                 if (chartNode == null) return;
                 AddNode(tree.SelectedNode as RootModel, chartNode);
+                onChartNodeSelect(this, new EventArgs());
             }
         }
 
@@ -198,6 +199,7 @@ namespace TreeComponent
                 {
                     OpenChartEditForm();
                 }
+                onChartNodeSelect(this, new EventArgs());
             }
         }
 

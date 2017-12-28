@@ -15,7 +15,6 @@ namespace TreeComponent
         }
 
         private ChartModel chart;
-        public bool save = false;
         public ChartModel Chart
         {
             get { return chart; }
@@ -33,7 +32,6 @@ namespace TreeComponent
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            save = true;
             changeChart();
             Close();
         }
@@ -92,7 +90,9 @@ namespace TreeComponent
 
         private void changeChart()
         {
-            chart = new ChartModel(chart.Text);
+            //chart = new ChartModel(chart.Text);
+
+            chart.SeriesList.Clear();
             for(int j = 1; j < dataGridView1.Rows.Count-1; j++)
             {
                 chart.AddSerie(new Serie(dataGridView1[0, j].Value.ToString()));
