@@ -32,11 +32,12 @@
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.confirmButton = new System.Windows.Forms.Button();
             this.cancelButton = new System.Windows.Forms.Button();
+            this.buttonLoad = new System.Windows.Forms.Button();
+            this.buttonOpenTable = new System.Windows.Forms.Button();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
             this.chartNameTextBox = new System.Windows.Forms.TextBox();
-            this.buttonLoad = new System.Windows.Forms.Button();
-            this.buttonOpenTable = new System.Windows.Forms.Button();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
@@ -98,6 +99,32 @@
             this.cancelButton.UseVisualStyleBackColor = true;
             this.cancelButton.Click += new System.EventHandler(this.cancelButton_Click);
             // 
+            // buttonLoad
+            // 
+            this.buttonLoad.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonLoad.Location = new System.Drawing.Point(233, 3);
+            this.buttonLoad.Name = "buttonLoad";
+            this.buttonLoad.Size = new System.Drawing.Size(109, 34);
+            this.buttonLoad.TabIndex = 2;
+            this.buttonLoad.Text = "Загрузить";
+            this.buttonLoad.UseVisualStyleBackColor = true;
+            this.buttonLoad.Click += new System.EventHandler(this.buttonLoad_Click);
+            // 
+            // buttonOpenTable
+            // 
+            this.buttonOpenTable.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonOpenTable.Location = new System.Drawing.Point(348, 3);
+            this.buttonOpenTable.Name = "buttonOpenTable";
+            this.buttonOpenTable.Size = new System.Drawing.Size(111, 34);
+            this.buttonOpenTable.TabIndex = 3;
+            this.buttonOpenTable.Text = "Таблица";
+            this.buttonOpenTable.UseVisualStyleBackColor = true;
+            this.buttonOpenTable.Click += new System.EventHandler(this.buttonOpenTable_Click);
+            // 
             // tableLayoutPanel3
             // 
             this.tableLayoutPanel3.ColumnCount = 2;
@@ -134,30 +161,9 @@
             this.chartNameTextBox.Size = new System.Drawing.Size(346, 82);
             this.chartNameTextBox.TabIndex = 1;
             // 
-            // buttonLoad
+            // openFileDialog1
             // 
-            this.buttonLoad.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonLoad.Location = new System.Drawing.Point(233, 3);
-            this.buttonLoad.Name = "buttonLoad";
-            this.buttonLoad.Size = new System.Drawing.Size(109, 34);
-            this.buttonLoad.TabIndex = 2;
-            this.buttonLoad.Text = "Загрузить";
-            this.buttonLoad.UseVisualStyleBackColor = true;
-            // 
-            // buttonOpenTable
-            // 
-            this.buttonOpenTable.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonOpenTable.Location = new System.Drawing.Point(348, 3);
-            this.buttonOpenTable.Name = "buttonOpenTable";
-            this.buttonOpenTable.Size = new System.Drawing.Size(111, 34);
-            this.buttonOpenTable.TabIndex = 3;
-            this.buttonOpenTable.Text = "Таблица";
-            this.buttonOpenTable.UseVisualStyleBackColor = true;
-            this.buttonOpenTable.Click += new System.EventHandler(this.buttonOpenTable_Click);
+            this.openFileDialog1.FileName = "openFileDialog1";
             // 
             // ChartEditForm
             // 
@@ -186,5 +192,6 @@
         private System.Windows.Forms.TextBox chartNameTextBox;
         private System.Windows.Forms.Button buttonLoad;
         private System.Windows.Forms.Button buttonOpenTable;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
     }
 }

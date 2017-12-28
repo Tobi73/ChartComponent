@@ -70,5 +70,27 @@ namespace TreeComponent
                 model = ft.Chart;
             }
         }
+
+        public virtual ChartModel LoadChart(string fname)
+        {
+            return new ChartModel();
+        }
+
+        private void buttonLoad_Click(object sender, EventArgs e)
+        {
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    model = LoadChart(openFileDialog1.FileName);
+                    
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Ошибка:{ex.ToString()}");
+                }
+
+            }
+        }
     }
 }
