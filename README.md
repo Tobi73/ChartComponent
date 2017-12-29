@@ -8,6 +8,6 @@ In the left you can see the chart tree with node-charts. You can append a child 
 You can also write you own function to load
 ## Component Interface
 Данный компонент предоставляет следующие свойства:
-*
-*
-*
+* First
+* Second
+* Third
