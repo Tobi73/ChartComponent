@@ -1,11 +1,21 @@
-# ChartComponent
-It`s a C# library, that can help developers present data as charts easily and collect them in a tree.
-After pulling this package from nuget you need to choose control items from this library in toolbox.
+# Chart Component
+Данный компонент предоставляет возможность строить, выводить, сохранять (используется xlsx формат) и хранить графики в древовидной структуре.
+Да
 ## Appearance of the component
+
 ![image](https://user-images.githubusercontent.com/25034771/34423645-d584c04c-ec36-11e7-8d6c-697c58439088.png)
-In the left you can see the chart tree with node-charts. You can append a child to selected node. To do this you need to right click on the node and click "Добавить". After this you`ll se the form that allows you input a chart name, fill the table, which represents chart data.
+
+В левой части компонента находится дерево графиков. При нажатии правой кнопкой мыши на узел дерева вы можете вывести график, который хранится в нем. Нажатие на узел дерева левой кнопкой мыши раскрывает контекстное меню, которое выводит следующий список вариантов использования:
+* Добавление нового графика - добавление графика-наследника для выбранного графика.
+* Редактирование графика - обновление данных, по которым был построен график
+Вышеперечисленные функции могут быть быть переопределены программистом. 
+
+При добавлении данных для построения графика пользователь может:
+* вручную заполнить таблицу с данными
+* загрузить данные из файла
+
 ![image](https://user-images.githubusercontent.com/25034771/34423912-011f399c-ec39-11e7-8e0d-f848675fb50a.png)
-You can also write you own function to load
+
 ## Component Functions
 Данный компонент предоставляет следующие возможности:
 * Создание таблиц и графиков, построенных по ним.
