@@ -1,5 +1,7 @@
 ﻿using ChartComponent;
 using System;
+using System.IO;
+using System.Text;
 using System.Windows.Forms;
 
 namespace TreeComponent
@@ -14,18 +16,19 @@ namespace TreeComponent
             InitializeComponent();
             this.model = model;
             chartNameTextBox.Text = model.Text;
-            loadFileFunction = func;
+            loadFileFunction = func ?? LoadFromCsv;
         }
 
         public ChartEditForm(Func<string, ChartModel> func = null)
         {
             InitializeComponent();
-            loadFileFunction = func;
+            loadFileFunction = func ?? LoadFromCsv;
         }
 
         public ChartEditForm()
         {
             InitializeComponent();
+            loadFileFunction = LoadFromCsv;
         }
 
         public ChartModel ChartModel
@@ -90,6 +93,33 @@ namespace TreeComponent
                 }
 
             }
+        }
+
+        private ChartModel LoadFromCsv(string fname)
+        {
+            var chartModel = new ChartModel();
+            var lines = File.ReadAllLines(fname, Encoding.UTF8);
+            var names = lines[0]?.Split(';');
+            chartModel.Name = names.GetValue(0)?.ToString() ?? "Chart";
+            chartModel.NameX = names.GetValue(1)?.ToString() ?? "X";
+            chartModel.NameY = names.GetValue(2)?.ToString() ?? "Y";
+
+            foreach (var xValue in lines[1]?.Split(';'))
+            {
+                chartModel.AxisX.Add(xValue);
+            }
+
+            for (var i = 2; i < lines.Length; i++)
+            {
+                var serieElements = lines[i]?.Split(';');
+                var serie = new Serie(serieElements[0]);
+                for (var k = 1; k < serieElements.Length; k++)
+                {
+                    serie.PointsList.Add(chartModel.AxisX[k - 1], double.Parse(serieElements[k]));
+                }
+                chartModel.SeriesList.Add(serie);
+            }
+            return chartModel;
         }
 
         private void ChartEditForm_Load(object sender, EventArgs e)

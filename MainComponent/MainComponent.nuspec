@@ -2,13 +2,11 @@
 <package >
   <metadata>
     <id>CourseWork.ChartComponent</id>
-    <version>1.0.3.0</version>
+    <version>1.0.4.0</version>
     <title>$title$</title>
     <authors>ar az df</authors>
     <owners>ar az df</owners>
-    <licenseUrl>http://LICENSE_URL_HERE_OR_DELETE_THIS_LINE</licenseUrl>
-    <projectUrl>http://PROJECT_URL_HERE_OR_DELETE_THIS_LINE</projectUrl>
-    <iconUrl>http://ICON_URL_HERE_OR_DELETE_THIS_LINE</iconUrl>
+    <projectUrl>https://github.com/Tobi73/ChartComponent</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>A component that helps developers work with data and diagrams</description>
     <releaseNotes>Summary of changes made in this release of the package.</releaseNotes>
