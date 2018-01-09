@@ -102,18 +102,19 @@ namespace MainComponent
             }
         }
 
-        [Category("CustomChart"), Description("Select BackgroundImage")]
-        public Image BackgroundImageChart
-        {
-            set
-            {
-                customChart.BackgroundImage = value;
-            }
-            get
-            {
-                return customChart.BackgroundImage;
-            }
-        }
+        //[Category("CustomChart"), Description("Select BackImage")]
+        //public string BackImageChart
+        //{
+        //    set
+        //    {
+        //        customChart.BackImage = value;
+        //        customChart.Invalidate();
+        //    }
+        //    get
+        //    {
+        //        return customChart.BackImage;
+        //    }
+        //}
 
         [Category("CustomTree"), Description("Select back color")]
         public Color BackColorTree

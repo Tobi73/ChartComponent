@@ -47,41 +47,41 @@
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(495, 253);
+            this.btnSave.Location = new System.Drawing.Point(468, 248);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(82, 23);
+            this.btnSave.Size = new System.Drawing.Size(109, 28);
             this.btnSave.TabIndex = 1;
-            this.btnSave.Text = "save";
+            this.btnSave.Text = "Сохранить";
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnBack
             // 
-            this.btnBack.Location = new System.Drawing.Point(394, 253);
+            this.btnBack.Location = new System.Drawing.Point(353, 248);
             this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(82, 23);
+            this.btnBack.Size = new System.Drawing.Size(109, 28);
             this.btnBack.TabIndex = 2;
-            this.btnBack.Text = "back";
+            this.btnBack.Text = "Назад";
             this.btnBack.UseVisualStyleBackColor = true;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // btnAddColumn
             // 
-            this.btnAddColumn.Location = new System.Drawing.Point(12, 253);
+            this.btnAddColumn.Location = new System.Drawing.Point(12, 248);
             this.btnAddColumn.Name = "btnAddColumn";
-            this.btnAddColumn.Size = new System.Drawing.Size(82, 23);
+            this.btnAddColumn.Size = new System.Drawing.Size(109, 28);
             this.btnAddColumn.TabIndex = 3;
-            this.btnAddColumn.Text = "add column";
+            this.btnAddColumn.Text = "Добавить столбец";
             this.btnAddColumn.UseVisualStyleBackColor = true;
             this.btnAddColumn.Click += new System.EventHandler(this.btnAddColumn_Click);
             // 
             // btnDeleteColumn
             // 
-            this.btnDeleteColumn.Location = new System.Drawing.Point(113, 253);
+            this.btnDeleteColumn.Location = new System.Drawing.Point(127, 248);
             this.btnDeleteColumn.Name = "btnDeleteColumn";
-            this.btnDeleteColumn.Size = new System.Drawing.Size(82, 23);
+            this.btnDeleteColumn.Size = new System.Drawing.Size(109, 28);
             this.btnDeleteColumn.TabIndex = 4;
-            this.btnDeleteColumn.Text = "delete column";
+            this.btnDeleteColumn.Text = "Удалить столбец";
             this.btnDeleteColumn.UseVisualStyleBackColor = true;
             this.btnDeleteColumn.Click += new System.EventHandler(this.btnDeleteColumn_Click);
             // 
@@ -96,7 +96,7 @@
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.dataGridView1);
             this.Name = "FormTable";
-            this.Text = "FormTable";
+            this.Text = "Таблица";
             this.Load += new System.EventHandler(this.FormTable_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
