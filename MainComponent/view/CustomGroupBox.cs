@@ -64,7 +64,7 @@ namespace MainComponent
         }
 
         [Category("CustomChart"), Description("Select borders color")]
-        public Color BorderColorChart
+        public Color BorderlineColorChart
         {
             set
             {
@@ -77,7 +77,7 @@ namespace MainComponent
         }
 
         [Category("CustomChart"), Description("Select borders width")]
-        public int BorderWidthChart
+        public int BorderlineWidthChart
         {
             set
             {
@@ -102,6 +102,19 @@ namespace MainComponent
             }
         }
 
+        [Category("CustomChart"), Description("Select border dash style")]
+        public ChartDashStyle BorderlineDashStyleChart
+        {
+            set
+            {
+                customChart.BorderlineDashStyle = value;
+            }
+            get
+            {
+                return customChart.BorderlineDashStyle;
+            }
+        }
+
         //[Category("CustomChart"), Description("Select BackImage")]
         //public string BackImageChart
         //{
@@ -121,7 +134,7 @@ namespace MainComponent
         {
             set
             {
-                chartTree.BackColor = value;
+                chartTree.tree.BackColor = value;
                 
             }
             get
@@ -131,15 +144,15 @@ namespace MainComponent
         }
 
         [Category("CustomTree"), Description("Select BackgroundImage")]
-        public Image BackgroundImageTree
+        public BorderStyle borderStyleTree
         {
             set
             {
-                chartTree.BackgroundImage = value;
+                chartTree.tree.BorderStyle = value;
             }
             get
             {
-                return chartTree.BackgroundImage;
+                return chartTree.tree.BorderStyle;
             }
         }
 
