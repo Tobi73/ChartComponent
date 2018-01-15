@@ -23,3 +23,23 @@
 * Построение дерева для хранения графиков
 * Сериализация построенного дерева со всеми данными
 
+## Component API
+
+# Общие
+* WidthChart (float) - выставляет соотношение размеров компонентов графика и дерева (в процентах)
+* TypeOfChart (SeriesChartType) - тип графика по умолчанию
+# График
+* BorderlineColorChart (Color) - тип границы компонента с графиком
+* BorderlineWidthChart (int) - ширина границы компонента с графиком
+* BackColorChart (Color) - шон компонента с графиком
+* BorderlineDashStyleChart (ChartDashStyle) - тип линии границы компонента с графиком
+# Дерево
+* BackColorTree (Color) - фон компонента с деревом
+* BorderStyleTree (BorderStyle) - тип границы компонента дерева
+* FontTree (Font) - шрифт используемый компонентом с деревом
+
+
+
+
+
+
