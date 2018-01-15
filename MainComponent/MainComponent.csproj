@@ -64,12 +64,6 @@
   <ItemGroup>
     <Compile Include="controller\XlsxExporter.cs" />
     <Compile Include="controller\Serializer.cs" />
-    <Compile Include="ShitForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ShitForm.Designer.cs">
-      <DependentUpon>ShitForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="view\CustomDesigner.cs" />
     <Compile Include="view\CustomGroupBox.cs">
       <SubType>Component</SubType>
@@ -80,9 +74,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="ShitForm.resx">
-      <DependentUpon>ShitForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="view\CustomGroupBox.resx">
       <DependentUpon>CustomGroupBox.cs</DependentUpon>
     </EmbeddedResource>
