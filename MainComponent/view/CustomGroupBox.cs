@@ -29,7 +29,9 @@ namespace MainComponent
             InitializeComponent();
         }
 
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         private ChartModel thisChart;
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         private RootModel tree;
 
         public void SetFileLoadFunction(Func<string, ChartModel> func)
@@ -221,7 +223,7 @@ namespace MainComponent
             }
         }
 
-
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public RootModel RootNode
         {
             get
