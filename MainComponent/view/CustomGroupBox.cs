@@ -36,8 +36,8 @@ namespace MainComponent
         {
             chartTree.SetFileLoadFunc(func);
         }
-        [Category("New"), Description("Select width CustomChart (%)")]
-        public float widthChart
+        [Category("General"), Description("Tree/Chart Component Ratio (%)")]
+        public float WidthChart
         {
             set
             {
@@ -50,7 +50,7 @@ namespace MainComponent
             }
         }
 
-        [Category("CustomChart"), Description("Select type of chart")]
+        [Category("General"), Description("Default chart type")]
         public SeriesChartType TypeOfChart
         {
             set
@@ -63,7 +63,7 @@ namespace MainComponent
             }
         }
 
-        [Category("CustomChart"), Description("Select borders color")]
+        [Category("Chart"), Description("Border color")]
         public Color BorderlineColorChart
         {
             set
@@ -76,7 +76,7 @@ namespace MainComponent
             }
         }
 
-        [Category("CustomChart"), Description("Select borders width")]
+        [Category("Chart"), Description("Border width")]
         public int BorderlineWidthChart
         {
             set
@@ -89,7 +89,7 @@ namespace MainComponent
             }
         }
 
-        [Category("CustomChart"), Description("Select back color")]
+        [Category("Chart"), Description("Background color")]
         public Color BackColorChart
         {
             set
@@ -102,7 +102,7 @@ namespace MainComponent
             }
         }
 
-        [Category("CustomChart"), Description("Select border dash style")]
+        [Category("Chart"), Description("Border dash style")]
         public ChartDashStyle BorderlineDashStyleChart
         {
             set
@@ -115,21 +115,7 @@ namespace MainComponent
             }
         }
 
-        //[Category("CustomChart"), Description("Select BackImage")]
-        //public string BackImageChart
-        //{
-        //    set
-        //    {
-        //        customChart.BackImage = value;
-        //        customChart.Invalidate();
-        //    }
-        //    get
-        //    {
-        //        return customChart.BackImage;
-        //    }
-        //}
-
-        [Category("CustomTree"), Description("Select back color")]
+        [Category("Tree"), Description("Background color")]
         public Color BackColorTree
         {
             set
@@ -143,8 +129,8 @@ namespace MainComponent
             }
         }
 
-        [Category("CustomTree"), Description("Select BackgroundImage")]
-        public BorderStyle borderStyleTree
+        [Category("Tree"), Description("Border style")]
+        public BorderStyle BorderStyleTree
         {
             set
             {
@@ -156,7 +142,7 @@ namespace MainComponent
             }
         }
 
-        [Category("CustomTree"), Description("Select Font")]
+        [Category("Tree"), Description("Font")]
         public Font FontTree
         {
             set
@@ -170,7 +156,109 @@ namespace MainComponent
             }
         }
 
-        protected override void OnPaint(System.Windows.Forms.PaintEventArgs e)
+        [Category("Tree"), Description("Chart node selection handler")]
+        public event EventHandler OnChartNodeSelect
+        {
+            add
+            {
+                chartTree.OnChartNodeSelect += value;
+            }
+            remove
+            {
+                chartTree.OnChartNodeSelect -= value;
+            }
+        }
+
+        [Category("Tree"), Description("Chart node removal handler")]
+        public event EventHandler OnChartNodeDelete
+        {
+            add
+            {
+                chartTree.OnChartNodeDelete += value;
+            }
+            remove
+            {
+                chartTree.OnChartNodeDelete -= value;
+            }
+        }
+
+        [Category("Tree"), Description("Chart node add handler")]
+        public event ChartTreeAddEventHandler OnChartAdd
+        {
+            add
+            {
+                chartTree.OnChartAdd += value;
+            }
+            remove
+            {
+                chartTree.OnChartAdd -= value;
+            }
+        }
+
+        [Category("Tree"), Description("Chart node edit handler")]
+        public event ChartTreeEditEventHandler OnChartEdit
+        {
+            add
+            {
+                chartTree.OnChartEdit += value;
+            }
+            remove
+            {
+                chartTree.OnChartEdit -= value;
+            }
+        }
+
+        [Category("Tree"), Description("Name of the root node")]
+        public string RootName
+        {
+            get
+            {
+                return chartTree.RootName;
+            }
+            set
+            {
+                chartTree.RootName = value;
+            }
+        }
+
+
+        public RootModel RootNode
+        {
+            get
+            {
+                return chartTree.RootNode;
+            }
+            set
+            {
+                chartTree.RootNode = value;
+            }
+        }
+
+        public Func<string, ChartModel> FileLoadFunc
+        {
+            set
+            {
+                chartTree.SetFileLoadFunc(value);
+            }
+        }
+
+        public TreeView ChartTreeView
+        {
+            get
+            {
+                return chartTree.ChartTreeView;
+            }
+        }
+
+        public TreeNode SelectedChartNode
+        {
+            get
+            {
+                return chartTree.SelectedChartNode;
+            }
+        }
+
+        protected override void OnPaint(PaintEventArgs e)
         {
             base.OnPaint(e);
             customChart.Invalidate();

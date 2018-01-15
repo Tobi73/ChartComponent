@@ -8,24 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-
 namespace MainComponent
 {
-    public partial class FormCreateGroupBox : Form
+    public partial class ShitForm : Form
     {
-        public FormCreateGroupBox()
+        public ShitForm()
         {
             InitializeComponent();
-        }
-
-        private void btnTable_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void FormCreateGroupBox_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

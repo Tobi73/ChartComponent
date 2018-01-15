@@ -3,12 +3,15 @@ using System;
 using System.ComponentModel;
 using System.Windows.Forms;
 
+
 namespace TreeComponent
 {
+    public delegate void ChartTreeEditEventHandler(object sender, ChartEditEventArgs a);
+    public delegate ChartModel ChartTreeAddEventHandler(object sender, ChartAddEventArgs a);
+
     public partial class ChartTree : Control
     {
-        public delegate void ChartTreeEditEventHandler(object sender, ChartEditEventArgs a);
-        public delegate ChartModel ChartTreeAddEventHandler(object sender, ChartAddEventArgs a);
+        
         event EventHandler onChartNodeSelect;
         event EventHandler onChartNodeDelete;
         event ChartTreeAddEventHandler onChartAdd;
