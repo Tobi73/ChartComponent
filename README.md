@@ -25,18 +25,25 @@
 
 ## Component API
 
-# Общие
+### Общие
 * WidthChart (float) - выставляет соотношение размеров компонентов графика и дерева (в процентах)
 * TypeOfChart (SeriesChartType) - тип графика по умолчанию
-# График
+### График
 * BorderlineColorChart (Color) - тип границы компонента с графиком
 * BorderlineWidthChart (int) - ширина границы компонента с графиком
 * BackColorChart (Color) - шон компонента с графиком
 * BorderlineDashStyleChart (ChartDashStyle) - тип линии границы компонента с графиком
-# Дерево
+### Дерево
 * BackColorTree (Color) - фон компонента с деревом
 * BorderStyleTree (BorderStyle) - тип границы компонента дерева
 * FontTree (Font) - шрифт используемый компонентом с деревом
+* OnChartNodeSelect - событие выбора узла дерева
+* OnChartNodeDelete - событие удаление узла дерева
+* OnChartAdd - событие добавления графика (метод должен возвращать модель графика)
+* OnChartDelete - событие удаления графика
+* OnChartEdit - событие редактирования графика (метод должен возвращать модель графика)
+* RootName - название корневого элемента
+* RootNode - корневой элемент дерева
 
 
 
