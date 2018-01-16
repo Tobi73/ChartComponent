@@ -33,6 +33,7 @@
             this.btnBack = new System.Windows.Forms.Button();
             this.btnAddColumn = new System.Windows.Forms.Button();
             this.btnDeleteColumn = new System.Windows.Forms.Button();
+            this.Categories = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -40,6 +41,8 @@
             // 
             this.dataGridView1.AllowUserToOrderColumns = true;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Categories});
             this.dataGridView1.Location = new System.Drawing.Point(12, 12);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(565, 218);
@@ -85,6 +88,11 @@
             this.btnDeleteColumn.UseVisualStyleBackColor = true;
             this.btnDeleteColumn.Click += new System.EventHandler(this.btnDeleteColumn_Click);
             // 
+            // Categories
+            // 
+            this.Categories.HeaderText = "Категории";
+            this.Categories.Name = "Categories";
+            // 
             // FormTable
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -110,5 +118,6 @@
         private System.Windows.Forms.Button btnBack;
         private System.Windows.Forms.Button btnAddColumn;
         private System.Windows.Forms.Button btnDeleteColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Categories;
     }
 }

@@ -117,6 +117,7 @@ namespace TreeComponent
 
         private void btnDeleteColumn_Click(object sender, EventArgs e)
         {
+            if (dataGridView1.SelectedCells[0].ColumnIndex == 0) return;
             dataGridView1.Columns.Remove(dataGridView1.SelectedCells[0].OwningColumn);
         }
     }
